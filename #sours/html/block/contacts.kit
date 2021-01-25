@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Контакты</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- @import "/header.html" -->
+    <hr />
+    <div class="content">
+      <h1>Напишите нам</h1>
+      <div class="napishi">
+        <form action="#">
+          <br />
+          <div class="row">
+            <label>
+              <span class="vol_1">Ваше имя</span>
+              <span class="vol_2"
+                ><input type="text" placeholder="Имя" required
+              /></span>
+            </label>
+          </div>
+          <div class="row">
+            <label>
+              <span class="vol_1">Ваш город</span>
+              <span class="vol_2">
+                <select name="city">
+                  <option value="abn">Абакан</option>
+                  <option value="anp">Анапа</option>
+                  <option value="arm">Армавир</option>
+                  <option value="ast">Астрахань</option>
+                  <option value="blk">Балаково</option>
+                  <option value="brn">Барнаул</option>
+                  <option value="blg">Белгород</option>
+                  <option value="vnv">Великий Новгород</option>
+                  <option value="vkz">Владикавказ</option>
+                  <option value="vld">Владимир</option>
+                  <option value="vlg">Волгоград</option>
+                  <option value="vgd">Волгодонск</option>
+                  <option value="vol">Вологда</option>
+                  <option value="vrzh">Воронеж</option>
+                  <option value="glk">Геленджик</option>
+                  <option value="dzj">Дзержинск</option>
+                  <option value="ekat">Екатеринбург</option>
+                  <option value="zlt">Златоуст</option>
+                  <option value="iva">Иваново</option>
+                  <option value="izh">Ижевск</option>
+                  <option value="yos">Йошкар-Ола</option>
+                  <option value="kzn">Казань</option>
+                  <option value="klg">Калуга</option>
+                  <option value="ksh">Камышин</option>
+                  <option value="kmr">Кемерово</option>
+                  <option value="kir">Киров</option>
+                  <option value="kst">Кострома</option>
+                  <option value="krd">Краснодар</option>
+                  <option value="krasn">Красноярск</option>
+                  <option value="krg">Курган</option>
+                  <option value="kur">Курск</option>
+                  <option value="lip">Липецк</option>
+                  <option value="mgn">Магнитогорск</option>
+                  <option value="mrv">Минеральные Воды</option>
+                  <option value="mhl">Михайловка</option>
+                  <option value="msk">Москва</option>
+                  <option value="mur">Муром</option>
+                  <option value="nch">Набережные Челны</option>
+                  <option value="nal">Нальчик</option>
+                  <option value="nfk">Нефтекамск</option>
+                  <option value="njk">Нижнекамск</option>
+                  <option value="nnov">Нижний Новгород</option>
+                  <option value="ntg">Нижний Тагил</option>
+                  <option value="nvr">Новороссийск</option>
+                  <option value="nvs">Новосибирск</option>
+                  <option value="okt">Октябрьский</option>
+                  <option value="omk">Омск</option>
+                  <option value="orn">Оренбург</option>
+                  <option value="penza">Пенза</option>
+                  <option value="perm">Пермь</option>
+                  <option value="psk">Псков</option>
+                  <option value="ptg">Пятигорск</option>
+                  <option value="rnd">Ростов-на-Дону</option>
+                  <option value="rzn">Рязань</option>
+                  <option value="svt">Салават</option>
+                  <option value="smr">Самара</option>
+                  <option value="spb">Санкт-Петербург</option>
+                  <option value="srt">Саратов</option>
+                  <option value="srt" selected="selected">Скрытенбург</option>
+                  <option value="smk">Смоленск</option>
+                  <option value="soc">Сочи</option>
+                  <option value="stav">Ставрополь</option>
+                  <option value="sok">Старый Оскол</option>
+                  <option value="tgn">Таганрог</option>
+                  <option value="tmb">Тамбов</option>
+                  <option value="tvr">Тверь</option>
+                  <option value="tlt">Тольятти</option>
+                  <option value="tom">Томск</option>
+                  <option value="tula">Тула</option>
+                  <option value="tmn">Тюмень</option>
+                  <option value="uln">Ульяновск</option>
+                  <option value="ufa">Уфа</option>
+                  <option value="chb">Чебоксары</option>
+                  <option value="chlb">Челябинск</option>
+                  <option value="che">Череповец</option>
+                  <option value="sht">Шахты</option>
+                  <option value="els">Элиста</option>
+                  <option value="yar">Ярославль</option>
+                </select>
+              </span>
+            </label>
+          </div>
+          <div>
+            <span class="vol_1">Ваш пол</span>
+            <span class="vol_2">
+              <input type="radio" name="pol" value="m" />М
+              <input type="radio" name="pol" value="g" />Ж
+            </span>
+          </div>
+          <div class="row">
+            <label>
+              <span class="vol_1">Email</span>
+              <span class="vol_2"
+                ><input type="email" placeholder="ABD@deh.gh" required
+              /></span>
+            </label>
+          </div>
+          <div class="row">
+            <label>
+              <span class="vol_1">Телефон</span>
+              <span class="vol_2"
+                ><input type="tel" placeholder="+7(999)999-99-99"
+              /></span>
+            </label>
+          </div>
+          <div class="row">
+            <label>
+              <span class="vol_1">Тема обращения</span>
+              <span class="vol_2">
+                <select name="vopr" id="">
+                  <option value="st">Сотрудничество</option>
+                  <option value="vp">Вопросы по заказу</option>
+                  <option value="pd">Жалобы, предложения</option>
+                </select>
+              </span>
+            </label>
+          </div>
+          <div class="row">
+            <label>
+              <span class="vol_1">Другой вопрос</span>
+              <span class="vol_2">
+                <textarea
+                  rows="6px"
+                  cols="37px"
+                  placeholder="Текст"
+                  required
+                ></textarea>
+              </span>
+            </label>
+          </div>
+          <div class="row"></div>
+          <div class="row">
+            <span class="vol_1"
+              ><input type="submit" value="Отправить данные"
+            /></span>
+            <span class="vol_2"><input type="reset" value="Отмена" /></span>
+          </div>
+        </form>
+      </div>
+      <br />
+      <hr />
+      <div>
+        <h1>Контактные данные</h1>
+        <div class="contact">
+          Адрес офиса
+          <address>
+            г. Скрытенбург, ул. Невозможная, д. 000 стр. 0, оф. -999
+          </address>
+          <br />
+          Номер для связи
+          <address>8-987-654-32-10</address>
+          <br />
+          Почта для связи
+          <address>ABC@def.gh</address>
+        </div>
+      </div>
+      <br />
+      <div class="map" style="position: relative; overflow: hidden">
+        <a
+          href="https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps"
+          style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+          >Яндекс.Карты</a
+        ><a
+          href="https://yandex.ru/maps/?ll=56.515545%2C80.945023&utm_medium=mapframe&utm_source=maps&z=7.81"
+          style="color: #eee; font-size: 12px; position: absolute; top: 14px"
+          >Россия — Яндекс.Карты</a
+        ><iframe
+          src="https://yandex.ru/map-widget/v1/-/CKqdEZ3h"
+          width="100%"
+          height="374"
+          frameborder="1"
+          allowfullscreen="true"
+          style="position: relative"
+        ></iframe>
+      </div>
+    </div>
+    <hr />
+    <!-- @import "/footer.html" -->
+  </body>
+</html>

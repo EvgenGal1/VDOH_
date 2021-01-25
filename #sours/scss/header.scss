@@ -1,0 +1,182 @@
+// <HEADER>============================================
+header {
+  background-color: #8b0000;
+  height: 150px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  margin-top: 25px;
+  margin-left: 15px;
+  outline: 4px solid yellow;
+  float: left;
+  outline-style: ridge;
+  display: block;
+}
+
+.logo p {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.logo:hover {
+  outline: none;
+}
+
+//<>====================================================
+
+.menu {
+  margin-top: 21px;
+  float: right;
+}
+
+.menu > li {
+  float: left;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  list-style-type: none;
+  width: 160px;
+  height: 40px;
+  border: 2px solid #000;
+  margin-right: 11px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.menu > li:nth-child(1) {
+  background-color: #ffff00;
+}
+
+.menu > li:nth-child(2) {
+  background-color: #00ba00;
+}
+
+.menu > li:nth-child(3) {
+  background-color: #fd2727;
+}
+
+.menu > li:nth-child(4) {
+  background-color: #ffa500;
+}
+
+.menu > li:nth-child(5) {
+  background-color: #1c89bb;
+}
+
+.menu a:hover::before {
+  content: "!";
+  color: #000;
+}
+
+.menu a:hover::after {
+  content: "!";
+  color: #000000;
+}
+
+.menu a:link {
+  color: #8b0000;
+}
+
+.menu a:visited {
+  color: #800080;
+}
+
+.menu a:hover {
+  color: #000000;
+}
+
+.menu a:active {
+  color: #1400d4;
+}
+
+/*
+.menu a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+*/
+
+//<>====================================================
+
+.menu ul {
+  display: none;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  width: 140px;
+  margin: 15px 2px 1px;
+  padding: 1px 3px 3px;
+  float: right;
+  list-style-type: none;
+  border: 2px solid #000;
+  background: #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu ul li {
+  margin-top: 3px;
+  background: #a3a3a3;
+  border: 1px solid #f00;
+}
+
+li:hover ul {
+  display: block;
+}
+
+.menu ul a:hover::before {
+  content: ">>";
+  color: #000;
+}
+
+.menu ul a:hover::after {
+  content: "<<";
+  color: #000000;
+}
+
+/*
+
+.menu a:hover::before {
+  content: "!!!";
+  color: #000;
+}
+
+.menu a:hover::after {
+  content: "!!!";
+  color: #000000;
+}
+
+.menu a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu a:link {
+  color: #8b0000;
+}
+
+.menu a:visited {
+  color: #800080;
+}
+
+.menu a:hover {
+  color: #1400d4;
+}
+
+.menu a:active {
+  color: #000000;
+}
+*/

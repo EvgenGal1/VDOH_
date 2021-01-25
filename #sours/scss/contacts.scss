@@ -1,0 +1,140 @@
+//<>====================================================
+
+.napishi,
+.contact {
+  margin-left: 15px;
+}
+
+//<>====================================================
+
+.napishi {
+  width: 400px;
+  border-radius: 7px;
+  background-color: #dadada;
+  padding: 20px;
+  border: 2px solid #8b0000;
+}
+
+.row {
+  margin-bottom: 5px;
+  /* Отступ снизу */
+}
+
+.vol_1 {
+  width: 170px;
+  /* Ширина блока с текстом */
+  float: left;
+  /* Расположение в одну строку с полем */
+  text-align: left;
+  /* Выравнивание по правому краю */
+}
+
+.vol_2 {
+  width: 40px;
+  /* Ширина поля */
+  margin-left: 60px;
+  /* Расстояние между полем и текстом */
+  text-align: left;
+}
+
+input[value="m"] {
+  margin-left: 15px;
+  width: 17px;
+}
+
+input[value="g"] {
+  margin-left: 50px;
+  width: 17px;
+}
+
+input,
+select,
+textarea {
+  height: px;
+  border-radius: 5px;
+  width: 150px;
+  background-color: #b3b3b3;
+  font-size: 14px;
+  border: 2px solid #8b0000;
+  text-transform: capitalize;
+}
+
+select {
+  width: 154px;
+}
+
+textarea {
+  width: 148px;
+  resize: vertical;
+}
+
+input[type="tel"]:focus {
+  color: #f00;
+  background-color: #ff0;
+  border: 2px solid #8b0000;
+}
+
+input[type="email"]:focus {
+  color: #f00;
+  background-color: #ff0;
+  border: 2px solid #8b0000;
+}
+
+input[type="text"]:focus {
+  color: #f00;
+  background-color: #ff0;
+  border: 2px solid #8b0000;
+}
+
+textarea:focus {
+  color: #f00;
+  background-color: #ff0;
+  border: 2px solid #8b0000;
+}
+
+.row input[type="reset"] {
+  width: 157px;
+}
+
+.row input[type="reset"]:hover {
+  color: black;
+  border-style: solid;
+  border-color: #550000;
+  background: #818181;
+  font-weight: 700;
+}
+
+.row input[type="reset"]:active {
+  color: #8b0000;
+}
+
+.row input[type="submit"]:hover {
+  color: black;
+  border-style: solid;
+  border-color: #550000;
+  background: #818181;
+  font-weight: 700;
+}
+
+.row input[type="submit"]:active {
+  color: #8b0000;
+}
+
+//<>====================================================
+
+.contact {
+  width: 400px;
+  border-radius: 7px;
+  background-color: #dadada;
+  padding: 20px;
+  border: 2px solid #8b0000;
+}
+
+//<>====================================================
+
+.map {
+  width: 100%;
+  height: 374px;
+  border-radius: 7px;
+  border: 2px solid #8b0000;
+}
