@@ -1,89 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Время</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-
+<html lang="ru">
+  <!-- @import "../block/head/head3.kit" -->
   <body>
-    <!-- @import "../block/header.html" -->
-    <hr />
-    <div class="content">
-      <div class="kup">
-        <form action="#">
-          <label>
-            <h1>
-              Управление временем
-              <input type="submit" value="Купить!" id="kup" autofocus />
-            </h1>
-          </label>
-        </form>
+    <div class="wrapper">
+      <!-- @import "../block/header.kit" -->
+      <hr />
+      <div class="content">
+        <div class="kup">
+          <form action="#">
+            <label>
+              <h1>
+                Управление временем
+                <input type="submit" value="Купить!" id="kup" autofocus />
+              </h1>
+            </label>
+          </form>
+        </div>
+        <div>
+          <a href="/img/time1.jpg" target="_blank" title="Полный размер">
+            <img
+              class="prod_img"
+              src="/img/time1.jpg"
+              alt="сорян"
+              width="240"
+              height="250"
+            />
+          </a>
+        </div>
+        <div>
+          <h3 class="pismo">Описание товара</h3>
+          <p class="kr">Буквы</p>
+          <h3 class="pismo" style="clear: both">Подробное описание товара</h3>
+          <p class="pod">Много текста</p>
+          <h3 class="pismo" style="clear: both">Характеристики товара</h3>
+          <ul class="har">
+            <li>Пункт 1</li>
+            <li>Пункт 2</li>
+            <li>Ещё один</li>
+            <li>И ещё</li>
+            <li>Вроде последний</li>
+          </ul>
+        </div>
+        <div>
+          <table class="table">
+            <caption>
+              Какая то таблица с важными данными
+            </caption>
+            <tr class="tr">
+              <td>Опять эти пункты</td>
+              <td>Главные ещё</td>
+              <td>В "шапке"</td>
+              <td>Что ты</td>
+              <td>Смотрите на них</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Общий</td>
+              <td>Что то</td>
+              <td colspan="3">Объединяющий</td>
+            </tr>
+            <tr>
+              <td>Это нужное</td>
+              <td>Интересное</td>
+              <td>Захватывающее</td>
+              <td>Но это не точно</td>
+            </tr>
+            <tr>
+              <td>Пункт подпункта</td>
+              <td colspan="2">Подпункт пункта</td>
+              <td>4</td>
+              <td>Просто 5</td>
+            </tr>
+            <tr>
+              <td colspan="2">Длиная строчка</td>
+              <td>Тех. хар-ки</td>
+              <td>Важное</td>
+              <td>Шутка</td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div>
-        <a href="/img/time1.jpg" target="_blank" title="Полный размер">
-          <img
-            class="prod_img"
-            src="/img/time1.jpg"
-            alt="сорян"
-            width="240"
-            height="250"
-          />
-        </a>
-      </div>
-      <div>
-        <h3 class="pismo">Описание товара</h3>
-        <p class="kr">Буквы</p>
-        <h3 class="pismo" style="clear: both">Подробное описание товара</h3>
-        <p class="pod">Много текста</p>
-        <h3 class="pismo" style="clear: both">Характеристики товара</h3>
-        <ul class="har">
-          <li>Пункт 1</li>
-          <li>Пункт 2</li>
-          <li>Ещё один</li>
-          <li>И ещё</li>
-          <li>Вроде последний</li>
-        </ul>
-      </div>
-      <div>
-        <table class="table">
-          <caption>
-            Какая то таблица с важными данными
-          </caption>
-          <tr class="tr">
-            <td>Опять эти пункты</td>
-            <td>Главные ещё</td>
-            <td>В "шапке"</td>
-            <td>Что ты</td>
-            <td>Смотрите на них</td>
-          </tr>
-          <tr>
-            <td rowspan="2">Общий</td>
-            <td>Что то</td>
-            <td colspan="3">Объединяющий</td>
-          </tr>
-          <tr>
-            <td>Это нужное</td>
-            <td>Интересное</td>
-            <td>Захватывающее</td>
-            <td>Но это не точно</td>
-          </tr>
-          <tr>
-            <td>Пункт подпункта</td>
-            <td colspan="2">Подпункт пункта</td>
-            <td>4</td>
-            <td>Просто 5</td>
-          </tr>
-          <tr>
-            <td colspan="2">Длиная строчка</td>
-            <td>Тех. хар-ки</td>
-            <td>Важное</td>
-            <td>Шутка</td>
-          </tr>
-        </table>
-      </div>
+      <hr />
+      <!-- @import "../block/footer.kit" -->
     </div>
-    <hr />
-    <!-- @import "../block/footer.html" -->
   </body>
 </html>

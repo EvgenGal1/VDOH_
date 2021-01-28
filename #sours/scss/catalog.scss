@@ -14,13 +14,13 @@
 }
 */
 
-.catal .prod_img {
+.catalog-item .prod_img {
   width: 140px;
   height: 140px;
   margin: 10px 20px 15px;
 }
 
-.catal {
+.catalog-item {
   display: inline-block;
   outline-style: dashed;
   color: red;
@@ -30,7 +30,7 @@
   padding: 15px 10px;
 }
 
-.catal a {
+.catalog-item a {
   display: block;
   color: black;
 }
