@@ -135,62 +135,18 @@ a {
   color: #8b0000;
 }
 
-h1 {
-  color: #8b0000;
-  font-size: 30px;
-  font-family: cursive;
-  background: yellow;
-  min-height: 50px;
-  vertical-align: bottom;
-  text-align: left;
-}
+// .body,
+// .header,
+// .catalogs,
+// .games,
+// .items,
+// .contact {
+//   // font-family: $fontfamily1;
+// }
 
-h2 {
-  color: #8b0000;
-  font-size: 25px;
-  font-family: cursive;
-  background: yellow;
-}
-
-h3 {
-  color: black;
-  font-size: 18px;
-  font-weight: 400;
-  background: #a3a3a3;
-  margin-left: 10px;
-}
-.body,
-.header,
-.catalogs,
-.games,
-.items,
-.contact {
-  // font-family: $fontfamily1;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding: 0 03%;
-  }
-  h1 {
-    margin: 25px 0px;
-    min-height: 50px;
-  }
-  h2 {
-    margin: 20px 0px;
-    min-height: 40px;
-  }
-  h3 {
-    margin: 15px 0px;
-    min-height: 175px;
-  }
-}
-
-.padd_cont {
-  padding: 0 03%;
-}
+// .padd_cont {
+//   padding: 0 03%;
+// }
 
 p {
   font-size: 14px;
@@ -204,5 +160,5 @@ p {
 // элем форм, checkbox, select, кнопки
 // @import "forms.scss";
 // сбор готовых и вспомогательных классов (ibg, video, заголовки, зеркало, серый стиль)
-// @import "ui.scss";
+@import "ui.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================

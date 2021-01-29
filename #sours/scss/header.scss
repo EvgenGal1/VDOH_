@@ -93,10 +93,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover::before,
-    &:hover::after {
-      content: "!";
-      color: #000;
+    &:hover {
+      color: #000000;
+      &:before,
+      &:after {
+        content: "!";
+      }
     }
     &:link {
       color: #8b0000;
@@ -119,7 +121,7 @@ header {
     color: #1400d4;
   }
 
-  // .header-nava {
+  // .header-nav a {
   //   display: inline-block;
   //   width: 100%;
   //   height: 100%;
@@ -154,51 +156,50 @@ header {
     border: 1px solid #f00;
     a {
       text-decoration: none;
+      &:hover {
+        color: #000000;
+        &::before {
+          content: ">>";
+        }
+        &:hover::after {
+          content: "<<";
+        }
+      }
     }
   }
 }
 
-.header-nav.ul a:hover::before {
-  content: ">>";
-  color: #000;
-}
-
-.header-nav.ul a:hover::after {
-  content: "<<";
-  color: #000000;
-}
-
 /*
 
-.header-nava:hover::before {
+.header-nav a:hover::before {
   content: "!!!";
   color: #000;
 }
 
-.header-nava:hover::after {
+.header-nav a:hover::after {
   content: "!!!";
   color: #000000;
 }
 
-.header-nava {
+.header-nav a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-.header-nava:link {
+.header-nav a:link {
   color: #8b0000;
 }
 
-.header-nava:visited {
+.header-nav a:visited {
   color: #800080;
 }
 
-.header-nava:hover {
+.header-nav a:hover {
   color: #1400d4;
 }
 
-.header-nava:active {
+.header-nav a:active {
   color: #000000;
 }
 */

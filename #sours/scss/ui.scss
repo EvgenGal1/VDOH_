@@ -1,7 +1,111 @@
 //<(ui.scss)ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ ИГОТОВЫХ КЛАССОВ>=============================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 10px 03%;
+}
+h1 {
+  font-size: 30px;
+  margin: 0 0 10px;
+  min-height: 50px;
+  padding: 10px 0px;
+  vertical-align: bottom;
+  text-align: left;
+  background: yellow;
+  color: #8b0000;
+  font-family: cursive;
+  margin: 0px 0px;
+  overflow: hidden;
+  background: yellow;
+}
+h3 {
+  padding: 0px 0px;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: 400;
+}
+// классы отступов по бокам и с верху
+.mc0 {
+  margin: 0px 03%;
+}
+.mc1 {
+  margin: 10px 03%;
+}
+.pc0 {
+  padding: 0px 03%;
+}
+.pc1 {
+  padding: 10px 03%;
+}
 
+// блок приветствия
+.helloys {
+  color: #8b0000;
+  font-family: cursive;
+  margin: 0px 0px;
+  // overflow: hidden;
+  // background: yellow;
+  h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    // min-height: 50px;
+    // padding: 10px 0px;
+    // vertical-align: bottom;
+    // text-align: left;
+    background: yellow;
+  }
+  h2 {
+    font-size: 25px;
+    margin: 0 0 10px;
+    // min-height: 40px;
+    background: yellow;
+  }
+  p {
+    // min-height: 175px;
+    margin: 10px 03%;
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    background: #a3a3a3;
+    border: 1px solid #f00;
+  }
+  // ??? не раб оттолкнуть всё кроме h1, h2 ???
+  // &:not(h1, h2) {
+  //   padding: 0px 03%;
+  // }
+}
+
+.block-body {
+  // margin: 0px 0px;
+  font-family: monospace;
+  padding: 10px 10px;
+  font-weight: 400;
+  color: #000;
+  background: #a3a3a3;
+  border: 1px solid #f00;
+  // overflow: hidden;
+  h3 {
+    padding: 0px 0px;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 400;
+    // margin: 10px 03%;
+  }
+  p {
+    font-size: 18px;
+    font-family: monospace;
+  }
+}
+.pismo {
+  // margin-top: 1px;
+  // margin-left: 10px;
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================

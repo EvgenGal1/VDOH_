@@ -1,48 +1,36 @@
 //<>====================================================
-
-/*
-.spease {
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px color green;
-  width: 220px;
-  height: 120px;
-  margin: 10px 15px;
-  padding: 20px 10px;
-  justify-content: center;
-  align-items: flex-end;
-}
-*/
-
-.catalog-item .prod_img {
-  width: 140px;
-  height: 140px;
-  margin: 10px 20px 15px;
+.catalogs {
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .catalog-item {
-  display: inline-block;
+  margin: 0px 20px 20px 0px;
+  padding: 2px 2px;
   outline-style: dashed;
   color: red;
-  text-align: center;
-  align-content: center;
-  margin: 10px 10px 20px 11px;
-  padding: 15px 10px;
+  & .prod_img {
+    // width: 140px;
+    // height: 140px;
+    // width: 200px;
+    // height: 200px;
+    // margin: 10px 20px 15px;
+    outline: none;
+    // float: left;
+    // margin: 7px 15px 15px;
+    &:hover {
+      outline: 7px solid #ff0;
+    }
+  }
 }
-
-.catalog-item a {
-  display: block;
-  color: black;
-}
-
 //<>====================================================
-
 .kup h1 {
-  display: block;
+  // display: block;
 }
 
 #kup {
-  float: right;
+  // float: right;
   border-radius: 1px;
   width: 250px;
   background-color: #fc0101;
@@ -50,7 +38,7 @@
   font-size: 30px;
   border: 10px double yellow;
   text-transform: capitalize;
-  margin: -3px 25px;
+  // margin: -3px 25px;
 }
 
 #kup:hover {
@@ -63,25 +51,21 @@
 #kup:active {
   color: red;
 }
+.kup {
+  background: yellow;
+  margin-bottom: 10px;
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8b0000;
+    font-family: cursive;
+    font-size: 30px;
+    padding: 0px 03%;
+  }
+}
 
 //<>====================================================
-
-.prod_img {
-  outline: 7px solid #ff0;
-  float: left;
-  margin: 7px 15px 15px;
-}
-
-.prod_img:hover {
-  outline: none;
-}
-
-.pismo {
-  margin-top: 1px;
-  margin-left: 10px;
-  overflow: hidden;
-  border: 1px solid #f00;
-}
 
 .kr {
   color: #707070;
