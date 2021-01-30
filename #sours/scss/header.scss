@@ -45,16 +45,39 @@ header {
 
   .header-menu-list {
     // @include flexbox();
-
     display: flex;
+    // ??? убрать полсе решения последних li
     flex-flow: row wrap;
     justify-content: space-evenly;
     justify-content: flex-end;
     // @media (max-width: $md2+px) {
     // }
+    @media (max-width: 1095px) {
+      // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
+      &.menu-list__items:nth-child(5):hover {
+        &:nth-child(4) {
+          width: 50px;
+          a {
+            width: 50px;
+          }
+          .lastBukv {
+            display: none;
+          }
+        }
+        background-color: #ffa;
+      }
+    }
   }
 
   .menu-list__items {
+    margin: 0 10px 20px 0;
+    &:first-child a {
+      width: 170px;
+    }
+    // ???  не раб - сокращать последние li в блоке при уменьш блока
+    &:last-child {
+      margin-right: 0;
+    }
     &:hover .ul {
       display: block;
     }
@@ -62,10 +85,10 @@ header {
       background-color: #ffff00;
     }
     &:nth-child(2) a.menu-list-link {
-      background-color: #00ba00;
+      background-color: #fd2727;
     }
     &:nth-child(3) a.menu-list-link {
-      background-color: #fd2727;
+      background-color: #00ba00;
     }
     &:nth-child(4) a.menu-list-link {
       background-color: #ffa500;
@@ -73,26 +96,97 @@ header {
     &:nth-child(5) a.menu-list-link {
       background-color: #1c89bb;
     }
+    &:nth-child(6) a.menu-list-link {
+      background-color: #ffffff;
+    }
+    &:nth-child(7) a.menu-list-link {
+      background-color: #000000;
+      color: #fff;
+    }
+    &:nth-child(8) a.menu-list-link {
+      background-color: #12621d;
+    }
+    &:nth-child(9) a.menu-list-link {
+      background-color: #961cbb;
+    }
+    @media (max-width: $md0+px) {
+      &:last-child {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .lastBukv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 1202px) {
+      &:nth-child(6) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .lastBukv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 1095px) {
+      &:nth-child(5) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .lastBukv {
+          display: none;
+        }
+        &:hover {
+          .menu-list__items:nth-child(4) {
+            width: 50px;
+            a {
+              width: 50px;
+            }
+            .lastBukv {
+              display: none;
+            }
+          }
+        }
+      }
+      // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
+      &:nth-child(5):hover {
+        &:nth-child(4) {
+          width: 50px;
+          a {
+            width: 50px;
+          }
+          .lastBukv {
+            display: none;
+          }
+        }
+        background-color: #ffa;
+      }
+    }
   }
 
   .menu-list-link {
     // margin-top: 21px;
-    font-style: italic;
-    font-size: 22px;
-    font-weight: 700;
-    text-align: center;
-    list-style-type: none;
-    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
     height: 40px;
+    // ??? не раб - задать всем кроме последнего
+    // not:last-child.menu-list-link:
+    // margin: 0 10px 20px 0;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    list-style-type: none;
     border: 2px solid #000;
-    margin-right: 11px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     &:hover {
       color: #000000;
       &:before,
@@ -103,6 +197,13 @@ header {
     &:link {
       color: #8b0000;
     }
+    // @media (max-width: $md0+px) {
+    //   .firctBukv {
+    //   }
+    //   .lastBukv {
+    //     display: none;
+    //   }
+    // }
   }
 
   .header-nava:link {
@@ -137,7 +238,7 @@ header {
   font-size: 16px;
   font-weight: 900;
   text-align: center;
-  width: 160px;
+  width: 150px;
   // margin: 15px 2px 1px;
   padding: 1px 3px 3px;
   // float: right;

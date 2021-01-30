@@ -10,18 +10,18 @@ h6 {
   padding: 10px 03%;
 }
 h1 {
-  font-size: 30px;
-  margin: 0 0 10px;
-  min-height: 50px;
-  padding: 10px 0px;
-  vertical-align: bottom;
-  text-align: left;
-  background: yellow;
-  color: #8b0000;
-  font-family: cursive;
-  margin: 0px 0px;
-  overflow: hidden;
-  background: yellow;
+  // font-size: 30px;
+  // margin: 0 0 10px;
+  // min-height: 50px;
+  // padding: 10px 0px;
+  // vertical-align: bottom;
+  // text-align: left;
+  // background: yellow;
+  // color: #8b0000;
+  // font-family: cursive;
+  // margin: 0px 0px;
+  // overflow: hidden;
+  // background: yellow;
 }
 h3 {
   padding: 0px 0px;
@@ -83,8 +83,9 @@ h3 {
 
 .block-body {
   // margin: 0px 0px;
-  font-family: monospace;
+  min-height: 200px;
   padding: 10px 10px;
+  font-family: monospace;
   font-weight: 400;
   color: #000;
   background: #a3a3a3;
