@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title></title><meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <title>Космонавт</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!-- <meta name="format-detection" content="telephone=no" /> -->
@@ -16,7 +17,6 @@
   name="viewport"
   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
 />
-
 
   </head>
   <body>
@@ -131,7 +131,7 @@
 </header>
 
       <hr />
-      <div class="content">
+      <div class="content cont-grid">
         <div class="kup">
           <form action="#">
             <!--??? зачем тут был label -->
@@ -143,34 +143,25 @@
             </label>
           </form>
         </div>
-        <div>
-          <a href="/img/space1.jpg" target="_blank" title="Полный размер">
-            <img
-              class="prod_img"
-              src="/img/space1.jpg"
-              alt="сорян"
-              width="240"
-              height="250"
-            />
+        <div class="img-Block ibg">
+          <a
+            class="img-Block-link"
+            href="#"
+            target="_blank"
+            title="Полный размер"
+          >
+            <!-- width="240"
+          height="250" -->
+            <img class="prod_img" src="../../../img/space1.jpg" alt="сорян" />
           </a>
         </div>
-        <div>
+        <div class="helloys">
           <h3 class="pismo">Описание товара</h3>
           <p class="kr">
             Мечта из&nbsp;неуемного детства, о&nbsp;далеких просторах вселенной,
             разрушенная о&nbsp;незыблемые нормы современных реалий.
           </p>
-          <h3 class="pismo" style="clear: both">Подробное описание товара</h3>
-          <p class="pod">
-            Детская, неосуществленная мечта, в&nbsp;виду ряда обстоятельств,
-            которые возможно, но&nbsp;очень сложно преодолеть. Это очень
-            интересная, рискованная и опасная работа. Ведь космонавт – это
-            человек, который ничего не боится, он смелый и отважный! Быть
-            космонавтом - это значит, каждую секунду своего полета быть на
-            границе великой тайны. Эта профессия даёт огромные перспективы,
-            бесспорную известность, наполняет гордостью и&nbsp;честью.
-          </p>
-          <h3 class="pismo" style="clear: both">Характеристики товара</h3>
+          <h3 class="pismo">Характеристики товара</h3>
           <ul class="har">
             <li>
               Возможно увидеть и&nbsp;почувствовать&nbsp;то, что
@@ -195,6 +186,18 @@
               </ul>
             </li>
           </ul>
+        </div>
+        <div class="block-body">
+          <h3 class="pismo">Подробное описание товара</h3>
+          <p class="pod">
+            Детская, неосуществленная мечта, в&nbsp;виду ряда обстоятельств,
+            которые возможно, но&nbsp;очень сложно преодолеть. Это очень
+            интересная, рискованная и опасная работа. Ведь космонавт – это
+            человек, который ничего не боится, он смелый и отважный! Быть
+            космонавтом - это значит, каждую секунду своего полета быть на
+            границе великой тайны. Эта профессия даёт огромные перспективы,
+            бесспорную известность, наполняет гордостью и&nbsp;честью.
+          </p>
         </div>
         <div>
           <table class="table">
@@ -251,5 +254,8 @@
 </footer>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/script.js"></script>
+    <!-- <script src="/js/custom.js"></script> -->
   </body>
 </html>

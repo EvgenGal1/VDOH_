@@ -50,56 +50,45 @@ header {
     flex-flow: row wrap;
     justify-content: space-evenly;
     justify-content: flex-end;
-    // @media (max-width: $md2+px) {
-    // }
-    @media (max-width: 1095px) {
-      // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
-      &.menu-list__items:nth-child(5):hover {
-        &:nth-child(4) {
-          width: 50px;
-          a {
-            width: 50px;
-          }
-          .lastBukv {
-            display: none;
-          }
-        }
-        background-color: #ffa;
-      }
-    }
   }
 
   .menu-list__items {
-    margin: 0 10px 20px 0;
-    &:first-child a {
-      width: 170px;
-    }
-    // ???  не раб - сокращать последние li в блоке при уменьш блока
-    &:last-child {
-      margin-right: 0;
-    }
+    margin: 0 0 20px 10px;
+    // &:first-child a {
+    //   width: 170px;
+    // }
+    // &:last-child {
+    //   margin-right: 0;
+    // }
     &:hover .ul {
       display: block;
     }
-    &:nth-child(1) a.menu-list-link {
+    // ??? не раб - всем елементам кроме первого
+    // &:nth-child(n):not(:first-child)
+    // &:nth-child(n) {
+    //   width: 150px;
+    // }
+    &:nth-child(1) .menu-list-link {
       background-color: #ffff00;
+      width: 170px;
     }
-    &:nth-child(2) a.menu-list-link {
+    &:nth-child(2) .menu-list-link {
       background-color: #fd2727;
     }
-    &:nth-child(3) a.menu-list-link {
+    &:nth-child(3) .menu-list-link {
       background-color: #00ba00;
     }
-    &:nth-child(4) a.menu-list-link {
+    &:nth-child(4) .menu-list-link {
       background-color: #ffa500;
     }
-    &:nth-child(5) a.menu-list-link {
+    &:nth-child(5) .menu-list-link {
       background-color: #1c89bb;
     }
-    &:nth-child(6) a.menu-list-link {
+    &:nth-child(6) .menu-list-link {
       background-color: #ffffff;
+      color: #000;
     }
-    &:nth-child(7) a.menu-list-link {
+    &:nth-child(7) .menu-list-link {
       background-color: #000000;
       color: #fff;
     }
@@ -109,8 +98,24 @@ header {
     &:nth-child(9) a.menu-list-link {
       background-color: #961cbb;
     }
+    // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
+    // ??? не раб - уменьш себя а не соседа
+    // &:nth-child(n):hover {
+    //   // .menu-list__items:nth-child(n + 1)
+    //   &:nth-child(n + 1) {
+    //     width: 50px;
+    //     a {
+    //       width: 50px;
+    //     }
+    //     .lastBukv {
+    //       display: none;
+    //     }
+    //     background-color: #ffa;
+    //   }
+    // }
     @media (max-width: $md0+px) {
-      &:last-child {
+      // &:last-child
+      &:nth-child(7) {
         width: 50px;
         a {
           width: 50px;
@@ -120,7 +125,7 @@ header {
         }
       }
     }
-    @media (max-width: 1202px) {
+    @media (max-width: 1212px) {
       &:nth-child(6) {
         width: 50px;
         a {
@@ -131,7 +136,7 @@ header {
         }
       }
     }
-    @media (max-width: 1095px) {
+    @media (max-width: 1106px) {
       &:nth-child(5) {
         width: 50px;
         a {
@@ -140,30 +145,39 @@ header {
         .lastBukv {
           display: none;
         }
-        &:hover {
-          .menu-list__items:nth-child(4) {
-            width: 50px;
-            a {
-              width: 50px;
-            }
-            .lastBukv {
-              display: none;
-            }
-          }
+      }
+    }
+    @media (max-width: 1009px) {
+      &:nth-child(4) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .lastBukv {
+          display: none;
         }
       }
-      // ??? не раб - уменьшать соседний передний блок, при наведении на сокращенный
-      &:nth-child(5):hover {
-        &:nth-child(4) {
+    }
+    @media (max-width: 903px) {
+      &:nth-child(3) {
+        width: 50px;
+        a {
           width: 50px;
-          a {
-            width: 50px;
-          }
-          .lastBukv {
-            display: none;
-          }
         }
-        background-color: #ffa;
+        .lastBukv {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 797px) {
+      &:nth-child(2) {
+        width: 50px;
+        a {
+          width: 50px;
+        }
+        .lastBukv {
+          display: none;
+        }
       }
     }
   }
@@ -197,13 +211,6 @@ header {
     &:link {
       color: #8b0000;
     }
-    // @media (max-width: $md0+px) {
-    //   .firctBukv {
-    //   }
-    //   .lastBukv {
-    //     display: none;
-    //   }
-    // }
   }
 
   .header-nava:link {
