@@ -355,7 +355,46 @@ header {
 .cont-grid {
   display: -ms-grid;
   display: grid;
-  grid-template-areas: "kup" "img-b"; }
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "kup" "img-b img-b" "hel" "b-b" "cha" "t-b"; }
+  .cont-grid .img-block {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: img-b;
+    -ms-grid-column-align: center;
+    justify-self: center; }
+  .cont-grid .kup {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: kup;
+    -ms-grid-column-align: center;
+    justify-self: center; }
+  .cont-grid .helloys {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: hel;
+    -ms-grid-column-align: center;
+    justify-self: center; }
+  .cont-grid .block-body {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: b-b;
+    -ms-grid-column-align: center;
+    justify-self: center; }
+  .cont-grid .character {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: cha;
+    -ms-grid-column-align: center;
+    justify-self: center; }
+  .cont-grid .tabl-block {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: t-b;
+    -ms-grid-column-align: center;
+    justify-self: center; }
 
 .kup #kup {
   -ms-grid-row: 1;
@@ -412,6 +451,7 @@ header {
 .img-block {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: img-b;
   width: 240px;
   height: 100%;

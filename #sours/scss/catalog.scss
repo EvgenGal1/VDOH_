@@ -27,7 +27,32 @@
 //<>====================================================
 .cont-grid {
   display: grid;
-  grid-template-areas: "kup" "img-b";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "kup" "img-b img-b" "hel" "b-b" "cha" "t-b";
+  .img-block {
+    grid-area: img-b;
+    justify-self: center;
+  }
+  .kup {
+    grid-area: kup;
+    justify-self: center;
+  }
+  .helloys {
+    grid-area: hel;
+    justify-self: center;
+  }
+  .block-body {
+    grid-area: b-b;
+    justify-self: center;
+  }
+  .character {
+    grid-area: cha;
+    justify-self: center;
+  }
+  .tabl-block {
+    grid-area: t-b;
+    justify-self: center;
+  }
 }
 //<>====================================================
 // отменяет обтекания эл. с обеих сторон style="clear: both"
