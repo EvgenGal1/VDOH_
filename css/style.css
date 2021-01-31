@@ -352,7 +352,15 @@ header {
     .catalog-item .prod_img:hover {
       outline: 7px solid #ff0; }
 
+.cont-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas: "kup" "img-b"; }
+
 .kup #kup {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: kup;
   border-radius: 1px;
   width: 250px;
   background-color: #fc0101;
@@ -401,7 +409,10 @@ header {
     font-size: 30px;
     padding: 0px 03%; }
 
-.img-Block {
+.img-block {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: img-b;
   width: 240px;
   height: 100%;
   height: 250px; }
