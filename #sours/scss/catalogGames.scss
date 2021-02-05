@@ -1,0 +1,600 @@
+// <Основной блок>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+
+// <Minesweeper(игра Сапёр)˅====================================================˅
+$grey: #e2e2e2;
+$bg: #ffebc5;
+$red: crimson;
+
+@mixin center() {
+  position: relative;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.Minesweeper:root {
+  // ??? не раб - что это? возможно с js не даёт fixed settingy на родителе
+  --tileSize: 60px;
+  --boardSize: 0px;
+}
+
+.Minesweeper {
+  width: 100%;
+  height: 100%;
+  font-family: "VT323", monospace;
+  // margin: 0;
+  // padding: 0;
+  // box-sizing: border-box;
+  // position: relative;
+  // position: absolute;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // background: $bg;
+  // --tileSize: 60px;
+  // --boardSize: 0px;
+
+  &::selection {
+    background: transparentize(#7f8c8d, 0.4);
+  }
+
+  .bl {
+    position: relative;
+    // position: absolute;
+    // --tileSize: 60px;
+    // --boardSize: 0px;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $bg;
+  }
+
+  .btn {
+    background: darken($grey, 10%);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: darken($grey, 30%);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    user-select: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: inset 0 2px 0 lighten($grey, 2%),
+      inset 0 -2px 0 darken($grey, 15%), inset 2px 0 0 lighten($grey, 2%),
+      inset -2px 0 0 darken($grey, 15%);
+    text-shadow: 0 1px 0 lighten($grey, 5%), 0 -1px 0 darken($grey, 40%);
+
+    &:hover {
+      background: darken($grey, 5%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      background: darken($grey, 15%);
+      transform: translateY(1px);
+    }
+  }
+
+  .endscreen {
+    position: fixed;
+    background: $grey;
+    padding: 1rem 2rem;
+    font-size: 40px;
+    display: none;
+    box-shadow: inset 0 2px 0 lighten($grey, 2%),
+      inset 0 -2px 0 darken($grey, 15%), inset 2px 0 0 lighten($grey, 2%),
+      inset -2px 0 0 darken($grey, 15%), 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0 lighten($grey, 5%), 0 -1px 0 darken($grey, 40%);
+
+    &.show {
+      display: block;
+    }
+
+    span {
+      color: #2ecc71;
+    }
+  }
+
+  .board {
+    // width: 10 * $tilesize;
+    // height: 10 * $tilesize;
+    background: $grey;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    border: 10px solid darken($grey, 5%);
+    box-sizing: content-box;
+    box-shadow: 0 6px 0 darken($grey, 15%), 0 -6px 0 lighten($grey, 2%),
+      6px 0 0 darken($grey, 15%), -6px 0 0 lighten($grey, 2%);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      background: $grey;
+      top: -14px;
+      right: -14px;
+      transform: rotate(45deg);
+      z-index: -1;
+      box-shadow: 1px calc(var(--boardSize) * 1.465) 0 $grey;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      background: lighten($grey, 40%);
+      top: -14px;
+      left: -14px;
+      transform: rotate(-45deg);
+      z-index: -1;
+      box-shadow: -1px calc(var(--boardSize) * 1.465) 0 darken($grey, 20%);
+    }
+
+    .tile {
+      background: $grey;
+      width: var(--tileSize);
+      height: var(--tileSize);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: calc(var(--tileSize) * 0.8);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s ease;
+      // border: 1px solid darken($grey, 15%);
+      box-shadow: inset 0 2px 0 0 lighten($grey, 10%),
+        inset 2px 0 0 0 lighten($grey, 10%), inset 0 -2px 0 0 darken($grey, 10%),
+        inset -2px 0 0 0 darken($grey, 10%);
+
+      &:hover:not(.tile--checked) {
+        background: lighten($grey, 5%);
+      }
+
+      &--checked {
+        background: darken($grey, 5%);
+        box-shadow: inset 0 1px 0 0 darken($grey, 10%),
+          inset 1px 0 0 0 darken($grey, 10%),
+          inset 0 -1px 0 0 darken($grey, 10%),
+          inset -1px 0 0 0 darken($grey, 10%);
+
+        &.tile--bomb {
+          &:before,
+          &:after {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      &--clear {
+      }
+
+      &--bomb {
+        font-size: calc(var(--tileSize) * 0.5);
+      }
+
+      &--flagged {
+        font-size: calc(var(--tileSize) * 0.5);
+      }
+    }
+  }
+
+  .settings {
+    // ??? не раб fixed на блоке родителя
+    position: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    label {
+      font-size: 1.2rem;
+    }
+    input {
+      // width: 100px;
+    }
+    fieldset {
+      display: block;
+      margin-inline-start: 2px;
+      margin-inline-end: 2px;
+      padding-block-start: 0.35em;
+      padding-inline-start: 0.75em;
+      padding-inline-end: 0.75em;
+      padding-block-end: 0.625em;
+      min-inline-size: min-content;
+      border-width: 2px;
+      border-style: groove;
+      border-color: threedface;
+      border-image: initial;
+    }
+  }
+}
+//</Minesweeper(игра Сапёр)˄========================================================˄
+
+// <Minesweeper-origin(игра Сапёр оригинал)˅====================================================˅
+.Minesweeper-origin {
+  $sprite-url: "https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png";
+
+  #game-container {
+    position: relative;
+  }
+
+  .window-wrapper-outer {
+    border: 1px solid;
+    border-color: #f1efe2 #716f64 #716f64 #f1efe2;
+  }
+
+  .window-wrapper-inner {
+    border: 1px solid;
+    border-color: #fff #aca899 #aca899 #fff;
+  }
+
+  .window-container {
+    position: relative;
+    background-color: #ece9d8;
+    padding: 1px;
+  }
+
+  #custom-level-dialog {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    z-index: 3;
+    width: 200px;
+  }
+
+  .title-bar {
+    height: 25px;
+    background: #3d95ff url($sprite-url) no-repeat;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  #custom-title-bar {
+    background-position: 0 -110px;
+  }
+
+  #custom-dialog-content {
+    overflow: hidden;
+    font: 12px arial;
+    padding: 35px 15px;
+  }
+
+  #minesweeper-custom-fields {
+    float: left;
+  }
+
+  #minesweeper-custom-fields p {
+    clear: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+
+  #minesweeper-custom-fields label,
+  #high-score-dialog label {
+    float: left;
+    width: 47px;
+    padding-top: 3px;
+  }
+
+  .form-textbox {
+    width: 35px;
+    height: 14px;
+    border: 2px solid;
+    border-color: #aca899 #fff #fff #aca899;
+  }
+
+  #minesweeper-custom-buttons {
+    float: right;
+  }
+
+  .form-button {
+    display: block;
+    width: 60px;
+    height: 25px;
+    background: #ece9d8;
+  }
+
+  #minesweeper-ok-btn {
+    margin-bottom: 18px;
+  }
+
+  #high-score-dialog {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    z-index: 4;
+    width: 200px;
+  }
+
+  #high-score-dialog-content {
+    overflow: hidden;
+    font: 12px arial;
+    padding: 10px;
+  }
+
+  #high-score-dialog h2 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  #high-score-dialog #high-score-name-label {
+    width: 40px;
+  }
+
+  #high-score-name-textbox {
+    width: 120px;
+  }
+
+  #submit-high-score-container {
+    text-align: center;
+  }
+
+  #submit-high-score {
+    width: auto;
+  }
+
+  #minesweeper-board-wrapper {
+    position: relative;
+    background-color: #bdbdbd;
+    padding: 7px;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+  }
+
+  #minesweeper-title-bar {
+    background-position: 0 -84px;
+  }
+
+  /* begin menu */
+  #menu-link-container {
+    overflow: hidden;
+    padding-top: 1px;
+  }
+
+  #menu-link {
+    float: left;
+    padding: 3px 6px;
+    color: #000;
+    text-decoration: none;
+    cursor: default;
+    font: 12px arial;
+  }
+
+  #menu-link:hover,
+  #menu-link.active {
+    color: #fff;
+    background: #316ac5;
+  }
+
+  #menu {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: -3px;
+    z-index: 2;
+    list-style: none;
+    width: 122px;
+    margin: 0;
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #aca899;
+    font: 12px arial;
+  }
+
+  #menu li {
+    display: block;
+    margin: 0;
+    padding: 4px 5px 4px 16px;
+    color: #000;
+    text-decoration: none;
+    cursor: default;
+  }
+
+  #menu li:hover {
+    color: #fff;
+    background-color: #316ac5;
+  }
+
+  #menu li.checked {
+    background-image: url($sprite-url);
+    background-repeat: no-repeat;
+    background-position: -136px -41px;
+  }
+
+  #menu li.checked:hover {
+    background-position: -134px -69px;
+  }
+
+  #menu li.menu-divider {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    border-bottom: 1px solid #aca899;
+    margin: 5px 1px;
+    padding: 0;
+  }
+  /* end menu */
+
+  #minesweeper-header-container {
+    padding: 3px 5px;
+    border: 2px solid;
+    border-color: #7d7d7d #fff #fff #7d7d7d;
+  }
+
+  #minesweeper-header-wrapper {
+    border-bottom: 7px solid #bdbdbd;
+  }
+
+  #minesweeper-header {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #minefield {
+    overflow: hidden;
+    border: 3px solid;
+    border-color: #7d7d7d #fff #fff #7d7d7d;
+  }
+
+  #minefield div {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url($sprite-url) no-repeat;
+  }
+
+  #minefield .covered {
+    background-position: 0 -39px;
+  }
+  #minefield .mines0 {
+    background-position: 0 -23px;
+  }
+  #minefield .mines1 {
+    background-position: -16px -23px;
+  }
+  #minefield .mines2 {
+    background-position: -32px -23px;
+  }
+  #minefield .mines3 {
+    background-position: -48px -23px;
+  }
+  #minefield .mines4 {
+    background-position: -64px -23px;
+  }
+  #minefield .mines5 {
+    background-position: -80px -23px;
+  }
+  #minefield .mines6 {
+    background-position: -96px -23px;
+  }
+  #minefield .mines7 {
+    background-position: -112px -23px;
+  }
+  #minefield .mines8 {
+    background-position: -128px -23px;
+  }
+  #minefield .mine-hit {
+    background-position: -32px -39px;
+  }
+  #minefield .mine-misflagged {
+    background-position: -48px -39px;
+  }
+  #minefield .mine {
+    background-position: -64px -39px;
+  }
+  #minefield .flag {
+    background-position: -16px -39px;
+  }
+  #minefield .question {
+    background-position: -80px -39px;
+  }
+
+  #mine-count,
+  #timer {
+    overflow: hidden;
+    position: absolute;
+    top: 1px;
+    z-index: 1;
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080;
+  }
+
+  #mine-count {
+    left: 0;
+  }
+  #timer {
+    right: 0;
+  }
+
+  .numbers div {
+    float: left;
+    width: 13px;
+    height: 23px;
+    background: url($sprite-url) no-repeat;
+  }
+
+  #minesweeper-reset-button {
+    background: url($sprite-url) no-repeat;
+    height: 26px;
+    width: 26px;
+    margin: 0 auto;
+  }
+
+  #minesweeper-reset-button.face-smile {
+    background-position: 0 -55px;
+  }
+  #minesweeper-reset-button.face-pressed {
+    background-position: -26px -55px;
+  }
+  #minesweeper-reset-button.face-surprised {
+    background-position: -52px -55px;
+  }
+  #minesweeper-reset-button.face-sad {
+    background-position: -78px -55px;
+  }
+  #minesweeper-reset-button.face-sunglasses {
+    background-position: -104px -55px;
+  }
+
+  .numbers .t0 {
+    background-position: 0 0;
+  }
+  .numbers .t1 {
+    background-position: -13px 0;
+  }
+  .numbers .t2 {
+    background-position: -26px 0;
+  }
+  .numbers .t3 {
+    background-position: -39px 0;
+  }
+  .numbers .t4 {
+    background-position: -52px 0;
+  }
+  .numbers .t5 {
+    background-position: -65px 0;
+  }
+  .numbers .t6 {
+    background-position: -78px 0;
+  }
+  .numbers .t7 {
+    background-position: -91px 0;
+  }
+  .numbers .t8 {
+    background-position: -104px 0;
+  }
+  .numbers .t9 {
+    background-position: -117px 0;
+  }
+  .numbers .tm {
+    background-position: -130px 0;
+  }
+}
+//</Minesweeper-origin(игра Сапёр оригинал)˄========================================================˄
+
+//</Основной блок Игр>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

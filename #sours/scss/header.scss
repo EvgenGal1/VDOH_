@@ -1,10 +1,11 @@
 // <HEADER>============================================
 header {
-  background-color: #8b0000;
-  height: 150px;
   display: flex;
   justify-content: space-between;
+  height: 150px;
   padding: 25px 03%;
+  background-color: #8b0000;
+
   // .header {
   //   background-color: #8b0000;
   //   height: 150px;
@@ -34,15 +35,19 @@ header {
       text-align: right;
     }
     &:hover {
-      outline: none;
+      // outline: none;
     }
   }
 }
 //<MENU>====================================================
 .header-menu {
+  text-shadow: 0.5px 0.3px 0.5px #000;
   .header-nav {
   }
-
+  // затемняет не то что выделено
+  ul:hover li:not(:hover) {
+    opacity: 0.1;
+  }
   .header-menu-list {
     // @include flexbox();
     display: flex;
@@ -60,14 +65,19 @@ header {
     // &:last-child {
     //   margin-right: 0;
     // }
+    // затемняет не то что выделено
+    &:hover .ul li:not(:hover) {
+      opacity: 0.5;
+    }
     &:hover .ul {
       display: block;
     }
-    // ??? не раб - всем елементам кроме первого
-    // &:nth-child(n):not(:first-child)
-    // &:nth-child(n) {
-    //   width: 150px;
-    // }
+    // всем, кроме первого. перебивает медиа запрос
+    &:nth-child(n):not(:first-child) {
+      content: "open-quote";
+      // width: 150px;
+      // height: 50px;
+    }
     &:nth-child(1) .menu-list-link {
       background-color: #ffff00;
       width: 170px;
@@ -113,6 +123,30 @@ header {
     //     background-color: #ffa;
     //   }
     // }
+    @media (max-width: $md3+px) {
+      .menu-list-link {
+        border-radius: 7px;
+        text-decoration: none;
+      }
+      // вибираем все li.menu-list__items? кроме первого,
+      &:nth-child(n):not(:first-child) {
+        width: 20px !important;
+        // всем a.menu-list-link перед дочерним элементом ставим <
+        & .menu-list-link:nth-child(n)::before {
+          content: "<";
+        }
+        // & .menu-list-link:nth-child(n)::after {
+        //   content: ">";
+        // }
+        a {
+          width: 20px !important;
+        }
+        .firctBukv {
+          display: none;
+          text-shadow: 1px 1px#000000;
+        }
+      }
+    }
     @media (max-width: $md0+px) {
       // &:last-child
       &:nth-child(7) {
@@ -205,7 +239,7 @@ header {
       color: #000000;
       &:before,
       &:after {
-        content: "!";
+        // content: "!";
       }
     }
     &:link {
@@ -256,7 +290,9 @@ header {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
   li {
+    // opacity: 0.5;
     display: block;
     top: 25px;
     margin-top: 3px;

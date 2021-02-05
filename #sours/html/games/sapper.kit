@@ -1,34 +1,99 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
-    <title></title><!-- @import "../block/head/head3.kit" -->
+<html lang="ru">
+  <head>
+    <title></title>
+    <!-- @import "../block/head/head3.kit" -->
   </head>
   <body>
     <div class="wrapper">
-      <!-- @import "../block/header.kit" -->
+      <!-- @import ../block/header.kit" -->
+      <hr />
+      <div class="kup">
+        <form action="#">
+          <!--??? зачем тут был label -->
+          <label>
+            <h1>
+           
+              <input type="submit" value="Купить!" id="kup" autofocus />
+            </h1>
+          </label>
+        </form>
+      </div>
       <hr />
       <div class="content">
-      <div class="helloys">
-        <h1>Разработка переписывания игры - Сапёр.</h1>
-        <h2>В планах: крестики/нолики, змейка, солитер и т.д. и т.п.</h2>
-        <p>
-          Ещё пару букв про игры, отсутстие времени, разработку и лень <br />Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Magni at nisi qui cumque
-          doloribus, perspiciatis repellendus repellat? Veniam, nemo?
-          Consectetur, repellendus esse saepe natus aspernatur nihil maiores,
-          vel officiis iste dignissimos perspiciatis porro temporibus numquam?
-        </p>
-        </div> 
+        <div class="helloys">
+          <h1>Разработка переписывания игры - Сапёр.</h1>
+          <h2>В планах: крестики/нолики, змейка, солитер и т.д. и т.п.</h2>
+          <p>
+            Ещё пару букв про игры, отсутстие времени, разработку и лень
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            at nisi qui cumque doloribus, perspiciatis repellendus repellat?
+            Veniam, nemo? Consectetur, repellendus esse saepe natus aspernatur
+            nihil maiores, vel officiis iste dignissimos perspiciatis porro
+            temporibus numquam?
+          </p>
+        </div>
         <hr />
         <div class="block-body mc0">
           <h3>Инфа для твоей жизни...</h3>
           <p>В&nbsp;разработке. ... .. .. . ... . ..</p>
         </div>
+        <hr />
+        <!-- https://codepen.io/creme/pen/EqeXNJ -->
+        <div class="Minesweeper">
+          <div class="bl">
+            <div class="board"></div>
+            <a href="#!" class="btn">New Game</a>
+            <div class="endscreen"></div>
+            <!-- need to style the settings first -->
+            <div class="settings">
+              <label for="boardSize">board size</label>
+              <input id="boardSize" type="range" min="0" max="20" />
+
+              <label for="tileSize">tile size</label>
+              <input id="tileSize" type="range" min="10" max="100" step="10" />
+
+              <fieldset>
+                <input
+                  type="radio"
+                  id="easy"
+                  name="difficulty"
+                  value="0.1"
+                  class="difficulty"
+                />
+                <label for="easy">Easy</label>
+                <input
+                  type="radio"
+                  id="normal"
+                  name="difficulty"
+                  value="0.2"
+                  class="difficulty"
+                  checked
+                />
+                <label for="normal">Normal</label>
+                <input
+                  type="radio"
+                  id="hard"
+                  name="difficulty"
+                  value="0.4"
+                  class="difficulty"
+                />
+                <label for="hard">Hard</label>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- https://codepen.io/joelbyrd/pen/hdHKF -->
+        <div class="Minesweeper-origin">
+          <div id="game">minesweeper game initializes here</div>
+        </div>
       </div>
       <hr />
       <!-- @import "../block/footer.kit" -->
     </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="../../../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/main.js"></script>
     <!-- <script src="/js/custom.js"></script> -->
   </body>
 </html>

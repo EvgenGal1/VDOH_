@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
-    <title></title><meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<html lang="ru">
+  <head>
+    <title>Бессмертный</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!-- <meta name="format-detection" content="telephone=no" /> -->
@@ -124,40 +126,43 @@
       </ul>
     </nav>
   </div>
-  <!-- </div>
-  </div> -->
 </header>
 
       <hr />
-      <div class="content">
-        <div class="kup">
-          <form action="#">
-            <label>
-              <h1>
-                Надежда на бессмертие
-                <input type="submit" value="Купить!" id="kup" autofocus />
-              </h1>
-            </label>
-          </form>
-        </div>
-        <div>
-          <a href="/img/immortal1.jpg" target="_blank" title="Полный размер">
-            <img
-              class="prod_img"
-              src="/img/immortal1.jpg"
-              alt="сорян"
-              width="240"
-              height="250"
-            />
+      <div class="kup">
+        <form action="#">
+          <!--??? зачем тут был label -->
+          <label>
+            <h1>
+              Надежда на бессмертие
+              <input type="submit" value="Купить!" id="kup" autofocus />
+            </h1>
+          </label>
+        </form>
+      </div>
+      <hr />
+      <div class="content cont-grid pc1">
+        <div class="block-img">
+          <a
+            class="block-img-link ibg"
+            href="/img/immortal1.jpg"
+            target="_blank"
+            title="Полный размер"
+          >
+            <!-- <div class="bl-img ibg"> -->
+            <img class="img-bl" src="../../../img/immortal1.jpg" alt="сорян" />
+            <!-- </div> -->
           </a>
         </div>
-        <div>
-          <h3 class="pismo">Описание товара</h3>
-          <p class="kr">
+        <div class="helloys">
+          <h3 class="hel-title">Описание товара</h3>
+          <p class="hel-text">
             Надежда на&nbsp;достигнутую неуязвимость над хрупкой жизнью,
             несмотря на&nbsp;тщетные вековые попытки великих умов.
           </p>
-          <h3 class="pismo" style="clear: both">Подробное описание товара</h3>
+        </div>
+        <div class="block-body">
+          <h3 class="hel-title">Подробное описание товара</h3>
           <p class="pod">
             Способности персонажа, позволяющие ему тем или иным образом избегать
             смерти, естественной для обычного человека, в&nbsp;том числе смерти
@@ -168,7 +173,9 @@
             духовным, временным, абсолютным или любым другим способом -
             результат гарантирован.
           </p>
-          <h3 class="pismo" style="clear: both">Характеристики товара</h3>
+        </div>
+        <div class="character">
+          <h3 class="hel-title">Характеристики товара</h3>
           <ul class="har">
             <li>Очень длинная жизнь;</li>
             <li>Возможность исправить ошибки;</li>
@@ -191,7 +198,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="tabl-block">
           <table class="table">
             <caption>
               Какая то таблица с важными данными
@@ -246,8 +253,8 @@
 </footer>
 
     </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="../../../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../../../js/main.js"></script>
     <!-- <script src="/js/custom.js"></script> -->
   </body>
 </html>

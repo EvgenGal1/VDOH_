@@ -4,58 +4,16 @@
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-
-.catalog-item {
-  margin: 0px 20px 20px 0px;
-  padding: 2px 2px;
-  outline-style: dashed;
-  color: red;
-  & .prod_img {
-    // width: 140px;
-    // height: 140px;
-    // width: 200px;
-    // height: 200px;
-    // margin: 10px 20px 15px;
-    outline: none;
-    // float: left;
-    // margin: 7px 15px 15px;
-    &:hover {
-      outline: 7px solid #ff0;
-    }
-  }
-}
 //<>====================================================
-.cont-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "kup" "img-b img-b" "hel" "b-b" "cha" "t-b";
-  .img-block {
-    grid-area: img-b;
-    justify-self: center;
-  }
-  .kup {
-    grid-area: kup;
-    justify-self: center;
-  }
-  .helloys {
-    grid-area: hel;
-    justify-self: center;
-  }
-  .block-body {
-    grid-area: b-b;
-    justify-self: center;
-  }
-  .character {
-    grid-area: cha;
-    justify-self: center;
-  }
-  .tabl-block {
-    grid-area: t-b;
-    justify-self: center;
-  }
-}
+
+//<>====================================================
+
 //<>====================================================
 // отменяет обтекания эл. с обеих сторон style="clear: both"
+// .kup {
+//   // grid-area: kup;
+//   // justify-self: center;
+// }
 .kup #kup {
   grid-area: kup;
   // float: right;
@@ -95,7 +53,7 @@
 }
 .kup {
   background: yellow;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   h1 {
     display: flex;
     align-items: center;
@@ -108,29 +66,8 @@
 }
 
 //<>====================================================
-.img-block {
-  grid-area: img-b;
-  width: 240px;
-  height: 100%;
-  height: 250px;
-  a {
-    // width: 240px;
-    // height: 250px;
-  }
-}
+
 //<>====================================================
-
-.kr {
-  color: #707070;
-  font-size: 15px;
-  font-family: cursive;
-  line-height: 16px;
-}
-
-.kr::first-letter {
-  font-size: 30px;
-  color: #ff0000;
-}
 
 .pod {
   color: #707070;
@@ -162,23 +99,34 @@
 
 //<>====================================================
 
-.table {
+// .table
+.tabl-block {
+  display: table;
   margin-left: 10px;
   border: 1px solid #000;
-  width: 450px;
-  height: 200px;
-}
+  // width: 450px;
+  // height: 200px;
+  padding: 2px;
+  .table {
+    font-size: 14px;
+    padding: 1px;
+    caption {
+      border: 1px solid #000;
+      padding: 5px;
+      background-color: dimgray;
+    }
+    td {
+      border: 1px solid #000;
+      padding: 5px;
+      vertical-align: top;
+      color: blue;
+    }
 
-.table td {
-  border: 1px solid #000;
-  padding: 5px;
-  vertical-align: top;
-  color: blue;
-}
-
-.tr td {
-  width: 15px;
-  vertical-align: middle;
-  text-align: center;
-  color: red;
+    .tr td {
+      width: 15px;
+      vertical-align: middle;
+      text-align: center;
+      color: red;
+    }
+  }
 }
