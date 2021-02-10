@@ -77,3 +77,22 @@
   -webkit-order: $val;
   order: $val;
 }
+// сокращение для меню в меню.
+@mixin ulliul {
+  width: 50px;
+  a,
+  .ul {
+    width: 50px;
+  }
+  .link-lastBukv,
+  .ul-li__lastBukv {
+    display: none;
+  }
+  .ul-li-a:hover {
+    text-decoration: underline;
+    &::before,
+    &::after {
+      content: "" !important;
+    }
+  }
+}
