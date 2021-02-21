@@ -1,6 +1,6 @@
 // <Minesweeper(CodePen).js(игра Сапёр)>˅========================================˅
 
-console.clear();
+// console.clear();
 
 let size = 10; // size x size tiles
 let bombFrequency = 0.2; // percentage of bombs
@@ -58,7 +58,7 @@ const setup = () => {
     const tile = document.createElement("div");
     tile.classList.add("tile");
     // ??? не раб - не видит чтоли
-    // board.appendChild(tile);
+    board.appendChild(tile);
   }
   tiles = document.querySelectorAll(".tile");
   boardSize = Math.sqrt(tiles.length);

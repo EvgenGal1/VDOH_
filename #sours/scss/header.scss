@@ -54,10 +54,13 @@ header {
 .header-menu {
   text-shadow: 0.5px 0.3px 0.5px #000;
   .header-nav {
+    margin: 0 0 20px 0px;
   }
   // затемняет не то что выделено
   ul:hover li:not(:hover) {
-    opacity: 0.7;
+    // не видно
+    // opacity: 0;
+    opacity: 0.5;
   }
   .header-menu-list {
     display: flex;
@@ -68,10 +71,15 @@ header {
   }
 
   .menu-list__items {
-    margin: 0 0 20px 10px;
+    // для li кроме первого отступ с лево
+    &:not(:first-child) {
+      margin: 0 0 0px 10px;
+    }
+    // margin: 0 0 0px 10px;
     // затемняет не то что выделено
     &:hover .ul li:not(:hover) {
       opacity: 0.5;
+      // opacity: 1;
     }
     &:hover .ul {
       display: block;
@@ -221,24 +229,12 @@ header {
     }
     @media (max-width: 903px) {
       &:nth-child(3) {
-        width: 50px;
-        a {
-          width: 50px;
-        }
-        .link-lastBukv {
-          display: none;
-        }
+        @include ulliul();
       }
     }
     @media (max-width: 797px) {
       &:nth-child(2) {
-        width: 50px;
-        a {
-          width: 50px;
-        }
-        .link-lastBukv {
-          display: none;
-        }
+        @include ulliul();
       }
     }
     @media (max-width: 680px) {
