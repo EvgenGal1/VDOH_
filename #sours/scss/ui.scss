@@ -133,6 +133,7 @@ h6 {
   max-height: 150px;
   max-width: 250px;
   max-height: 250px;
+
   // grid-area: img-b;
   // height: 100%;
   // width: 194px;
@@ -159,16 +160,17 @@ h6 {
   //   &:hover {
   //     outline: 7px solid #ff0;
   //   }
-  img.img-bl {
-    outline: none;
-    // width: 190px;
-    // height: 190px;
-    // ??? не раб - убирает background-image у .bl-img. при ibg, картинка растягивается, можно ли ка то убрать это
-    // display: block;
-    &:hover {
-      outline: 7px solid #ff0;
-    }
-  }
+  // ??? вроде как не нужен
+  // img.img-bl {
+  //   outline: none;
+  //   // width: 190px;
+  //   // height: 190px;
+  //   // ??? не раб - убирает background-image у .bl-img. при ibg, картинка растягивается, можно ли ка то убрать это
+  //   // display: block;
+  //   &:hover {
+  //     outline: 7px solid #ff0;
+  //   }
+  // }
   // }
 }
 

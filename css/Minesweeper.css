@@ -1,0 +1,440 @@
+.Minesweeper:root {
+  --tileSize: 60px;
+  --boardSize: 0px; }
+
+.Minesweeper {
+  width: 100%;
+  height: 100%;
+  font-family: "VT323", monospace; }
+  .Minesweeper::-moz-selection {
+    background: rgba(127, 140, 141, 0.6); }
+  .Minesweeper::selection {
+    background: rgba(127, 140, 141, 0.6); }
+  .Minesweeper .bl {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #ffebc5; }
+  .Minesweeper .btn {
+    background: #c9c9c9;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #969696;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: background 0.2s ease, -webkit-transform 0.2s ease;
+    transition: background 0.2s ease, -webkit-transform 0.2s ease;
+    -o-transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-box-shadow: inset 0 2px 0 #e7e7e7, inset 0 -2px 0 #bcbcbc, inset 2px 0 0 #e7e7e7, inset -2px 0 0 #bcbcbc;
+    box-shadow: inset 0 2px 0 #e7e7e7, inset 0 -2px 0 #bcbcbc, inset 2px 0 0 #e7e7e7, inset -2px 0 0 #bcbcbc;
+    text-shadow: 0 1px 0 #efefef, 0 -1px 0 #7c7c7c; }
+    .Minesweeper .btn:hover {
+      background: #d5d5d5;
+      -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+      transform: translateY(-1px); }
+    .Minesweeper .btn:active {
+      background: #bcbcbc;
+      -webkit-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+      transform: translateY(1px); }
+  .Minesweeper .endscreen {
+    position: fixed;
+    background: #e2e2e2;
+    padding: 1rem 2rem;
+    font-size: 40px;
+    display: none;
+    -webkit-box-shadow: inset 0 2px 0 #e7e7e7, inset 0 -2px 0 #bcbcbc, inset 2px 0 0 #e7e7e7, inset -2px 0 0 #bcbcbc, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 0 #e7e7e7, inset 0 -2px 0 #bcbcbc, inset 2px 0 0 #e7e7e7, inset -2px 0 0 #bcbcbc, 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 0 #efefef, 0 -1px 0 #7c7c7c; }
+    .Minesweeper .endscreen.show {
+      display: block; }
+    .Minesweeper .endscreen span {
+      color: #2ecc71; }
+  .Minesweeper .board {
+    background: #e2e2e2;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    border: 10px solid #d5d5d5;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-box-shadow: 0 6px 0 #bcbcbc, 0 -6px 0 #e7e7e7, 6px 0 0 #bcbcbc, -6px 0 0 #e7e7e7;
+    box-shadow: 0 6px 0 #bcbcbc, 0 -6px 0 #e7e7e7, 6px 0 0 #bcbcbc, -6px 0 0 #e7e7e7; }
+    .Minesweeper .board:before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      background: #e2e2e2;
+      top: -14px;
+      right: -14px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      z-index: -1;
+      -webkit-box-shadow: 1px calc(var(--boardSize) * 1.465) 0 #e2e2e2;
+      box-shadow: 1px calc(var(--boardSize) * 1.465) 0 #e2e2e2; }
+    .Minesweeper .board:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 6px;
+      background: white;
+      top: -14px;
+      left: -14px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      z-index: -1;
+      -webkit-box-shadow: -1px calc(var(--boardSize) * 1.465) 0 #afafaf;
+      box-shadow: -1px calc(var(--boardSize) * 1.465) 0 #afafaf; }
+    .Minesweeper .board .tile {
+      background: #e2e2e2;
+      width: var(--tileSize);
+      height: var(--tileSize);
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: calc(var(--tileSize) * 0.8);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: background 0.2s ease;
+      -o-transition: background 0.2s ease;
+      transition: background 0.2s ease;
+      -webkit-box-shadow: inset 0 2px 0 0 #fcfcfc, inset 2px 0 0 0 #fcfcfc, inset 0 -2px 0 0 #c9c9c9, inset -2px 0 0 0 #c9c9c9;
+      box-shadow: inset 0 2px 0 0 #fcfcfc, inset 2px 0 0 0 #fcfcfc, inset 0 -2px 0 0 #c9c9c9, inset -2px 0 0 0 #c9c9c9; }
+      .Minesweeper .board .tile:hover:not(.tile--checked) {
+        background: #efefef; }
+      .Minesweeper .board .tile--checked {
+        background: #d5d5d5;
+        -webkit-box-shadow: inset 0 1px 0 0 #c9c9c9, inset 1px 0 0 0 #c9c9c9, inset 0 -1px 0 0 #c9c9c9, inset -1px 0 0 0 #c9c9c9;
+        box-shadow: inset 0 1px 0 0 #c9c9c9, inset 1px 0 0 0 #c9c9c9, inset 0 -1px 0 0 #c9c9c9, inset -1px 0 0 0 #c9c9c9; }
+        .Minesweeper .board .tile--checked.tile--bomb:before, .Minesweeper .board .tile--checked.tile--bomb:after {
+          opacity: 1; }
+        .Minesweeper .board .tile--checked:hover {
+          cursor: default; }
+      .Minesweeper .board .tile--bomb {
+        font-size: calc(var(--tileSize) * 0.5); }
+      .Minesweeper .board .tile--flagged {
+        font-size: calc(var(--tileSize) * 0.5); }
+  .Minesweeper .settings {
+    position: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1rem; }
+    .Minesweeper .settings label {
+      font-size: 1.2rem; }
+    .Minesweeper .settings fieldset {
+      display: block;
+      -webkit-margin-start: 2px;
+      margin-inline-start: 2px;
+      -webkit-margin-end: 2px;
+      margin-inline-end: 2px;
+      -webkit-padding-before: 0.35em;
+      padding-block-start: 0.35em;
+      -webkit-padding-start: 0.75em;
+      padding-inline-start: 0.75em;
+      -webkit-padding-end: 0.75em;
+      padding-inline-end: 0.75em;
+      -webkit-padding-after: 0.625em;
+      padding-block-end: 0.625em;
+      min-inline-size: -webkit-min-content;
+      min-inline-size: -moz-min-content;
+      min-inline-size: min-content;
+      border-width: 2px;
+      border-style: groove;
+      border-color: threedface;
+      -webkit-border-image: initial;
+      -o-border-image: initial;
+      border-image: initial; }
+
+.Minesweeper-origin {
+  /* begin menu */
+  /* end menu */ }
+  .Minesweeper-origin #game-container {
+    position: relative; }
+  .Minesweeper-origin .window-wrapper-outer {
+    border: 1px solid;
+    border-color: #f1efe2 #716f64 #716f64 #f1efe2; }
+  .Minesweeper-origin .window-wrapper-inner {
+    border: 1px solid;
+    border-color: #fff #aca899 #aca899 #fff; }
+  .Minesweeper-origin .window-container {
+    position: relative;
+    background-color: #ece9d8;
+    padding: 1px; }
+  .Minesweeper-origin #custom-level-dialog {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    z-index: 3;
+    width: 200px; }
+  .Minesweeper-origin .title-bar {
+    height: 25px;
+    background: #3d95ff url("https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png") no-repeat;
+    font-size: 0;
+    line-height: 0; }
+  .Minesweeper-origin #custom-title-bar {
+    background-position: 0 -110px; }
+  .Minesweeper-origin #custom-dialog-content {
+    overflow: hidden;
+    font: 12px arial;
+    padding: 35px 15px; }
+  .Minesweeper-origin #minesweeper-custom-fields {
+    float: left; }
+  .Minesweeper-origin #minesweeper-custom-fields p {
+    clear: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px; }
+  .Minesweeper-origin #minesweeper-custom-fields label,
+  .Minesweeper-origin #high-score-dialog label {
+    float: left;
+    width: 47px;
+    padding-top: 3px; }
+  .Minesweeper-origin .form-textbox {
+    width: 35px;
+    height: 14px;
+    border: 2px solid;
+    border-color: #aca899 #fff #fff #aca899; }
+  .Minesweeper-origin #minesweeper-custom-buttons {
+    float: right; }
+  .Minesweeper-origin .form-button {
+    display: block;
+    width: 60px;
+    height: 25px;
+    background: #ece9d8; }
+  .Minesweeper-origin #minesweeper-ok-btn {
+    margin-bottom: 18px; }
+  .Minesweeper-origin #high-score-dialog {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    z-index: 4;
+    width: 200px; }
+  .Minesweeper-origin #high-score-dialog-content {
+    overflow: hidden;
+    font: 12px arial;
+    padding: 10px; }
+  .Minesweeper-origin #high-score-dialog h2 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center; }
+  .Minesweeper-origin #high-score-dialog #high-score-name-label {
+    width: 40px; }
+  .Minesweeper-origin #high-score-name-textbox {
+    width: 120px; }
+  .Minesweeper-origin #submit-high-score-container {
+    text-align: center; }
+  .Minesweeper-origin #submit-high-score {
+    width: auto; }
+  .Minesweeper-origin #minesweeper-board-wrapper {
+    position: relative;
+    background-color: #bdbdbd;
+    padding: 7px;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff; }
+  .Minesweeper-origin #minesweeper-title-bar {
+    background-position: 0 -84px; }
+  .Minesweeper-origin #menu-link-container {
+    overflow: hidden;
+    padding-top: 1px; }
+  .Minesweeper-origin #menu-link {
+    float: left;
+    padding: 3px 6px;
+    color: #000;
+    text-decoration: none;
+    cursor: default;
+    font: 12px arial; }
+  .Minesweeper-origin #menu-link:hover,
+  .Minesweeper-origin #menu-link.active {
+    color: #fff;
+    background: #316ac5; }
+  .Minesweeper-origin #menu {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: -3px;
+    z-index: 2;
+    list-style: none;
+    width: 122px;
+    margin: 0;
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #aca899;
+    font: 12px arial; }
+  .Minesweeper-origin #menu li {
+    display: block;
+    margin: 0;
+    padding: 4px 5px 4px 16px;
+    color: #000;
+    text-decoration: none;
+    cursor: default; }
+  .Minesweeper-origin #menu li:hover {
+    color: #fff;
+    background-color: #316ac5; }
+  .Minesweeper-origin #menu li.checked {
+    background-image: url("https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png");
+    background-repeat: no-repeat;
+    background-position: -136px -41px; }
+  .Minesweeper-origin #menu li.checked:hover {
+    background-position: -134px -69px; }
+  .Minesweeper-origin #menu li.menu-divider {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    border-bottom: 1px solid #aca899;
+    margin: 5px 1px;
+    padding: 0; }
+  .Minesweeper-origin #minesweeper-header-container {
+    padding: 3px 5px;
+    border: 2px solid;
+    border-color: #7d7d7d #fff #fff #7d7d7d; }
+  .Minesweeper-origin #minesweeper-header-wrapper {
+    border-bottom: 7px solid #bdbdbd; }
+  .Minesweeper-origin #minesweeper-header {
+    position: relative;
+    overflow: hidden; }
+  .Minesweeper-origin #minefield {
+    overflow: hidden;
+    border: 3px solid;
+    border-color: #7d7d7d #fff #fff #7d7d7d; }
+  .Minesweeper-origin #minefield div {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url("https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png") no-repeat; }
+  .Minesweeper-origin #minefield .covered {
+    background-position: 0 -39px; }
+  .Minesweeper-origin #minefield .mines0 {
+    background-position: 0 -23px; }
+  .Minesweeper-origin #minefield .mines1 {
+    background-position: -16px -23px; }
+  .Minesweeper-origin #minefield .mines2 {
+    background-position: -32px -23px; }
+  .Minesweeper-origin #minefield .mines3 {
+    background-position: -48px -23px; }
+  .Minesweeper-origin #minefield .mines4 {
+    background-position: -64px -23px; }
+  .Minesweeper-origin #minefield .mines5 {
+    background-position: -80px -23px; }
+  .Minesweeper-origin #minefield .mines6 {
+    background-position: -96px -23px; }
+  .Minesweeper-origin #minefield .mines7 {
+    background-position: -112px -23px; }
+  .Minesweeper-origin #minefield .mines8 {
+    background-position: -128px -23px; }
+  .Minesweeper-origin #minefield .mine-hit {
+    background-position: -32px -39px; }
+  .Minesweeper-origin #minefield .mine-misflagged {
+    background-position: -48px -39px; }
+  .Minesweeper-origin #minefield .mine {
+    background-position: -64px -39px; }
+  .Minesweeper-origin #minefield .flag {
+    background-position: -16px -39px; }
+  .Minesweeper-origin #minefield .question {
+    background-position: -80px -39px; }
+  .Minesweeper-origin #mine-count,
+  .Minesweeper-origin #timer {
+    overflow: hidden;
+    position: absolute;
+    top: 1px;
+    z-index: 1;
+    border: 1px solid;
+    border-color: #808080 #fff #fff #808080; }
+  .Minesweeper-origin #mine-count {
+    left: 0; }
+  .Minesweeper-origin #timer {
+    right: 0; }
+  .Minesweeper-origin .numbers div {
+    float: left;
+    width: 13px;
+    height: 23px;
+    background: url("https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png") no-repeat; }
+  .Minesweeper-origin #minesweeper-reset-button {
+    background: url("https://raw.githubusercontent.com/joelbyrd/external-resources/master/images/minesweeper.png") no-repeat;
+    height: 26px;
+    width: 26px;
+    margin: 0 auto; }
+  .Minesweeper-origin #minesweeper-reset-button.face-smile {
+    background-position: 0 -55px; }
+  .Minesweeper-origin #minesweeper-reset-button.face-pressed {
+    background-position: -26px -55px; }
+  .Minesweeper-origin #minesweeper-reset-button.face-surprised {
+    background-position: -52px -55px; }
+  .Minesweeper-origin #minesweeper-reset-button.face-sad {
+    background-position: -78px -55px; }
+  .Minesweeper-origin #minesweeper-reset-button.face-sunglasses {
+    background-position: -104px -55px; }
+  .Minesweeper-origin .numbers .t0 {
+    background-position: 0 0; }
+  .Minesweeper-origin .numbers .t1 {
+    background-position: -13px 0; }
+  .Minesweeper-origin .numbers .t2 {
+    background-position: -26px 0; }
+  .Minesweeper-origin .numbers .t3 {
+    background-position: -39px 0; }
+  .Minesweeper-origin .numbers .t4 {
+    background-position: -52px 0; }
+  .Minesweeper-origin .numbers .t5 {
+    background-position: -65px 0; }
+  .Minesweeper-origin .numbers .t6 {
+    background-position: -78px 0; }
+  .Minesweeper-origin .numbers .t7 {
+    background-position: -91px 0; }
+  .Minesweeper-origin .numbers .t8 {
+    background-position: -104px 0; }
+  .Minesweeper-origin .numbers .t9 {
+    background-position: -117px 0; }
+  .Minesweeper-origin .numbers .tm {
+    background-position: -130px 0; }

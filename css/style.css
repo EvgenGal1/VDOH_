@@ -371,7 +371,7 @@ header {
   color: #000000;
 }
 */
-.catalogs {
+.catalogs-block {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -481,6 +481,92 @@ header {
       vertical-align: middle;
       text-align: center;
       color: red; }
+
+.games-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+
+/* заливка поля */
+.snakeGrey {
+  background: #2e353d;
+  /* оформление кнопок */
+  /* стиль таблицы */
+  /* стиль границы поля */
+  /* стиль границы поля при игре */
+  /* стиль ячейки */
+  /* цвет еды */
+  /* цвет змейки */
+  /* стиль результата */ }
+  .snakeGrey button {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background: #007b32;
+    border: none;
+    outline: none;
+    cursor: pointer; }
+  .snakeGrey button#startBtn {
+    margin-left: 5px; }
+  .snakeGrey button:hover {
+    background: #009641; }
+  .snakeGrey button:active {
+    background: #9cfb02;
+    color: black; }
+  .snakeGrey .gameTbl {
+    border-collapse: collapse;
+    margin: 15px 5px;
+    min-height: 500px; }
+  .snakeGrey .gameBoard {
+    outline: 2px solid #ff8800; }
+  .snakeGrey .gameBoardSup {
+    outline: 4px solid red; }
+  .snakeGrey td {
+    width: 20.5px;
+    height: 20.5px;
+    border: 1px solid #eee; }
+  .snakeGrey .food {
+    background: #00d021; }
+  .snakeGrey .snakeBody {
+    background: #335200;
+    border: 1.5px solid #00d021; }
+  .snakeGrey #message {
+    color: orange;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold; }
+  .snakeGrey .dates {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .snakeGrey .score,
+  .snakeGrey .speed {
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin: 10px; }
+  .snakeGrey .current {
+    font-weight: bold;
+    color: orange; }
+  .snakeGrey .toWin {
+    /* font-size: 1em; */
+    color: #920066;
+    font-weight: bold; }
+  .snakeGrey .curSpeed {
+    /* font-size: 1em; */
+    color: #aa1b1b;
+    font-weight: bold; }
 
 .Minesweeper:root {
   --tileSize: 60px;
@@ -923,77 +1009,6 @@ header {
   .Minesweeper-origin .numbers .tm {
     background-position: -130px 0; }
 
-/* заливка поля */
-.snakeGrey {
-  background: #2e353d;
-  /* оформление кнопок */
-  /* стиль таблицы */
-  /* стиль границы поля */
-  /* стиль границы поля при игре */
-  /* стиль ячейки */
-  /* цвет еды */
-  /* цвет змейки */
-  /* стиль результата */ }
-  .snakeGrey button {
-    width: 150px;
-    padding: 15px;
-    margin: 10px;
-    color: white;
-    background: #007b32;
-    border: none;
-    outline: none;
-    cursor: pointer; }
-  .snakeGrey button#startBtn {
-    margin-left: 5px; }
-  .snakeGrey button:hover {
-    background: #009641; }
-  .snakeGrey button:active {
-    background: #9cfb02;
-    color: black; }
-  .snakeGrey .gameTbl {
-    border-collapse: collapse;
-    margin: 15px 5px;
-    min-height: 500px; }
-  .snakeGrey .gameBoard {
-    outline: 2px solid #ff8800; }
-  .snakeGrey .gameBoardSup {
-    outline: 4px solid red; }
-  .snakeGrey td {
-    width: 20.5px;
-    height: 20.5px;
-    border: 1px solid #eee; }
-  .snakeGrey .food {
-    background: #00d021; }
-  .snakeGrey .snakeBody {
-    background: #335200;
-    border: 1.5px solid #00d021; }
-  .snakeGrey #message {
-    color: orange;
-    font-size: 24px;
-    font-family: sans-serif;
-    font-weight: bold; }
-  .snakeGrey .dates {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .snakeGrey .score,
-  .snakeGrey .speed {
-    color: white;
-    font-size: 30px;
-    font-family: sans-serif;
-    margin: 10px; }
-  .snakeGrey .current {
-    font-weight: bold;
-    color: orange; }
-  .snakeGrey .toWin {
-    /* font-size: 1em; */
-    color: #920066;
-    font-weight: bold; }
-  .snakeGrey .curSpeed {
-    /* font-size: 1em; */
-    color: #aa1b1b;
-    font-weight: bold; }
-
 .napishi,
 .contact-data {
   margin-left: 15px; }
@@ -1250,10 +1265,6 @@ h6 {
     display: block;
     padding: 0px 0px 100% 0px; }
     .block-img a.block-img-link:hover {
-      outline: 7px solid #ff0; }
-  .block-img img.img-bl {
-    outline: none; }
-    .block-img img.img-bl:hover {
       outline: 7px solid #ff0; }
 
 .cont-grid {
