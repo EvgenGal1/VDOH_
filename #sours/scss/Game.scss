@@ -1,9 +1,9 @@
 // <Основной блок Игр>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 
-.games-block {
+.game-block {
   @include flexbox();
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  // flex-flow: row wrap;
+  // justify-content: flex-start;
 }
 
 //</Основной блок Игр>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

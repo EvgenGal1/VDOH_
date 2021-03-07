@@ -96,3 +96,58 @@
     }
   }
 }
+// * градиент красно-чёрный фон
+@mixin bgr_r-b {
+  background: repeating-radial-gradient(circle, #f00, #000 135px);
+}
+
+// * градиент серо белые. разм до крестика круги из чентра с сероватым ободком
+@mixin bgr_g-w-k {
+  background: repeating-radial-gradient(circle, #eee 24px, #fff 5px, #ccc 25px);
+}
+
+// * градиент серо белые. круги из чентра с сероватым ободком
+@mixin bgr_g-w-c {
+  background: repeating-radial-gradient(circle, #eee, #fff 1px, #ccc 25px);
+}
+
+// * градиент с лево на право
+@mixin bgl_l-r {
+  background: linear-gradient(to right, #43b1d2 0%, #37c3a8 100%);
+}
+
+// * градиент размытые красн., желт., синий фон
+@mixin bgl_r-y-b {
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, yellow, transparent),
+    linear-gradient(to top right, blue, transparent);
+}
+
+// * градиент желт. круг на красном с чёрной тенью
+@mixin bgr_y-r-b {
+  background: repeating-radial-gradient(yellow 0px, black 55px, red 120px);
+}
+
+// * градиент красн. желт. круги из центра с чёрн ободком
+@mixin bgr_r-y-b {
+  background: repeating-radial-gradient(
+    yellow,
+    red 25px,
+    black 26px /* определяет размер */
+  );
+}
+
+// * градиент красн. желт. наклонные линии с синим ободком
+@mixin bgl_r-y-b {
+  background: repeating-linear-gradient(
+    45deg,
+    yellow,
+    red 25px,
+    blue 26px /* определяет размер */
+  );
+}
+
+// * градиент чёрно серый шар с белым фоном
+@mixin bgr_b-g-w {
+  background: repeating-radial-gradient(circle, #fff 0px, #000 82px, #ccc 25px);
+}

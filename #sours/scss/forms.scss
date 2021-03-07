@@ -25,7 +25,7 @@
   padding: 0px 33px;
   // padding: 18px 33px 17px 33px;
   font-size: 15px;
-  font-family: $fontfamily1;
+  font-family: $fontfamilyCurs;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   &--w {
@@ -33,7 +33,7 @@
     color: #000;
   }
   &:hover {
-    font-family: $fontfamily1;
+    font-family: $fontfamilyCurs;
   }
   &.fw {
     width: 100%;
@@ -47,7 +47,7 @@
 .link {
   color: #fff;
   font-size: 15px;
-  font-family: $fontfamily1;
+  font-family: $fontfamilyCurs;
   text-transform: uppercase;
   text-decoration: underline;
   letter-spacing: 1.5px;

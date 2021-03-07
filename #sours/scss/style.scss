@@ -6,16 +6,39 @@
 // <ШРИФТЫ>===============================================================================================
 // <Подключаем шрифты>=======================================================================================
 // подкл шрифты гугл, гуглфондс, напрямую
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@font-face {
+  font-family: "AkzidenzGroteskBQ-BdCnd";
+  src: url("../fonts/AkzidenzGroteskBQ-BdCnd.eot");
+  src: local("☺"), url("../fonts/AkzidenzGroteskBQ-BdCnd.woff") format("woff"),
+    url("../fonts/AkzidenzGroteskBQ-BdCnd.ttf") format("truetype"),
+    url("../fonts/AkzidenzGroteskBQ-BdCnd.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("../fonts/BebasRegular.eot");
+  src: local("☺"), url("../fonts/BebasRegular.woff") format("woff"),
+    url("../fonts/BebasRegular.ttf") format("truetype"),
+    url("../fonts/BebasRegular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+// // font-display: swap;
+// // </Подключаем шрифты>
 // </Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================
-
 //</Иконочные шрифты>==========================================================================================
 
 // <ШРИФТ ПО УМОЛЧАНИЮ>==========================================================================================
 // переменая шрифта по умолчанию (можно несколько сразу завести)
 $fontfamily: "";
-$fontfamily1: "cursive";
+$fontfamily1: "PT Sans";
+$fontfamily2: "Bebas";
+$fontfamily3: "AkzidenzGroteskBQ-BdCnd";
+$fontfamilyCurs: "cursive";
 // </ШРИФТ ПО УМОЛЧАНИЮ>==========================================================================================
 
 // </ШРИФТЫ>=======================================================================================================
@@ -25,7 +48,7 @@ $fontfamily1: "cursive";
 // минимальная ширина. статична
 $minwidth: 320px;
 // начальное значение контейниера из PSD. чаще всего использ дизайнерами
-$mw: 1307;
+$mw: 1308;
 // 0! проба
 $md0: $mw + 12;
 // 1-ый брейкпоинт + 12px (по 6 с каждой стороны). измен по усмотрению
@@ -62,20 +85,24 @@ $md4: 479.98;
   margin: 0 auto;
   width: 100%;
   // уже есть три настроеных брейкпоинта
-  // при ширине экрана md1(1170 + 12), макс ширина контейнера станет 970px. в 1182 ширина становится 970
+  // при ширине экрана md0(1308 + 12), макс ширина контейнера станет 1200px. в 1332 ширина становится 1200
   @media (max-width: $md0+px) {
     max-width: 1200px;
   }
+  // $md1: 1200;
   @media (max-width: $md1+px) {
     max-width: 970px;
   }
+  // $md2: 992.98;
   @media (max-width: $md2+px) {
     max-width: 750px;
   }
+  // $md3: 767.98;
   @media (max-width: $md3+px) {
     max-width: none;
     padding: 0 10px;
   }
+  // $md4: 479.98;
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -98,6 +125,7 @@ $md4: 479.98;
 @import "audio.scss";
 @import "video.scss";
 @import "visyal.scss";
+@import "effect.scss";
 @import "gallery.scss";
 @import "spravoch.scss";
 // @import "home.scss";
@@ -107,6 +135,7 @@ $md4: 479.98;
 
 body {
   background-color: #e8e8e8;
+  background-color: #cccccc;
 }
 
 body {
@@ -153,7 +182,7 @@ a {
 // .games,
 // .items,
 // .contact {
-//   // font-family: $fontfamily1;
+//   // font-family: $fontfamilyCurs;
 // }
 
 // .padd_cont {
@@ -170,7 +199,7 @@ p {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 // элем форм, checkbox, select, кнопки
-// @import "forms.scss";
+@import "forms.scss";
 // сбор готовых и вспомогательных классов (ibg, video, заголовки, зеркало, серый стиль)
 @import "ui.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================

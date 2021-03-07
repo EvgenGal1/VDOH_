@@ -1,0 +1,182 @@
+// <effect.scss(эффекты css)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
+
+// <img()>˅=============================================================˅
+
+.block-img {
+  position: relative;
+  perspective: 700px;
+
+  &:hover {
+    .block-img__link {
+      transform: rotateY(-540deg);
+    }
+
+    .block-img__content {
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.block-img__link,
+.block-img__content {
+  // Скрываем обратную поверхность
+  backface-visibility: hidden;
+  transition: 1s ease-in-out 0.5s;
+  // transition-duration: 1.5s; // продолжительность перехода
+  // transition-timing-function: ease-in-out; //функц. перехода
+  // transition-delay: 1s; // задержка перехода
+}
+
+.block-img__link {
+  transform: rotateY(0deg);
+}
+
+.block-img__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  padding: 5px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(540deg);
+  background-blend-mode: screen;
+
+  & :not(:last-child) {
+    margin: 0px 0px 3px 0px; // * кроме посдеднего
+  }
+
+  & :nth-child(n + 1):nth-child(-n + 3) {
+    margin: 0px 0px 10px 0px; // * с 1 по 3 эл.
+  }
+
+  .rating__item {
+    margin: 0 !important;
+  }
+
+  @include bgr_r-b;
+  @media (max-width: $md2+px) {
+  }
+}
+
+.block-img__title {
+  // margin: 0px 0px 20px 0px;
+  font-size: 15px;
+  font-family: $fontfamily3;
+}
+
+.block-img__text {
+  // margin: 0px 0px 15px 0px;
+  font-size: 10px;
+  font-family: $fontfamily3;
+}
+
+.block-img__link-back {
+  // margin: 0px 0px 20px 0px;
+  font-size: 15px;
+  font-family: $fontfamily3;
+  color: #000;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.catalogs-items {
+  .block-img__link {
+    // ??? не раб - не крутится в перемещающейся области. сбивают др к др
+    backface-visibility: inherit;
+    transition: 0.5s ease-in-out 0s;
+    // !постояная прокрутка
+    // animation: run 5s infinite;
+    &:hover {
+      transition: 0.5s ease-in-out 0s;
+      animation: run 5s infinite;
+    }
+    @keyframes run {
+      0% {
+        transform: translate(-25%, -25%) scale(0.5);
+        border-radius: 0%;
+      }
+      12% {
+        transform: translate(0%);
+        border-radius: 50%;
+        // ??? не раб - не крутится в перемещающейся области. сбивают др к др
+        // & {
+        outline: none;
+        border-radius: 50%;
+        // }
+      }
+      25% {
+        transform: translate(25%, -25%) scale(0.5);
+        border-radius: 0%;
+      }
+      37% {
+        transform: translate(0%);
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(25%, 25%) scale(0.5);
+        border-radius: 0%;
+      }
+      62% {
+        transform: translate(0%);
+        border-radius: 50%;
+      }
+      75% {
+        transform: translate(-25%, 25%) scale(0.5);
+        border-radius: 0%;
+      }
+      87% {
+        transform: translate(0%);
+        border-radius: 50%;
+      }
+      100% {
+        transform: translate(-25%, -25%) scale(0.5);
+        border-radius: 0%;
+      }
+    }
+  }
+}
+
+// ! пока не использ.
+.block-img-cont:hover {
+  background-color: #055a49;
+  cursor: pointer;
+  transform: scale(1.5);
+  font-size: 14px;
+  color: #000;
+  box-shadow: 0px 0px 5px 3px #008aaa;
+}
+
+// ! пока не использ.
+.block-img-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0087be;
+  // ??? не раб - в медПрод работает
+  // box-shadow: 0px 0px 10px 20px rgb(0 138 170 / 50%);
+  width: 58%;
+  height: 50%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 12px;
+  transition: 1s cubic-bezier(0.34, 1.56, 0.34, 1.56),
+    background-color 0.5s ease-in, color 1.5s ease-out;
+}
+//</img()>˄=============================================================˄
+
+// ! пока не использ.
+.gallery .gallery-grid img {
+  width: 100%;
+}
+
+//</effect.scss(эффекты css)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
