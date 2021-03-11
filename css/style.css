@@ -400,55 +400,6 @@ header {
   -ms-flex-pack: distribute;
   justify-content: space-around; }
 
-.kup #kup {
-  grid-area: kup;
-  border-radius: 1px;
-  width: 250px;
-  background-color: #fc0101;
-  font-family: fantasy;
-  font-size: 30px;
-  border: 10px double yellow;
-  text-transform: capitalize; }
-  .kup #kup h1 {
-    font-size: 30px;
-    margin: 0 0 10px;
-    min-height: 50px;
-    padding: 10px 0px;
-    vertical-align: bottom;
-    text-align: left;
-    background: yellow;
-    color: #8b0000;
-    font-family: cursive;
-    margin: 0px 0px;
-    overflow: hidden;
-    background: yellow; }
-
-#kup:hover {
-  color: yellow;
-  border-style: ridge;
-  border-color: red;
-  background: black; }
-
-#kup:active {
-  color: red; }
-
-.kup {
-  background: yellow; }
-  .kup h1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    color: #8b0000;
-    font-family: cursive;
-    font-size: 30px;
-    padding: 0px 03%; }
-
 .pod {
   color: #707070;
   font-size: 18px;
@@ -475,7 +426,6 @@ header {
 
 .tabl-block {
   display: table;
-  margin-left: 10px;
   border: 1px solid #000;
   padding: 2px; }
   .tabl-block .table {
@@ -503,6 +453,9 @@ header {
   display: -webkit-flex;
   display: flex;
   font-size: 0; }
+
+.games-items .block-body {
+  margin: 0px 0px -20px 0px; }
 
 /* заливка поля */
 .snakeGrey {
@@ -2885,6 +2838,55 @@ h6 {
 .pp1 {
   padding: 10px 0%; }
 
+.kup #kup {
+  grid-area: kup;
+  border-radius: 1px;
+  width: 250px;
+  background-color: #fc0101;
+  font-family: fantasy;
+  font-size: 30px;
+  border: 10px double yellow;
+  text-transform: capitalize; }
+  .kup #kup h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    min-height: 50px;
+    padding: 10px 0px;
+    vertical-align: bottom;
+    text-align: left;
+    background: yellow;
+    color: #8b0000;
+    font-family: cursive;
+    margin: 0px 0px;
+    overflow: hidden;
+    background: yellow; }
+
+#kup:hover {
+  color: yellow;
+  border-style: ridge;
+  border-color: red;
+  background: black; }
+
+#kup:active {
+  color: red; }
+
+.kup {
+  background: yellow; }
+  .kup h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #8b0000;
+    font-family: cursive;
+    font-size: 30px;
+    padding: 0px 03%; }
+
 .helloys {
   color: #8b0000;
   font-family: cursive;
@@ -2903,8 +2905,6 @@ h6 {
     background: yellow; }
   .helloys p,
   .helloys p.hel-text {
-    margin: 10px 03%;
-    margin: 10px 0%;
     padding: 10px 03%;
     line-height: 16px;
     font-size: 15px;
@@ -2917,8 +2917,6 @@ h6 {
     .helloys p.hel-text::first-letter {
       font-size: 30px;
       color: #ff0000; }
-  .helloys p {
-    margin: 10px 03%; }
 
 .block-body {
   min-height: 200px;
@@ -2936,10 +2934,6 @@ h6 {
   .block-body p {
     font-size: 18px;
     font-family: monospace; }
-
-.hel-title {
-  margin-top: 1px;
-  margin-left: 10px; }
 
 .block-img {
   -webkit-box-flex: 0;
@@ -2970,14 +2964,11 @@ h6 {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-grid-columns: 1fr 10px 4.5fr;
-  grid-template-columns: 1fr 4.5fr;
-  grid-template-areas: "img-b hel" "b-b b-b" "cha cha" "t-b t-b";
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: repeat(5, 1fr);
   -ms-grid-rows: auto 10px auto 10px auto 10px auto;
-  grid-template-areas: "img-b hel hel" "b-b b-b b-b" "cha cha t-b" "cha cha t-b"; }
+  grid-template-areas: "img-b hel hel hel hel" "b-b b-b b-b b-b b-b" "cha cha cha cha cha" "t-b t-b t-b t-b t-b"; }
   .cont-grid .block-img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img-b;
@@ -2985,9 +2976,7 @@ h6 {
   .cont-grid .helloys {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 3;
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
+    -ms-grid-column-span: 7;
     grid-area: hel;
     justify-items: center;
     -webkit-box-align: center;
@@ -2996,10 +2985,7 @@ h6 {
   .cont-grid .block-body {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
+    -ms-grid-column-span: 9;
     grid-area: b-b;
     justify-items: center;
     -webkit-box-align: center;
@@ -3009,16 +2995,65 @@ h6 {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1/4;
-    -ms-grid-row: 4;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
-    grid-row: 4/5; }
+    grid-row: 3/4; }
   .cont-grid .tabl-block {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1/4;
-    -ms-grid-row: 5;
+    -ms-grid-row: 4;
     -ms-grid-row-span: 1;
-    grid-row: 5/6; }
+    grid-row: 4/5; }
+
+.central-block .block-img,
+.central-block .block-img2 {
+  padding: 5px;
+  outline: 3px dashed red;
+  width: 200px; }
+  .central-block .block-img a.block-img__link,
+  .central-block .block-img2 a.block-img__link {
+    display: block;
+    padding: 0px 100% 100% 0px; }
+
+.central-block.cont-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: auto 10px 1fr 10px 1fr 10px 1fr 10px auto;
+  grid-template-columns: auto repeat(3, 1fr) auto;
+  -ms-grid-rows: auto 10px auto 10px auto;
+  grid-template-areas: "img-b hel hel hel hel" "b-b b-b b-b b-b img-b2" "img-b hel hel hel hel"; }
+  .central-block.cont-grid .block-img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    grid-area: img-b;
+    margin: 0; }
+  .central-block.cont-grid .helloys {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 7;
+    grid-area: hel;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .central-block.cont-grid .block-body {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-area: b-b;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .central-block.cont-grid .block-img2 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 9;
+    grid-area: img-b2;
+    margin: 0; }
 
 .row:after {
   display: block;
