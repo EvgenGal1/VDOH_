@@ -53,7 +53,7 @@ header {
 //<MENU>====================================================
 .header-menu {
   text-shadow: 0.5px 0.3px 0.5px #000;
-  .header-nav {
+  .header-menu__top {
     margin: 0 0 20px 0px;
   }
   // затемняет не то что выделено
@@ -281,23 +281,23 @@ header {
     }
   }
 
-  .header-nav a:link {
+  .header-menu__top a:link {
     // color: #8b0000;
   }
 
-  .header-nav a:visited {
+  .header-menu__top a:visited {
     // color: #800080;
   }
 
-  .header-nav a:hover {
+  .header-menu__top a:hover {
     color: #000000;
   }
 
-  .header-nav a:active {
+  .header-menu__top a:active {
     // color: #1400d4;
   }
 
-  // .header-nav a {
+  // .header-menu__top a {
   //   display: inline-block;
   //   width: 100%;
   //   height: 100%;
@@ -351,35 +351,35 @@ header {
 
 /*
 
-.header-nav a:hover::before {
+.header-menu__top a:hover::before {
   content: "!!!";
   color: #000;
 }
 
-.header-nav a:hover::after {
+.header-menu__top a:hover::after {
   content: "!!!";
   color: #000000;
 }
 
-.header-nav a {
+.header-menu__top a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-.header-nav a:link {
+.header-menu__top a:link {
   color: #8b0000;
 }
 
-.header-nav a:visited {
+.header-menu__top a:visited {
   color: #800080;
 }
 
-.header-nav a:hover {
+.header-menu__top a:hover {
   color: #1400d4;
 }
 
-.header-nav a:active {
+.header-menu__top a:active {
   color: #000000;
 }
 */
