@@ -1,0 +1,164 @@
+// ! 1 варик
+// <html>
+// <head>
+// <script type="text/javascript">
+// window.onload = function() {
+//     document.getElementById('SuperButton').onclick = function()
+//     {
+//         if(document.body.className != 'new_class')
+//         {
+//             document.body.className = 'new_class';
+//         }
+//         else
+//         {
+//             document.body.className = '';
+//         }
+//     }
+// }
+// </script>
+// <style>
+// body { background: #23ff0c; min-height: 100%; }
+// .new_class { background: #FF0; }
+
+// </style>
+// </head>
+// <body>
+// <button id="SuperButton" name="SuperButton">Super Button</button>
+// </body>
+// </html>
+
+// ! 2 варик
+// body.style1 {background:#fff}
+// body.style1 a{color:#cc0000;}
+
+// body.style2 {background:#000}
+// body.style2 a{color:#ccc;}
+// и по клику на кнопку манипулируют этим классом, а все стили в одном файле
+
+// интересно, допустим у меня есть 2 класса для body (body1, body2), а вот кнопку как такую написать я не представляю
+
+// $('changeStyleButton').click(function(){ $('body').addClass('style2'); });
+
+// ! 3 варик
+// //function to append a new theme stylesheet with the new style changes
+// function updateCSS(locStr){
+//   $("link[href*=parseTheme\\.css\\.php]:last").after('<link href="/themeroller/css/parseTheme.css.php?'+ encodeURIComponent( locStr ) +'" type="text/css" rel="Stylesheet" />');
+//   if($("link[href*=parseTheme\\.css\\.php]").size() > 3){
+//       $("link[href*=parseTheme\\.css\\.php]:first").remove();
+//   }
+// };
+
+// Т.е. это фактически ответ @inferus-vv, только здесь jquery использован, здесь он просто для удобства...
+
+// Работает в опере, хроме, сафари, лисе, и даже в ie. еще на андроиде в стоковом браузере тоже работает.
+
+// ! 4 варик
+// Добавьте аттрибут id элементу link который rel="stylesheet"
+// В скрипте находите этот элемент и меняйте ему аттрибут href
+// Страница перезагружаться естественно не будет, но таблица стилей загрузится.
+
+// А вообще это убого при наличии поддержки rel="alternate stylesheet".
+
+// Поделиться
+// Улучшить ответ
+// Отслеживать
+// ответ дан 9 апр '12 в 10:15
+
+// karmadro4
+// 2,38711 золотой знак1212 серебряных знаков1515 бронзовых знаков
+// моих знаний JS хватило только на <html> <body> <script type="text/javascript"> function color(c) {document.body.style.backgroundColor=c} </script> <input type='button' value='красный фон' onclick='color("red")'> <input type='button' value='черный фон' onclick='color("black")'> </body> </html> – sergey 9 апр '12 в 10:41
+// @mixalef, нет-нет, я предлагал сменить URL "главной" таблицы стилей.
+
+// !!! https://javascript.ru/forum/misc/80255-smena-stilejj-nazhatiem-na-knopku.html
+
+// ! 5 варик
+
+// !!! http://blogprogram.ru/poluchit-naznachit-css-stil-v-jquery/
+
+// Пример: получить CSS стиль всех параграфов:
+// $("p").css('marginTop');
+// $("p").css('background-color');
+
+// Как это можно использовать? например, определить цвет заливки при клике на пункт и назначить его какому-то div-у.
+
+// Пример: кликните по одному из этих 3-х пунктов ниже и цвет скопируется в новый div
+
+// Меркурий
+// Венера
+// Земля
+// Новый цвет
+// Скрипт данного примера:
+
+// <ul id="list">
+// <li class="item" style="background-color: #567328">Меркурий</li >
+// <li class="item" style="background-color: #9CEB1F">Венера</li >
+// <li class="item" style="background-color: #EBDB1F">Земля</li >
+// </ul>
+// <script>
+// $(document).ready(function(){
+// $("#list .item").click(function () {
+// var color = $(this).css("background-color");
+// $("#result").css("background-color", color );
+// $("#results").val(color ); }); });
+// </script>
+
+// Назначить CSS элементу
+// $(".topBlock").css("top", "5px") установит смещение по вертикали равным 5px
+// $(".topBlock").css({"top":"5px", "background-color":"red"}) установит смещения по вертикали и красную заливку
+
+// Назначить несколько стилей элементу:
+// $("div").css({ border:"1px solid blue", fontWeight:"bolder", backgroundColor:"red" });
+
+// Скачать рабочий скрипт данного примера
+// cvet.zip в /Своё.Нэт
+
+// ! 6 варик
+
+// !!! http://blogprogram.ru/kak-izmenit-css-elementa-cherez-jquery/
+
+// КАК ИЗМЕНИТЬ CSS ЭЛЕМЕНТА ЧЕРЕЗ JQUERY
+// Категория: JQuery • 16th Декабрь 2018
+// 527
+// Бывают ситуации, когда нужно изменить стиль html элемента на лету, без перезагрузки страницы. Например, при нажатии на кнопку или только на определенной странице. Сделать это очень просто с помощью jQuery.
+
+// Предлагаю использовать не стандартный подход к данной задачи, а именно - мы будем менять css используя атрибут style в jQuery.
+
+// Предположим у нас есть элемент:
+// <style>.myhtml {color: red;}</style>
+// <div class="myhtml">какое-то содержимое</div>
+
+// Давайте изменим на лету его цвет на зеленый и выделим его жирным:
+
+// <script type="text/javascript">
+// $(document).ready(function(){
+// $(".myhtml").attr('style', 'color: green; font-weight: bold;');
+// });
+// </script>
+
+// Как вы видите этот код срабатывает только после загрузки страницы и назначает атрибуту style класса .myhtml новые стили. В них можно даже писать !important; для приоритетности.
+
+// Если же нам нужно было бы изменить стиль по клику на сам элемент, то код был бы таким:
+
+// <script type="text/javascript">
+// $(document).ready(function(){
+// $(".myhtml").click(function(){
+// $(".myhtml").attr('style', 'color: green; font-weight: bold;');
+// });
+// });
+// </script>
+
+// Примерно так работают скрипты сайтов, которые предлагают пользователю на лету изменить цветовую схему сайта. А если подумать, то на этом же принципе можно легко сделать версию для слабовидящих (главное прикрутить скрипт куков, которые бы запоминали состояние переменных).
+
+// Если же нам нужно изменить css только на определенной странице, то используйте этот код:
+
+// <script type="text/javascript">
+// $(document).ready(function(){
+// var pathes = window.location.pathname + window.location.search;
+// if(pathes == '/about/') {
+// $(".myhtml").attr('style', 'color: green; font-weight: bold;'); }
+// });
+// </script>
+
+// Переменная pathes определяет текущую относительную ссылку сайта. Если она равна '/about/', то скрипт сработает только на этой странице. Данный метод удобен, если нам нужно делать какие-то исключения на определенных страницах.
+
+// В заключении скажу, что стандартный подход изменения css заключается в использовании метода jQuery.css(). В нем тоже есть свои особенности и знать его нужно всегда.

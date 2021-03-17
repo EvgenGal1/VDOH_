@@ -124,8 +124,6 @@ $md4: 479.98;
 @import "footer.scss";
 @import "audio.scss";
 @import "video.scss";
-@import "visyal.scss";
-@import "effect.scss";
 @import "gallery.scss";
 @import "spravoch.scss";
 // @import "home.scss";
@@ -202,4 +200,10 @@ p {
 @import "forms.scss";
 // сбор готовых и вспомогательных классов (ibg, video, заголовки, зеркало, серый стиль)
 @import "ui.scss";
+// изменения стилей при нажате на кнопки под меню
+// @import "parseTheme.scss";
+// визуальные эффекты css во вкладке "Визул"
+@import "visyal.scss";
+// не большие анимации, трансформации, эффекты css на всех страницах
+@import "effect.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
