@@ -1262,4 +1262,3 @@ $(document).ready(function () {
   minesweeper.init("game");
 });
 //</Minesweeper-origin(CodePen).js(игра Сапёр оригинал)>˄========================================˄
-

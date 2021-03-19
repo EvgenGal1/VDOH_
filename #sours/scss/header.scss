@@ -51,6 +51,32 @@ header {
   }
 }
 //<MENU>====================================================
+// !!! posi
+.wrapper {
+  .header-menu {
+    position: relative;
+    // min-width: 1250px;
+    &__top {
+      position: absolute;
+      right: 0;
+      top: 0;
+      .header-menu-list {
+        flex-flow: initial;
+      }
+      .menu-list__items {
+        float: left;
+      }
+    }
+
+    &__bottom {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+// !!!
+
 .header-menu {
   text-shadow: 0.5px 0.3px 0.5px #000;
   .header-menu__top {
@@ -303,6 +329,7 @@ header {
   //   height: 100%;
   // }
 }
+
 //<>====================================================
 
 .ul {
