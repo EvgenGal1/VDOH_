@@ -1112,6 +1112,7 @@
       &:last-of-type > .acord-item__title {
         transform: rotate(0) translateX(-50%) translateY(-2.5rem);
         padding: 0;
+        // ??? не раб - не центрирует.
         text-align: center;
       }
 
@@ -1154,6 +1155,7 @@
       bottom: 0;
       left: 50%;
       height: 1.5rem;
+      // ??? не раб - .acord-item__title изза длины скачет. без длины уход за нижн край. такой же код отдельно раб
       width: 200%;
       text-align: left;
       transform-origin: 0 50%;
