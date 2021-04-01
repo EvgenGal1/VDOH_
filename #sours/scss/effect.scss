@@ -5,8 +5,10 @@
 .block-img {
   position: relative;
   perspective: 700px;
+  transition-duration: 1.5s;
 
   &:hover {
+    transition-duration: 1.5s;
     .block-img__link {
       transform: rotateY(-540deg);
     }

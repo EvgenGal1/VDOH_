@@ -1,7 +1,8 @@
 // <parseTheme.scss()>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
 
-.header-menu {
-}
+// .header-menu {
+
+// }
 .header-menu__bottom {
   display: flex;
   justify-content: flex-end;
@@ -75,7 +76,7 @@ $background: #3498db;
 //</.slideThree()>˄=======================================================================================˄
 
 // <ЕЩЁ кнопка/переключ 1()>˅=======================================================================================˅
-// ! https: ; //nisnom.com/veb-razrabotki/stilizovannye-pereklyuchateli-so-smenyayushhimisya-podpisyami/#more-1205
+// ! https://nisnom.com/veb-razrabotki/stilizovannye-pereklyuchateli-so-smenyayushhimisya-podpisyami/#more-1205
 
 .slid {
   // font-family: helvetica neue, helvetica, arial, sans-serif;
@@ -209,9 +210,178 @@ $background: #3498db;
 }
 //</ЕЩЁ кнопка/переключ 1()>˄=======================================================================================˄
 
-// <ЕЩЁ кнопка/переключ 1()>˅=======================================================================================˅
-// ! https: ; //nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247
-//</ЕЩЁ кнопка/переключ 1()>˄=======================================================================================˄
+// <ЕЩЁ кнопка/переключ 2()>˅=======================================================================================˅
+// ! https://nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247
+//</ЕЩЁ кнопка/переключ 2()>˄=======================================================================================˄
+
+// <ЕЩЁ кнопка/переключ 3()>˅=======================================================================================˅
+// ! https://nisnom.com/veb-razrabotki/stilizovannye-chekboksy-s-krasivym-elastichnym-effektom/#more-3234
+$black: #1e1e1e;
+$grey: #cccccc;
+$white: #ffffff;
+
+body {
+  #switcher-1,
+  #switcher-2 {
+    width: 80px;
+    height: 26px;
+  }
+
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // height: 100vh;
+
+  background-color: $grey;
+  span.switcher {
+    // position: relative;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20px 0;
+    input {
+      appearance: none;
+
+      // position: relative;
+
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+
+      background-color: $black;
+      outline: none;
+
+      font-family: "Oswald", sans-serif;
+      &:before,
+      &:after {
+        z-index: 2;
+
+        // position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        color: $white;
+      }
+      &:before {
+        content: "ON";
+        left: 20px;
+      }
+      &:after {
+        content: "OFF";
+        right: 20px;
+      }
+    }
+    label {
+      z-index: 1;
+      // position: absolute;
+      top: 10px;
+      bottom: 10px;
+
+      border-radius: 20px;
+    }
+    &.switcher-1 {
+      input {
+        transition: 0.25s -0.1s;
+        &:checked {
+          background-color: $white;
+          &:before {
+            color: $white;
+            transition: color 0.5s 0.2s;
+          }
+          &:after {
+            color: $grey;
+            transition: color 0.5s;
+          }
+          & + label {
+            left: 10px;
+            right: 100px;
+
+            background: $black;
+
+            transition: left 0.5s, right 0.4s 0.2s;
+          }
+        }
+        &:not(:checked) {
+          background: $black;
+          transition: background 0.5s -0.1s;
+          &:before {
+            color: $grey;
+            transition: color 0.5s;
+          }
+          &:after {
+            color: $black;
+            transition: color 0.5s 0.2s;
+          }
+          & + label {
+            left: 100px;
+            right: 10px;
+
+            background: $white;
+
+            transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+          }
+        }
+      }
+    }
+    &.switcher-2 {
+      overflow: hidden;
+      input {
+        transition: background-color 0s 0.5s;
+        &:before {
+          color: $black;
+        }
+        &:after {
+          color: $white;
+        }
+        &:checked {
+          background-color: $white;
+          & + label {
+            background: $white;
+
+            animation: turn-on 0.5s ease-out;
+
+            @keyframes turn-on {
+              0% {
+                left: 100%;
+              }
+              100% {
+                left: 0%;
+              }
+            }
+          }
+        }
+        &:not(:checked) {
+          background: $black;
+          & + label {
+            background: $black;
+
+            animation: turn-off 0.5s ease-out;
+
+            @keyframes turn-off {
+              0% {
+                right: 100%;
+              }
+              100% {
+                right: 0%;
+              }
+            }
+          }
+        }
+      }
+      label {
+        top: 0px;
+
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+      }
+    }
+  }
+}
+
+//</ЕЩЁ кнопка/переключ 3()>˄=======================================================================================˄
 
 // ! 1 варик
 // <html>

@@ -2,6 +2,7 @@
 
 // ??? не раб - .ibg е/и script.js ниже game.js.
 //@prepros-append script.js
+//@prepros-append dopJQuery.js
 //@prepros-append game/games.js
 
 //</main.js(сбор всех скриптов)>˄=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄
@@ -24,19 +25,19 @@ function ibg() {
 ibg();
 
 // на JS
-// function ibg() {
-//   let ibg = document.querySelectorAll(".ibg");
-//   for (var i = 0; i < ibg.length; i++) {
-//     if (
-//       ibg[i].querySelector("img") &&
-//       ibg[i].querySelector("img").getAttribute("src") != null
-//     ) {
-//       ibg[i].style.backgroundImage =
-//         "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
-//     }
-//   }
-// }
-// ibg();
+function ibg() {
+  let ibg = document.querySelectorAll(".ibg");
+  for (var i = 0; i < ibg.length; i++) {
+    if (
+      ibg[i].querySelector("img") &&
+      ibg[i].querySelector("img").getAttribute("src") != null
+    ) {
+      ibg[i].style.backgroundImage =
+        "url(" + ibg[i].querySelector("img").getAttribute("src") + ")";
+    }
+  }
+}
+ibg();
 
 // не доделан на JS
 // попытка на JS
@@ -68,6 +69,28 @@ ibg();
 //</.slideThree()>˄=======================================================================================˄
 
 //</script.js>˄=¡=¡=¡=¡=¡=!=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄
+
+function getText() {
+  console.log(1);
+  // var textLorem = text();
+  // var podText = $("p[class='pod']").text("textLorem").after("<p>Test</p>");
+  // .text("werqwe");
+  // $(".pod").css({
+  //   top: "5px",
+  //   // "background-color": "red",
+  // });
+  // var helText = $(".hel-text").text();
+  // $(".pod").append(helText);
+  // .text(helText);
+  // .append("<p>???<p>");
+  // .prepend()
+
+  // ??? не раб - не добавл на главную. добавл все во всё
+  // var blImg_contClon = $(".block-img__content").clone();
+  // $(".block-img").append(blImg_contClon);
+  // $(blImg_contClon).appendTo(".block-img");
+}
+getText();
 
 // <games.js(сбор игровых скриптов)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 
@@ -1262,3 +1285,4 @@ $(document).ready(function () {
   minesweeper.init("game");
 });
 //</Minesweeper-origin(CodePen).js(игра Сапёр оригинал)>˄========================================˄
+
