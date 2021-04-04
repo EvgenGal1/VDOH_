@@ -2,7 +2,6 @@
 
 // ??? не раб - .ibg е/и script.js ниже game.js.
 //@prepros-append script.js
-//@prepros-append dopJQuery.js
 //@prepros-append game/games.js
 
 //</main.js(сбор всех скриптов)>˄=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄
@@ -42,7 +41,6 @@ ibg();
 // не доделан на JS
 // попытка на JS
 // function ibg() {
-//   console.log(1);
 //   var privClass = document.getElementsByClassName("block-img__link");
 //   privClass[0].style.backgroundImage = "url('../../img/head.jpg')";
 //   // if (getPrivClass) {
@@ -69,28 +67,6 @@ ibg();
 //</.slideThree()>˄=======================================================================================˄
 
 //</script.js>˄=¡=¡=¡=¡=¡=!=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄
-
-function getText() {
-  console.log(1);
-  // var textLorem = text();
-  // var podText = $("p[class='pod']").text("textLorem").after("<p>Test</p>");
-  // .text("werqwe");
-  // $(".pod").css({
-  //   top: "5px",
-  //   // "background-color": "red",
-  // });
-  // var helText = $(".hel-text").text();
-  // $(".pod").append(helText);
-  // .text(helText);
-  // .append("<p>???<p>");
-  // .prepend()
-
-  // ??? не раб - не добавл на главную. добавл все во всё
-  // var blImg_contClon = $(".block-img__content").clone();
-  // $(".block-img").append(blImg_contClon);
-  // $(blImg_contClon).appendTo(".block-img");
-}
-getText();
 
 // <games.js(сбор игровых скриптов)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 

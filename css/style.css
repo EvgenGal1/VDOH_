@@ -3744,3 +3744,134 @@ body {
 
 .central-block.cont-grid {
   grid-template-areas: "img-b b-s b-s b-s b-s" "b-b b-b b-b b-b img-b2"; }
+
+.DoP .DoP-prob {
+  width: 250px;
+  background: #bec0f3;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.DoP .DoP-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0; }
+
+.DoP li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #fcfda9; }
+
+.DoP a {
+  background: #000;
+  background-color: #fbd8d8;
+  margin: 5px;
+  padding: 5px; }
+
+.DoP li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.DoP img {
+  margin: 5px;
+  background-color: #fbd8d8; }
+
+.DoP p {
+  background: #000;
+  background-color: #fbd8d8;
+  margin: 5px;
+  padding: 2px; }
+
+.DoP li ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fbd8d8; }
+
+.DoP .DoP-status {
+  /* width: 150px; */
+  background-color: #fbd8d8;
+  margin: 5px;
+  padding: 5px;
+  text-align: center; }
+
+.DoP .DoP-btn {
+  /* width: 150px; */
+  margin: 5px;
+  padding: 5px;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  cursor: default;
+  background-color: -internal-light-dark(#efefef, #3b3b3b);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-top-style: outset;
+  border-right-style: outset;
+  border-bottom-style: outset;
+  border-left-style: outset;
+  border-color: -internal-light-dark(#767676, #858585);
+  border-top-color: -internal-light-dark(#767676, #858585);
+  border-right-color: -internal-light-dark(#767676, #858585);
+  border-bottom-color: -internal-light-dark(#767676, #858585);
+  border-left-color: -internal-light-dark(#767676, #858585);
+  -webkit-border-image: initial;
+  -o-border-image: initial;
+  border-image: initial; }
+
+.DoP .DoP-cl {
+  border: 1px solid red; }

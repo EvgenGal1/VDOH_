@@ -1,0 +1,110 @@
+.DoP {
+  .DoP-prob {
+    width: 250px;
+    background: #bec0f3;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .DoP-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    padding: 5px;
+    margin: 5px;
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fcfda9;
+  }
+  a {
+    background: #000;
+    background-color: #fbd8d8;
+    margin: 5px;
+    padding: 5px;
+  }
+  li div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    margin: 5px;
+    background-color: #fbd8d8;
+  }
+  p {
+    background: #000;
+    background-color: #fbd8d8;
+    margin: 5px;
+    padding: 2px;
+  }
+  li ul {
+    flex-direction: column;
+    background-color: #fbd8d8;
+  }
+  .DoP-status {
+    /* width: 150px; */
+    background-color: #fbd8d8;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+  .DoP-cl {
+    border: 1px solid red;
+  }
+  .DoP-btn {
+    /* width: 150px; */
+    margin: 5px;
+    padding: 5px;
+
+    //
+    // appearance: auto;
+    // -webkit-writing-mode: horizontal-tb !important;
+    // text-rendering: auto;
+    // color: -internal-light-dark(black, white);
+    // letter-spacing: normal;
+    // word-spacing: normal;
+    // text-transform: none;
+    // text-indent: 0px;
+    // text-shadow: none;
+    // display: inline-block;
+    // text-align: center;
+    // align-items: flex-start;
+    // cursor: default;
+    // background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    // box-sizing: border-box;
+    // margin: 0em;
+    // font: 400 13.3333px Arial;
+    // padding: 1px 6px;
+    // border-width: 2px;
+    // border-style: outset;
+    // border-top-style: outset;
+    // border-right-style: outset;
+    // border-bottom-style: outset;
+    // border-left-style: outset;
+    // border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    // border-top-color: -internal-light-dark(
+    //   rgb(118, 118, 118),
+    //   rgb(133, 133, 133)
+    // );
+    // border-right-color: -internal-light-dark(
+    //   rgb(118, 118, 118),
+    //   rgb(133, 133, 133)
+    // );
+    // border-bottom-color: -internal-light-dark(
+    //   rgb(118, 118, 118),
+    //   rgb(133, 133, 133)
+    // );
+    // border-left-color: -internal-light-dark(
+    //   rgb(118, 118, 118),
+    //   rgb(133, 133, 133)
+    // );
+    // border-image: initial;
+  }
+}

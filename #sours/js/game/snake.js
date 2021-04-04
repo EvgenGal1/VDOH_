@@ -1,4 +1,3 @@
-console.log(1);
 //! если в файле только один класс то его имя пишут с большой буквы (хорошая практика  - один файл - один класс)
 class Board {
   //! this. везде (почти) указывает на объект в котом находиться. здесь Board
@@ -447,7 +446,6 @@ class Game {
     // if (this.status.isSpeed()) {
     // if (this.status.setSpeed()) {
     //   // this.isGameLost();
-    //   console.log(3);
     //   // this.snake.stepZero();
     // this.snake.stepZero();
     // }

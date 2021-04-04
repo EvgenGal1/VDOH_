@@ -33,7 +33,6 @@ ibg();
 // не доделан на JS
 // попытка на JS
 // function ibg() {
-//   console.log(1);
 //   var privClass = document.getElementsByClassName("block-img__link");
 //   privClass[0].style.backgroundImage = "url('../../img/head.jpg')";
 //   // if (getPrivClass) {
