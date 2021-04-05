@@ -4,81 +4,37 @@
 
 // }
 .header-menu__bottom {
-  display: flex;
-  justify-content: flex-end;
-  section {
+  // display: flex;
+  // justify-content: flex-end;
+  .header-menu-set {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu-set__items {
+    width: 80px;
+    height: 26px;
     &:not(:first-child) {
       margin: 0 0 0px 30px;
     }
+    &:first-child {
+      display: none;
+    }
   }
-}
-
-// <.slideThree()>˅=======================================================================================˅
-// ! https://nisnom.com/veb-razrabotki/stilizovannye-chekboksy-i-radioknopki-na-css3/#more-700
-
-/* $activeColor: #c0392b; //red */
-$activeColor: #27ae60; //green
-$darkenColor: darken($activeColor, 20%);
-/* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
-$background: #3498db;
-
-.vremStil__1 {
-  width: 80px;
-  height: 26px;
-  background: #333;
-  // margin: 20px auto;
-  position: relative;
-  border-radius: 50px;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
-    0px 1px 0px rgba(255, 255, 255, 0.2);
-  &:after {
-    content: "OFF";
-    color: #000;
-    position: absolute;
-    right: 10px;
-    z-index: 0;
-    font: 12px/26px Arial, sans-serif;
-    font-weight: bold;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
-  }
-  &:before {
-    content: "ON";
-    color: $activeColor;
-    position: absolute;
-    left: 10px;
-    z-index: 0;
-    font: 12px/26px Arial, sans-serif;
-    font-weight: bold;
-  }
-  label {
-    display: block;
-    width: 34px;
-    height: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    z-index: 1;
-    background: #fcfff4;
-    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-    border-radius: 50px;
-    transition: all 0.4s ease;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-  }
-  input[type="checkbox"] {
-    visibility: hidden;
-    &:checked + label {
-      left: 43px;
+  .m-s-switcher {
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5 {
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
-//</.slideThree()>˄=======================================================================================˄
-
-// <ЕЩЁ кнопка/переключ 1()>˅=======================================================================================˅
+// <m-s-switcher-0(бело серый)>˅=======================================================================================˅
 // ! https://nisnom.com/veb-razrabotki/stilizovannye-pereklyuchateli-so-smenyayushhimisya-podpisyami/#more-1205
-
-.slid {
+.m-s-switcher-0 {
   // font-family: helvetica neue, helvetica, arial, sans-serif;
   // font-size: 14px;
   // font-weight: 200;
@@ -208,80 +164,112 @@ $background: #3498db;
     }
   }
 }
-//</ЕЩЁ кнопка/переключ 1()>˄=======================================================================================˄
+//<.m-s-switcher-0(бело серый)>˄=======================================================================================˄
 
-// <ЕЩЁ кнопка/переключ 2()>˅=======================================================================================˅
-// ! https://nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247
-//</ЕЩЁ кнопка/переключ 2()>˄=======================================================================================˄
+// <.m-s-switcher-1(черно зелёный)>˅=======================================================================================˅
+// ! https://nisnom.com/veb-razrabotki/stilizovannye-chekboksy-i-radioknopki-na-css3/#more-700
+.m-s-switcher-1 {
+  /* $activeColor: #c0392b; //red */
+  $activeColor: #27ae60; //green
+  $darkenColor: darken($activeColor, 20%);
+  /* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
+  $background: #3498db;
+  background: #333;
+  // margin: 20px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
+    0px 1px 0px rgba(255, 255, 255, 0.2);
+  &:after {
+    content: "OFF";
+    color: #000;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+  }
+  &:before {
+    content: "ON";
+    color: $activeColor;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+  }
+  label {
+    display: block;
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+  input[type="checkbox"] {
+    visibility: hidden;
+    &:checked + label {
+      left: 43px;
+    }
+  }
+}
+//</.m-s-switcher-1(черно зелёный)>˄=======================================================================================˄
 
-// <ЕЩЁ кнопка/переключ 3()>˅=======================================================================================˅
+// <.m-s-switcher-2,3(черно белые)>˅=======================================================================================˅
 // ! https://nisnom.com/veb-razrabotki/stilizovannye-chekboksy-s-krasivym-elastichnym-effektom/#more-3234
-$black: #1e1e1e;
-$grey: #cccccc;
-$white: #ffffff;
-
-body {
-  #switcher-1,
-  #switcher-2 {
+.menu-set__items:nth-child(n + 3) {
+  $black: #1e1e1e;
+  $grey: #cccccc;
+  $white: #ffffff;
+  display: flex;
+  .m-s-switcher {
+    position: relative;
     width: 80px;
     height: 26px;
-  }
-
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // height: 100vh;
-
-  background-color: $grey;
-  span.switcher {
-    // position: relative;
-
-    width: 200px;
-    height: 50px;
     border-radius: 25px;
-    margin: 20px 0;
+    // margin: 20px;
     input {
       appearance: none;
-
-      // position: relative;
-
-      width: 200px;
-      height: 50px;
+      position: relative;
+      width: 80px;
+      height: 26px;
       border-radius: 25px;
-
       background-color: $black;
       outline: none;
-
       font-family: "Oswald", sans-serif;
       &:before,
       &:after {
         z-index: 2;
-
-        // position: absolute;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
         color: $white;
       }
       &:before {
         content: "ON";
-        left: 20px;
+        left: 10px;
       }
       &:after {
         content: "OFF";
-        right: 20px;
+        right: 10px;
       }
     }
     label {
       z-index: 1;
-      // position: absolute;
-      top: 10px;
-      bottom: 10px;
-
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
       border-radius: 20px;
     }
-    &.switcher-1 {
+    &-2 {
       input {
         transition: 0.25s -0.1s;
         &:checked {
@@ -295,11 +283,9 @@ body {
             transition: color 0.5s;
           }
           & + label {
-            left: 10px;
-            right: 100px;
-
+            left: 4px;
+            right: 40px;
             background: $black;
-
             transition: left 0.5s, right 0.4s 0.2s;
           }
         }
@@ -315,17 +301,15 @@ body {
             transition: color 0.5s 0.2s;
           }
           & + label {
-            left: 100px;
-            right: 10px;
-
+            left: 40px;
+            right: 4px;
             background: $white;
-
             transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
           }
         }
       }
     }
-    &.switcher-2 {
+    &-3 {
       overflow: hidden;
       input {
         transition: background-color 0s 0.5s;
@@ -339,7 +323,6 @@ body {
           background-color: $white;
           & + label {
             background: $white;
-
             animation: turn-on 0.5s ease-out;
 
             @keyframes turn-on {
@@ -356,7 +339,6 @@ body {
           background: $black;
           & + label {
             background: $black;
-
             animation: turn-off 0.5s ease-out;
 
             @keyframes turn-off {
@@ -372,16 +354,18 @@ body {
       }
       label {
         top: 0px;
-
-        width: 200px;
-        height: 50px;
+        width: 80px;
+        height: 26px;
         border-radius: 25px;
       }
     }
   }
 }
+//</.m-s-switcher-2,3(черно белые)>˄=======================================================================================˄
 
-//</ЕЩЁ кнопка/переключ 3()>˄=======================================================================================˄
+// <.m-s-switcher-()>˅=======================================================================================˅
+// ! https://nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247
+//</.m-s-switcher-()>˄=======================================================================================˄
 
 // ! 1 варик
 // <html>
