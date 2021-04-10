@@ -1,10 +1,10 @@
 // <Основной блок Игр>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 
-.game-block {
-  @include flexbox();
-  // flex-flow: row wrap;
-  // justify-content: flex-start;
-}
+// .game-block {
+//   @include flexbox();
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+// }
 
 .games-items {
   .block-body {

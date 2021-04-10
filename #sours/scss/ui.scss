@@ -103,7 +103,7 @@ h6 {
   // background: yellow;
 
   // ??? не раб - не могу растянуть блок на высоту картинки
-  height: 100vh;
+  // height: 100vh;
   // .block-side-wrapper {
   //   display: flex;
   //   flex-direction: column;
@@ -187,6 +187,16 @@ h6 {
   }
 }
 
+// большой текст. блок ============================================================
+
+.catalog-block,
+.game-block,
+.spravoch-block {
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 // обход картинки. 1 вар. float + доделка ibg ===========================================
 .block-img,
 .block-img2 {
@@ -197,7 +207,7 @@ h6 {
   width: 100%;
   height: 100%;
   // margin: 0px 0px 20px 20px;
-  // margin: 0px 0px 0% 2%;
+  margin: 0px 0px 2% 2%;
   padding: 5px;
   outline: 3px dashed red;
   &:first-child {
@@ -222,6 +232,7 @@ h6 {
   @media (max-width: $md2+px) {
     flex: 0 1 20%;
     &:nth-last-child(-n + 2) {
+      margin: inherit;
       margin: 2% 0px 0px 0px; // * у последних двух
     }
   }

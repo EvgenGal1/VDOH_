@@ -7,28 +7,22 @@
 // код для примера -> =========================================================================================
 {
   /* 
-  <div class="prob">
-    <ul class="ul">
-      <li>
-        <a href="">ссылка 1</a>
-        <div><img src="qw1.jpg" alt="" /></div>
-        <div><img src="qw2.jpg" alt="" /></div>
-        <ul>
-          <li>2</li>
+    <div class="DoC1 pc1" id="DoC">
+      <div class="DoC1-prob">
+        <ul class="DoC1-ul">
+          <li>
+            <a href="">ссылка 1</a>
+            <div><img src="img/minElem/qw1.jpg" alt="" /></div>
+            <p class="DoC1-div1">lorem5</p>
+            <ul>
+              <li>1</li>
+            </ul>
+          </li>
         </ul>
-      </li>
-      <li>
-        <a href="">ссылка 2</a>
-        <div><img src="qw3.jpg" alt="" /></div>
-        <p class="div1">lorem5</p>
-        <ul>
-          <li>2</li>
-        </ul>
-      </li>
-    </ul>
-  <div class="status">0</div>
-  <button class="btn">Задать вопрос</button>
-  </div>
+        <div class="DoC1-status">0</div>
+        <button class="DoC1-btn">Задать вопрос</button>
+      </div>
+    </div>
   */
 }
 
@@ -37,10 +31,17 @@
 
 // выборка эл. -> ===========================================================================================
 // тег - $('а'), класс - $('.menu'), id - $('#ul'),
-// вложеность - $('menu li'), дочерний - $('menu > li'), ближ.сосед - $('menu li a + img'),
-// атрибут - $('img[src=img/img1.jpg]'), атриб.начало - $('img[src^=img/]'), атриб.конец - $('img[src$=.jpg]'), атриб.везде - $('img[src*=3]'),
+function has() {
+  var sp = $(".DoC3 td span[class]");
+  $(".DoC3 td:hac(span[class])");
+  console.log("DoC1.5");
+  // .css(border, red);
+}
+has();
+// вложеность/порядок - $('menu li'), дочерний - $('menu > li'), ближ.сосед - $('menu li a + img'), перечисление - $('menu, li, img'),
+// атрибут - $('img[src]'), атриб.детали - $('img[src=img/img1.jpg]'), атриб.начало - $('img[src^=img/]'), атриб.конец - $('img[src$=.jpg]'), атриб.везде - $('img[src*=3]'),
 // чётные - $('menu li:even'), не чётные - $('menu li:odd'),
-// первый - $('li:first'), последний - $('li:last'),
+// первый - $('li:first'), последний - $('li:last'), определённый(7) - $('li:nth-child(7)')
 // не выбор - $('img:not([src*=3])'),
 // имеет внутри тег - $('li:has(ul)'), имеет внутри текст - $('p:contains(lorem)'),
 // скрытые - $('img:hidden'), видимые - $('img:visibility').
@@ -50,21 +51,38 @@
 
 // МЕТОДЫ -> ===============================================================================================
 
+console.log("DoC1.0");
+
+// $(function () {
 // цепные функции -> $('p').hide().text('Новые тектс').show(3000);
+$(".DoC1-ul li:nth-child(1) a").hide().show();
 
 // взять текст -> .text(); вставить какойто текст -> .text('какойто текст');
+$(".DoC1-ul li:nth-child(1) p").hide(1000).text("Нов. текст 1").show(3000);
 
 // взять высоту/ширину -> .height()/.width(); изменить  высоту/ширину -> .height(300)/.width(150);
+//  ???не раб - не могу между вставляемого текста добавть еще элемент
+function hW1() {
+  var hMax = $(".DoC1-ul li img").height(50);
+  var h = $(".DoC1-ul li img").height();
+  var w = $(".DoC1-ul li img").width();
+  $(".DoC1-ul li:nth-child(1) ul li").text("В: " + h + "; Ш: " + w + ";");
+  // w.width(150);
+  // .html("<p>wert</p>")
+  // .text("Ширина: " + w + ";");
+}
+hW1();
 
 // html код -> .html()
 // взять -> $('.ul li ul').html(); вывод -> <li>1</li>
 // прописать -> $('.ul li ul').html('<p>Новый текст</p>'); вывод -> <p>Новый текст</p>
+$(".DoC1-ul li:nth-child(2) a").html("<p>Нов. текст 2</p>");
 
-// основн. аргументы
-// не плавно/плавно(duration)(время,умолч.(400),'fast'(200),'slow'(600));  -> .hide()/.hide(1500);
-// скорость/кривая Безье(easing)(linear,swing) -> .hide('fast','linear');
-// с функцией(complete/callback,this) -> .hide( 500,"linear",function(){alert(эл.)})
-// очередь(queue)(true(в очереди),false(сразу)) -> .hide( 500,"linear",function(){alert(эл.)},false)
+// Основые Аргументы
+// 1. Не плавно/плавно(duration)(время/умолч.(400)/'fast'(200)/'slow'(600));  -> .hide()/.hide(1500);
+// 2. Скорость/кривая Безье(easing)(linear/swing) -> .hide('fast','linear');
+// 3. С функцией(complete(callback,this)) -> .hide( 500,"linear",function(){alert(эл.)})
+// 4. Очередь(queue)(true(в очереди),false(сразу)) -> .hide( 500,"linear",function(){alert(эл.)},false)
 // альтернатива прописать всё:
 // p.hide({ // скрывыаем элементы <p> в документе
 //   duration: 800, // продолжительность анимации
@@ -75,13 +93,30 @@
 //   queue: false, // не ставим в очередь
 // });
 
+// !!!
+// $(document).ready(function () {
+//   $("button").click(function () {
+//     // задаем функцию при нажатиии на элемент <button>
+//     $("div").click(); // вызываем событие click на элементе <div>
+//   });
+//   $("div").click(function () {
+//     // задаем функцию при нажатиии на элемент <div>
+//     $("div").toggle(); // отображаем, или скрываем элемент
+//   });
+// });
+// !!!
+
 // скрыть/показать элем анимировано. -> .hide()/.show(); !основн. аргум.
+$(".DoC1-ul li:nth-child(5) p").hide(1000).show(3000);
 
-// скрыть/показать прозрачность элем -> .fadeOut()/.fadeIn(); .fadeToggle() - для всего; !основн. аргум.
+// скрыть/вкл. прозрачность элем -> .fadeOut()/.fadeIn(); .fadeToggle() - для всего?; !основн. аргум.
+$(".DoC1-ul li:nth-child(6) p").fadeOut(1000).fadeIn(3000);
 
-// скрыть, вкл. прозрачность элем -> .fadeTo(); 3 аргум.(время, % прозрачности, функц); .fadeTo(500, 0.5).fadeTo(800, 1)
+// скрыть/вкл. прозрачность элем -> .fadeTo(); 3 аргум.(время, % прозрачности, функц); .fadeTo(500, 0.5).fadeTo(800, 1)
+$(".DoC1-ul li:nth-child(7) p").fadeTo(1000, 0).fadeTo(3000, 1);
 
-// свернуть(вниз)/развернуть(вверх) элем анимировано. -> .slideDown()/.slideUp(); .slideToggle() - для всего; !основн. аргум.
+// свернуть(вниз)/развернуть(вверх) элем анимировано. -> .slideDown()/.slideUp(); .slideToggle() - для всего?; !основн. аргум.
+// $(".DoC1-ul li:nth-child(7) p").
 
 // атрибут - взять/добавить(изменить)/удалить -> .attr('src'); / .attr('title', 'Подсказка'); / .removeAttr('src');
 
@@ -103,44 +138,53 @@
   */
 }
 
-console.log("Doc.0");
-
-$(function () {
-  console.log("Doc.1");
-  // скрываем(делает прозрачным) переданый эл. за 1ое переданое время и возвращаем эл. за 2ое переданное время
-  function elementOut(element, time1, time2, newClass, time3) {
-    // получаем аргументы в вызове функц
-    if (time1 > 5000 || time1 < 1000 || isNaN(time1) || isNaN(time2)) {
-      // е/и время больше 5с или меньш 1с или там не число
-      return false; // возвр ложь - не верно
-    } else {
-      // иначе
-      var className = "." + element; // в переменную запис. класс с аргум
-      $(className).fadeOut(time1).fadeIn(time2).addClass(newClass, time3);
-      // .removeClass(className)
-      // .addClass(className)
-      // .fadeOut(time1)
-      // .fadeIn(time2); // скрываем эл. за время
-    }
-  }
-  elementOut("DoP-ul", 1000, 1000, "DoP-cl", 5000); // вызов функц с передачей эл. и времени
-
-  // опред. тегу добав. подсказку
-  function changeAttr1(element, newAttr, newValue) {
-    console.log("Doc.2");
+console.log("DoC1.1");
+// ??? не раб - добавл. класс со стилями срабатывает сразу, не через время
+// ??? не раб - хочу добаыть имя класса и позже в ф() добавить к нем теги на которые и будет раб ф(). пока не получ
+// скрываем(делает прозрачным) переданый эл. за 1ое переданое время и возвращаем эл. за 2ое переданное время + добавляем класс со стилям
+function elementOut(element, time1, time2, newClass, time3) {
+  // получаем аргументы в вызове функц
+  if (time1 > 5000 || time1 < 1000 || isNaN(time1) || isNaN(time2)) {
+    // е/и время больше 5с или меньш 1с или там не число
+    return false; // возвр ложь - не верно
+  } else {
+    // иначе
+    // var className = "." + element; // в переменную запис. класс с аргум
+    // var childClass = className + $("li:even");
     var tagName = element;
-    $(tagName).attr(newAttr, newValue);
+    $(tagName)
+      .fadeOut(
+        time1,
+        "linear",
+        function () {
+          console.log("f() elementOut");
+        },
+        true
+      )
+      .fadeIn(time2)
+      .addClass(newClass, time3);
+    // .removeClass(className)
+    // .addClass(className)
+    // .fadeOut(time1)
+    // .fadeIn(time2); // скрываем эл. за время
   }
-  changeAttr1(".DoP-ul li img:not([src*=2])", "title", "Подсказка 1");
+}
+elementOut(".DoC1-ul > li:nth-child(3)", 1000, 3000, "DoC1-cl", 15000); // вызов функц с передачей эл. и времени
 
-  // опред. классу добав. подсказку
-  function changeAttr2(element, newAttr, newValue) {
-    console.log("Doc.3");
-    var className = "." + element;
-    $(className).attr(newAttr, newValue);
-  }
-  changeAttr2("DoP-div1", "title", "Подсказка 2");
-});
+// опред. тегу добав. подсказку
+function changeAttr1(element, newAttr, newValue) {
+  var tagName = element;
+  $(tagName).attr(newAttr, newValue);
+}
+changeAttr1(".DoC1-ul li img:not([src*=2])", "title", "Подсказка 1");
+
+// опред. классу добав. подсказку
+function changeAttr2(element, newAttr, newValue) {
+  var className = "." + element;
+  $(className).attr(newAttr, newValue);
+}
+changeAttr2("DoC1-div1", "title", "Подсказка 2");
+// });
 // ->
 // ->
 // ->

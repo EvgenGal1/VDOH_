@@ -253,6 +253,21 @@ header {
         @include ulliul();
       }
     }
+    @media (max-width: 1212px) {
+      &:nth-child(6) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 1106px) {
+      &:nth-child(5) {
+        @include ulliul();
+      }
+    }
+    @media (max-width: 1009px) {
+      &:nth-child(4) {
+        @include ulliul();
+      }
+    }
     @media (max-width: 903px) {
       &:nth-child(3) {
         @include ulliul();
