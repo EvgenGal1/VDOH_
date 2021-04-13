@@ -108,7 +108,6 @@
             ><span class="link__firct-bykv">И</span>
             <span class="link__last-bykv">гры</span>
           </a>
-          <!-- обернуть слово в тег, зажать shift + <> -->
           <ul class="ul">
             <li class="ul-li ibg">
               <a class="ul-li-a ibg" href="../../Game/Games/sapper.html">
@@ -233,7 +232,7 @@
       </div>
       <hr />
       <div class="spravochs-block pc1">
-        <div class="DoC1" id="DoC1">
+        <!-- <div class="DoC1" id="DoC1">
           <div class="DoC1-prob">
             <ul class="DoC1-ul">
               <li id="D-u__li1">
@@ -460,7 +459,7 @@
                       <p>видимый</p>
                     </div>
                     <div>Исключение</div>
-                    <!-- <button class="DoC2-btn">Кнопка</button> -->
+                    <button class="DoC2-btn">Кнопка</button>
                   </td>
                 </tr>
                 <tr class="DoC2-row">
@@ -498,40 +497,146 @@
             </table>
           </div>
         </div>
-        <hr />
+        <hr /> -->
         <div class="DoC3" id="DoC3">
           <table>
+            <!-- шапка -->
             <tr>
               <th>Название/Действие</th>
               <th>Описание/Альтернатива</th>
-              <th>Пуск/Настроки</th>
+              <th>Пуск</th>
+              <!-- /Настроки -->
             </tr>
+            <!-- Выбор эл. -->
             <tr>
-              <td colspan="3">Выборка элементов</td>
+              <td colspan="3">Выбор элемента</td>
             </tr>
+            <!-- выбор эл. -->
             <tr>
-              <td>вложеность/порядок</td>
+              <td>два способа</td>
               <td>
-                <span class="token jq">$</span><span class="token punct">(</span
-                ><span class="token elem">'menu li'</span
-                ><span class="token punct">)</span>
+                <span class="token">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span class="token">
+                  <span class="jq">jquery</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                >
               </td>
               <td>Пип</td>
             </tr>
+            <!-- Выборка эл. -->
             <tr>
-              <td>Josephin Tan</td>
-              <td>$150</td>
-              <td>-</td>
+              <td colspan="3">Выборка элементов</td>
             </tr>
+            <!-- базовые -->
             <tr>
-              <td>Joyce Ming</td>
-              <td>$200</td>
-              <td>$35</td>
+              <td>
+                Базовые: все / тег / класс / id / перечисление
+                <!-- <div>тег / класс / id</div> -->
+              </td>
+              <td>
+                <span class="token" title="выбор всех элементов">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'*'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span class="token" title="выбор всех тегов (а)">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'a'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span class="token" title="выбор класса (класс menu)">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'.menu'</span
+                  ><span class="punct">)</span></span
+                >
+                /
+                <span class="token" title="выбор идентифокатора (id ul)">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'#ul'</span
+                  ><span class="punct">)</span></span
+                >
+                /
+                <span
+                  class="token"
+                  title="выбор перечисленых эл. (тег a, класс .menu, id #ul)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'a, .menu, #ul'</span
+                  ><span class="punct">)</span></span
+                >
+              </td>
+              <td>Пип</td>
             </tr>
+            <!-- вложенность / дочерний / ближайший / следюущей -->
             <tr>
-              <td>James A. Pentel</td>
-              <td>$175</td>
-              <td>$25</td>
+              <td>вложеность(потомок) / дочерний / ближайший / следюущей</td>
+              <td>
+                <span class="token" title="выбор всех потомков (все li)">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span
+                  class="token"
+                  title="выбор только прямых потомков (сыновей)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu > li'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span
+                  class="token"
+                  title="выбор ближайшего ниже (только первый <p>)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li a + p'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span
+                  class="token"
+                  title="выбор всех следующих (все дочерние <p>)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li a ~ p'</span
+                  ><span class="punct">)</span></span
+                >
+              </td>
+              <td>Пип</td>
+            </tr>
+            <!-- ближайший / следюущей -->
+            <tr>
+              <td>ближайший / следюущей</td>
+              <td>
+                <span
+                  class="token"
+                  title="выбор ближайшего ниже (только первый <p>)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li a + p'</span
+                  ><span class="punct">)</span></span
+                >
+                <span> / </span>
+                <span
+                  class="token"
+                  title="выбор всех следующих (все дочерние <p>)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li a ~ p'</span
+                  ><span class="punct">)</span></span
+                >
+              </td>
+              <td>Пип</td>
             </tr>
           </table>
         </div>
@@ -555,8 +660,9 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/jQuery.js"></script>
-<script src="/js/jQueryDoС.js"></script>
+<script src="/js/jQueryDoC.js"></script>
 <script src="/js/jQueryDoP.js"></script>
+
     <script src="../../../js/main.js"></script>
     <!-- <script src="/js/custom.js"></script> -->
   </body>

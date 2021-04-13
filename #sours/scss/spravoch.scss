@@ -148,51 +148,121 @@
     table {
       width: 100%;
       display: table;
+      // table-layout: fixed;
     }
     th {
-      font-size: 16px;
-      font-weight: normal;
       font-size: 25px;
       font-weight: 700;
       font-style: italic;
-      background: #8b0000;
-      border-top: 5px solid #4b0000;
-      border-bottom: 1px solid black;
+      background: $DarkRed;
+      border-top: 5px solid $CrimsonBrown;
+      border-bottom: 2px solid black;
       color: yellow;
       text-shadow: 1px 1px black;
-      text-shadow: 0.5px 0.3px 0.5px #000;
       padding: 8px;
+      vertical-align: middle;
+      text-align: center;
     }
     td {
+      vertical-align: middle;
       font-size: 20px;
-      background: #a3a3a3;
+      font-weight: 600;
+      background: $WhiteAlum;
       border-bottom: 1px solid black;
-      color: #555555;
+      color: $WetAsphalt;
       border-top: 1px solid transparent;
-      padding: 8px;
+      padding: 10px 10px 15px;
+    }
+    td:last-child {
+      width: 10%;
     }
     tr:hover {
       td {
-        background-color: #333333;
+        background-color: $SignalBlack;
         color: #000;
-        text-shadow: 1px 1px 0px #555555;
+        text-shadow: 1px 1px 0px $WetAsphalt;
+        .token {
+          background: $WetAsphalt;
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            background: $WetAsphalt;
+            left: 75%;
+            bottom: -4px;
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 3px #000;
+            z-index: -1;
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+          &::before {
+            z-index: 0; /* Накладываем поверх, чтобы скрыть следы тени */
+            box-shadow: none; /* Прячем тень */
+          }
+          &:hover {
+            background: $DullGray;
+            border: 1px solid yellow;
+            &::after,
+            &::before {
+              background: $DullGray;
+              border-bottom: 1px solid yellow;
+              border-right: 1px solid yellow;
+            }
+          }
+        }
       }
     }
     td[colspan] {
+      vertical-align: middle;
+      text-align: center;
       background-color: $DullGray;
       color: #000;
     }
-    // tr:nth-child(2n)
-
-    .token.jq {
-      color: #4d6e32;
+    .token {
+      text-shadow: none;
+      background: $DullGray;
+      .jq {
+        color: #24f100;
+      }
+      .punct {
+        color: #ff9900;
+      }
+      .elem {
+        color: #ffd080;
+      }
     }
-    .token.punct {
-      color: #f5b400;
+    .token {
+      z-index: 2;
+      white-space: nowrap;
+      border: 1px solid #555555;
+      border-radius: 5px;
+      padding-bottom: 5px;
+      position: relative;
+      background: #707070;
+      box-shadow: 0 0 3px #000;
     }
-    .token.elem {
-      color: #ffda75;
-    }
+    // .token::after,
+    // .token::before {
+    //   content: "";
+    //   position: absolute;
+    //   background: #707070;
+    //   left: 75%;
+    //   bottom: -4px;
+    //   width: 8px;
+    //   height: 8px;
+    //   box-shadow: 0 0 3px #000;
+    //   z-index: -1;
+    //   -ms-transform: rotate(45deg);
+    //   transform: rotate(45deg);
+    //   -webkit-transform: rotate(45deg);
+    // }
+    // .token::before {
+    //   z-index: 0; /* Накладываем поверх, чтобы скрыть следы тени */
+    //   box-shadow: none; /* Прячем тень */
+    // }
   }
 }
 

@@ -3,10 +3,10 @@
 // подкл онлайн -> <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 // в подвал -> просто <script> перед </body>.
 // в шапку, пишем так -> $(document).ready(function(){ // код // }) или $(function(){ // код // })
-
+// $(document).ready(function(){}
 // код для примера -> =========================================================================================
-{
-  /* 
+// {
+/* 
     <div class="DoC1 pc1" id="DoC">
       <div class="DoC1-prob">
         <ul class="DoC1-ul">
@@ -24,20 +24,13 @@
       </div>
     </div>
   */
-}
+// }
 
 // выбор эл. -> ===========================================================================================
 // $('') или jquery('');
 
 // выборка эл. -> ===========================================================================================
 // тег - $('а'), класс - $('.menu'), id - $('#ul'),
-function has() {
-  var sp = $(".DoC3 td span[class]");
-  $(".DoC3 td:hac(span[class])");
-  console.log("DoC1.5");
-  // .css(border, red);
-}
-has();
 // вложеность/порядок - $('menu li'), дочерний - $('menu > li'), ближ.сосед - $('menu li a + img'), перечисление - $('menu, li, img'),
 // атрибут - $('img[src]'), атриб.детали - $('img[src=img/img1.jpg]'), атриб.начало - $('img[src^=img/]'), атриб.конец - $('img[src$=.jpg]'), атриб.везде - $('img[src*=3]'),
 // чётные - $('menu li:even'), не чётные - $('menu li:odd'),
@@ -92,19 +85,6 @@ $(".DoC1-ul li:nth-child(2) a").html("<p>Нов. текст 2</p>");
 //   },
 //   queue: false, // не ставим в очередь
 // });
-
-// !!!
-// $(document).ready(function () {
-//   $("button").click(function () {
-//     // задаем функцию при нажатиии на элемент <button>
-//     $("div").click(); // вызываем событие click на элементе <div>
-//   });
-//   $("div").click(function () {
-//     // задаем функцию при нажатиии на элемент <div>
-//     $("div").toggle(); // отображаем, или скрываем элемент
-//   });
-// });
-// !!!
 
 // скрыть/показать элем анимировано. -> .hide()/.show(); !основн. аргум.
 $(".DoC1-ul li:nth-child(5) p").hide(1000).show(3000);
@@ -184,7 +164,29 @@ function changeAttr2(element, newAttr, newValue) {
   $(className).attr(newAttr, newValue);
 }
 changeAttr2("DoC1-div1", "title", "Подсказка 2");
+
+// !!!
+//</DoC3>˅=========================================================================˅
+
+// function addBackgroundToken() {
+//   var classToken = $(".DoC3 td span[class*=token]");
+//   $(classToken).css("background", "#707070");
+// }
+// addBackgroundToken();
+
+//</DoC3>˄=========================================================================˄
+// !!!
+// $(document).ready(function () {
+//   $("button").click(function () {
+//     // задаем функцию при нажатиии на элемент <button>
+//     $("div").click(); // вызываем событие click на элементе <div>
+//   });
+//   $("div").click(function () {
+//     // задаем функцию при нажатиии на элемент <div>
+//     $("div").toggle(); // отображаем, или скрываем элемент
+//   });
 // });
+// !!!
 // ->
 // ->
 // ->
