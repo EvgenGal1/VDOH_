@@ -1262,7 +1262,7 @@ footer {
   display: table; }
 
 .spravochs-block .DoC3 th {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   background: #8b0000;
@@ -1276,21 +1276,34 @@ footer {
 
 .spravochs-block .DoC3 td {
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   background: #a3a3a3;
   border-bottom: 1px solid black;
   color: #555555;
+  text-shadow: 0.3px 0.3px 0px #000;
   border-top: 1px solid transparent;
-  padding: 10px 10px 15px; }
+  padding: 5px 5px 7px; }
+
+.spravochs-block .DoC3 td[colspan] {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #707070;
+  color: #000;
+  text-shadow: none; }
+  .spravochs-block .DoC3 td[colspan]:hover {
+    text-shadow: 0.5px 0.5px 0px #555555; }
+
+.spravochs-block .DoC3 td:first-child {
+  width: 25%; }
 
 .spravochs-block .DoC3 td:last-child {
   width: 10%; }
 
 .spravochs-block .DoC3 tr:hover td {
-  background-color: #333333;
+  background-color: #707070;
   color: #000;
-  text-shadow: 1px 1px 0px #555555; }
+  text-shadow: 0.3px 0.3px 0px #a3a3a3; }
   .spravochs-block .DoC3 tr:hover td .token {
     background: #555555; }
     .spravochs-block .DoC3 tr:hover td .token::after, .spravochs-block .DoC3 tr:hover td .token::before {
@@ -1298,7 +1311,7 @@ footer {
       position: absolute;
       background: #555555;
       left: 75%;
-      bottom: -4px;
+      bottom: -5px;
       width: 8px;
       height: 8px;
       -webkit-box-shadow: 0 0 3px #000;
@@ -1314,22 +1327,24 @@ footer {
       box-shadow: none;
       /* Прячем тень */ }
     .spravochs-block .DoC3 tr:hover td .token:hover {
-      background: #707070;
+      background: #333333;
       border: 1px solid yellow; }
       .spravochs-block .DoC3 tr:hover td .token:hover::after, .spravochs-block .DoC3 tr:hover td .token:hover::before {
-        background: #707070;
+        background: #333333;
         border-bottom: 1px solid yellow;
         border-right: 1px solid yellow; }
 
-.spravochs-block .DoC3 td[colspan] {
-  vertical-align: middle;
-  text-align: center;
-  background-color: #707070;
-  color: #000; }
-
 .spravochs-block .DoC3 .token {
+  z-index: 2;
+  position: relative;
+  white-space: nowrap;
+  padding: 2px 4px;
   text-shadow: none;
-  background: #707070; }
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  background: #707070;
+  border: 1px solid #555555;
+  border-radius: 5px; }
   .spravochs-block .DoC3 .token .jq {
     color: #24f100; }
   .spravochs-block .DoC3 .token .punct {
@@ -1337,16 +1352,23 @@ footer {
   .spravochs-block .DoC3 .token .elem {
     color: #ffd080; }
 
-.spravochs-block .DoC3 .token {
-  z-index: 2;
-  white-space: nowrap;
-  border: 1px solid #555555;
+.spravochs-block .DoC3 #tooltip {
+  z-index: 9999;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-width: 180px;
+  padding: 3px 5px;
+  color: white;
+  font-size: 16px;
+  font-family: serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  background-color: #333333;
+  border: 0.3px solid yellow;
   border-radius: 5px;
-  padding-bottom: 5px;
-  position: relative;
-  background: #707070;
-  -webkit-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000; }
+  opacity: 0.9; }
 
 body {
   background-color: #e8e8e8;

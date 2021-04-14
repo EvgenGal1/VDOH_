@@ -323,79 +323,83 @@
               <th>Пуск</th>
               <!-- /Настроки -->
             </tr>
+            <!-- Выбор/Выборка эл. -->
+            <tr>
+              <td colspan="3">Выбор/Выборка элементов</td>
+            </tr>
             <!-- Выбор эл. -->
             <tr>
-              <td colspan="3">Выбор элемента</td>
-            </tr>
-            <!-- выбор эл. -->
-            <tr>
-              <td>два способа</td>
-              <td>
-                <span class="token">
+              <td class="descr">
+                Два способа: <br />
+                <span>По умолчанию</span> / <span>Без конфликтный</span>
+              </td>
+              <td class="tokens">
+                <span class="token" data-tooltip="Подсказка 1">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">''</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token">
+                <span class="token" data-tooltip="Подсказка 2">
                   <span class="jq">jquery</span><span class="punct">(</span
                   ><span class="elem">''</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
               </td>
-              <td>Пип</td>
+              <td class="act">Пип</td>
             </tr>
             <!-- Выборка эл. -->
-            <tr>
-              <td colspan="3">Выборка элементов</td>
-            </tr>
             <!-- базовые -->
             <tr>
-              <td>
-                Базовые: все / тег / класс / id / перечисление
-                <!-- <div>тег / класс / id</div> -->
+              <td class="descr">
+                Базовые: <br />
+                <span>все</span> / <span>тег</span> / <span>класс</span> /
+                <span>id</span> / <span>перечисление</span>
               </td>
-              <td>
-                <span class="token" title="выбор всех элементов">
+              <td class="tokens">
+                <span class="token" data-tooltip="выбор всех элементов">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'*'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token" title="выбор всех тегов (а)">
+                <span class="token" data-tooltip="выбор всех тегов (а)">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'a'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token" title="выбор класса (класс menu)">
+                <span class="token" data-tooltip="выбор класса (класс menu)">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'.menu'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 /
-                <span class="token" title="выбор идентифокатора (id ul)">
+                <span class="token" data-tooltip="выбор идентифокатора (id ul)">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'#ul'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 /
                 <span
                   class="token"
-                  title="выбор перечисленых эл. (тег a, класс .menu, id #ul)"
+                  data-tooltip="выбор перечисленых эл. (тег a, класс .menu, id #ul)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'a, .menu, #ul'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
               </td>
-              <td>Пип</td>
+              <td class="act">Пип</td>
             </tr>
-            <!-- вложенность / дочерний / ближайший / следюущей -->
+            <!-- вложенность -->
             <tr>
-              <td>вложеность(потомок) / дочерний / ближайший / следюущей</td>
-              <td>
-                <span class="token" title="выбор всех потомков (все li)">
+              <td class="descr">
+                <span>вложеность(потомок)</span> / <span>дочерний</span> /
+                <span>ближайший</span> / <span>следюущей</span>
+              </td>
+              <td class="tokens">
+                <span class="token" data-tooltip="выбор всех потомков (все li)">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'menu li'</span
                   ><span class="punct">)</span></span
@@ -403,56 +407,118 @@
                 <span> / </span>
                 <span
                   class="token"
-                  title="выбор только прямых потомков (сыновей)"
+                  data-tooltip="выбор только прямых потомков (сыновей)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'menu > li'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
                 <span
                   class="token"
-                  title="выбор ближайшего ниже (только первый <p>)"
+                  data-tooltip="выбор ближайшего ниже (только первый <p>)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'menu li a + p'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
                 <span
                   class="token"
-                  title="выбор всех следующих (все дочерние <p>)"
+                  data-tooltip="выбор всех следующих (все дочерние <p>)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'menu li a ~ p'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
               </td>
-              <td>Пип</td>
+              <td class="act">Пип</td>
             </tr>
-            <!-- ближайший / следюущей -->
+            <!-- атрибуты -->
             <tr>
-              <td>ближайший / следюущей</td>
-              <td>
+              <td class="descr">
+                <span>атрибут</span> / <span>свойства</span> /
+                <span>начало</span> / <span>конец</span> / <span>везде</span>
+              </td>
+              <td class="tokens">
                 <span
                   class="token"
-                  title="выбор ближайшего ниже (только первый <p>)"
+                  data-tooltip="выбор по наличию атрибута (в img атриб. src)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
-                  ><span class="elem">'menu li a + p'</span
+                  ><span class="elem">'img[src]'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
                 <span> / </span>
                 <span
                   class="token"
-                  title="выбор всех следующих (все дочерние <p>)"
+                  data-tooltip="выбор по свойству атритуба (в src путь)"
                 >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img[src=img1.jpg]'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор по начальному значению (img в начале пути)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img[src^=img/]'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор по конечному значению (jpg в конце пути)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img[src$=.jpg]'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span><span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор по значению в наличии (3 в пути)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img[src*=3]'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- атрибуты -->
+            <tr>
+              <td class="descr">
+                <span>?</span> / <span>??</span> / <span>???</span> /
+                <span>????</span>
+              </td>
+              <td class="tokens">
+                <span class="token" data-tooltip="?">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span class="token" data-tooltip="??">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu > li'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span class="token" data-tooltip="???">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li a + p'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span class="token" data-tooltip="????">
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'menu li a ~ p'</span
                   ><span class="punct">)</span></span
-                >
+                ><span id="tooltip"></span>
               </td>
-              <td>Пип</td>
+              <td class="act">Пип</td>
             </tr>
           </table>
         </div>

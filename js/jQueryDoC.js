@@ -168,13 +168,93 @@ changeAttr2("DoC1-div1", "title", "Подсказка 2");
 // !!!
 //</DoC3>˅=========================================================================˅
 
+// добав. фон <span> с классом .token
 // function addBackgroundToken() {
 //   var classToken = $(".DoC3 td span[class*=token]");
 //   $(classToken).css("background", "#707070");
 // }
 // addBackgroundToken();
 
+// всплывашка (pop-up) для .token
+function showPopUp() {
+  $("[data-tooltip]")
+    .mousemove(function (eventObject) {
+      $data_tooltip = $(this).attr("data-tooltip");
+
+      $("#tooltip")
+        .text($data_tooltip)
+        .css({
+          top: eventObject.pageY + 20,
+          left: eventObject.pageX + 0,
+        })
+        .show();
+    })
+    .mouseout(function () {
+      $("#tooltip").hide().text("").css({
+        top: 0,
+        left: 0,
+      });
+    });
+}
+showPopUp();
+
+// ??? не раб - не могу прописать чтоб при наведении на (.descr span) или (.tokens .token) выделялся ктото противоположный из них. думаю тут нужен цикл (each или массив).
+// добав. рамку кл.token при наведении на кл.descr и убрать.
+// добав. фон кл.descr при наведении на кл.token и убрать.
+function highlightRelated1() {
+  // var getTrHasClBadge = $("tr:has(.descr)");
+  // if ($(getTrHasClBadge)) {
+  var getClBadge = $(".descr span");
+  var getClToken = $(".tokens .token");
+  // span:nth-child(1)
+  getClBadge.hover(
+    function () {
+      $(this).css({
+        background: "#555555",
+        "border-radius": "8px",
+      });
+    },
+    function () {
+      $(this).css({
+        background: "none",
+        "border-radius": "none",
+      });
+      // $(getClToken).css({ border: "1px solid yellow" });
+      // $(getClToken).after().css({ border: "1px solid yellow" })
+      // }
+    }
+  );
+}
+// highlightRelated1();
+
+// function highlightRelated2() {
+//   var getClBadge = $(".descr > span:nth-child(1)");
+//   var getClToken = $(".token:nth-child(1)");
+//   // span:nth-child(1)
+//   $(getClBadge).mouseover(function () {
+//     // .mouseover(function () {
+//     if ($(this)) {
+//       $(getClToken).css({ border: "1px solid #555555" });
+//       // $(getClToken).after().css({ border: "1px solid #555555" });
+//     }
+//   });
+// }
+// highlightRelated2();
+
+function highlightRelated3() {
+  console.log("DoC.3.1");
+  var getTrHasClBadge = $("tr:has(.descr)");
+  $(this).mouseover(function () {
+    highlightRelated1();
+  });
+  // $(getTrHasClBadge).mouseout(function () {
+  //   highlightRelated2();
+  // });
+}
+highlightRelated3();
 //</DoC3>˄=========================================================================˄
+// !!!
+
 // !!!
 // $(document).ready(function () {
 //   $("button").click(function () {

@@ -151,7 +151,7 @@
       // table-layout: fixed;
     }
     th {
-      font-size: 25px;
+      font-size: 23px;
       font-weight: 700;
       font-style: italic;
       background: $DarkRed;
@@ -165,31 +165,46 @@
     }
     td {
       vertical-align: middle;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       background: $WhiteAlum;
       border-bottom: 1px solid black;
       color: $WetAsphalt;
+      text-shadow: 0.3px 0.3px 0px #000;
       border-top: 1px solid transparent;
-      padding: 10px 10px 15px;
+      padding: 5px 5px 7px;
+    }
+    td[colspan] {
+      vertical-align: middle;
+      text-align: center;
+      background-color: $DullGray;
+      color: #000;
+      text-shadow: none;
+      &:hover {
+        text-shadow: 0.5px 0.5px 0px $WetAsphalt;
+      }
+    }
+    td:first-child {
+      width: 25%;
     }
     td:last-child {
       width: 10%;
     }
     tr:hover {
       td {
-        background-color: $SignalBlack;
+        background-color: $DullGray;
         color: #000;
-        text-shadow: 1px 1px 0px $WetAsphalt;
+        text-shadow: 0.3px 0.3px 0px $WhiteAlum;
         .token {
           background: $WetAsphalt;
+          // ??? хз зачем афтер
           &::after,
           &::before {
             content: "";
             position: absolute;
             background: $WetAsphalt;
             left: 75%;
-            bottom: -4px;
+            bottom: -5px;
             width: 8px;
             height: 8px;
             box-shadow: 0 0 3px #000;
@@ -203,11 +218,12 @@
             box-shadow: none; /* Прячем тень */
           }
           &:hover {
-            background: $DullGray;
+            background: $SignalBlack;
             border: 1px solid yellow;
+            // ??? хз зачем афтер
             &::after,
             &::before {
-              background: $DullGray;
+              background: $SignalBlack;
               border-bottom: 1px solid yellow;
               border-right: 1px solid yellow;
             }
@@ -215,15 +231,16 @@
         }
       }
     }
-    td[colspan] {
-      vertical-align: middle;
-      text-align: center;
-      background-color: $DullGray;
-      color: #000;
-    }
     .token {
+      z-index: 2;
+      position: relative;
+      white-space: nowrap; // не переносит текст
+      padding: 2px 4px;
       text-shadow: none;
+      box-shadow: 0 0 3px #000;
       background: $DullGray;
+      border: 1px solid #555555;
+      border-radius: 5px;
       .jq {
         color: #24f100;
       }
@@ -234,35 +251,24 @@
         color: #ffd080;
       }
     }
-    .token {
-      z-index: 2;
-      white-space: nowrap;
-      border: 1px solid #555555;
+    #tooltip {
+      z-index: 9999;
+      display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      max-width: 180px;
+      padding: 3px 5px;
+      color: white;
+      font-size: 16px;
+      font-family: serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      background-color: #333333;
+      border: 0.3px solid yellow;
       border-radius: 5px;
-      padding-bottom: 5px;
-      position: relative;
-      background: #707070;
-      box-shadow: 0 0 3px #000;
+      opacity: 0.9;
     }
-    // .token::after,
-    // .token::before {
-    //   content: "";
-    //   position: absolute;
-    //   background: #707070;
-    //   left: 75%;
-    //   bottom: -4px;
-    //   width: 8px;
-    //   height: 8px;
-    //   box-shadow: 0 0 3px #000;
-    //   z-index: -1;
-    //   -ms-transform: rotate(45deg);
-    //   transform: rotate(45deg);
-    //   -webkit-transform: rotate(45deg);
-    // }
-    // .token::before {
-    //   z-index: 0; /* Накладываем поверх, чтобы скрыть следы тени */
-    //   box-shadow: none; /* Прячем тень */
-    // }
   }
 }
 
