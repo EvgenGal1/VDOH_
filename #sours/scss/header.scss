@@ -27,6 +27,7 @@ header {
 // <LOGO>============================================
 .header-logo {
   .header-logo-smail {
+    position: relative;
     width: 100px;
     height: 100px;
     // height: 100%;
@@ -42,6 +43,60 @@ header {
     @include flexbox();
     flex-direction: column;
     justify-content: space-between;
+    &:hover {
+      .logo-down,
+      .logo-up {
+        display: none;
+      }
+      .logo-img {
+        position: inherit;
+        top: 0;
+        left: 0;
+        width: auto;
+        // анимаци логотипа
+        &:hover {
+          transition: 0.5s ease-in-out 0s;
+          animation: logIm 5s infinite;
+        }
+        // ??? не раб - плавные переход с уменьшением
+        @keyframes logIm {
+          0% {
+            transform: rotate(0deg) scale(0.85);
+          }
+          12% {
+            // transform: rotate(45deg) scale(0.85);
+          }
+          25% {
+            transform: rotate(90deg) scale(0.85);
+          }
+          37% {
+            // transform: rotate(135deg) scale(0.85);
+          }
+          50% {
+            transform: rotate(180deg) scale(0.85);
+          }
+          62% {
+            // transform: rotate(225deg) scale(0.85);
+          }
+          75% {
+            transform: rotate(270deg) scale(0.85);
+          }
+          87% {
+            // transform: rotate(315deg) scale(0.85);
+          }
+          100% {
+            transform: rotate(360deg) scale(0.85);
+          }
+        }
+        // !
+      }
+    }
+    .logo-img {
+      position: absolute;
+      left: 22%;
+      top: 22%;
+      width: 48px;
+    }
     .logo-down {
       text-align: right;
     }
