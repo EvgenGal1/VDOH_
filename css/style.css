@@ -1305,7 +1305,8 @@ footer {
   color: #000;
   text-shadow: 0.3px 0.3px 0px #a3a3a3; }
   .spravochs-block .DoC3 tr:hover td .token {
-    background: #555555; }
+    background: #555555;
+    cursor: pointer; }
     .spravochs-block .DoC3 tr:hover td .token::after, .spravochs-block .DoC3 tr:hover td .token::before {
       content: "";
       position: absolute;
@@ -1316,11 +1317,10 @@ footer {
       height: 8px;
       -webkit-box-shadow: 0 0 3px #000;
       box-shadow: 0 0 3px #000;
-      z-index: -1;
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-      -webkit-transform: rotate(45deg); }
-    .spravochs-block .DoC3 tr:hover td .token::before {
+      -webkit-transform: rotate(45deg);
+      z-index: -1;
       z-index: 0;
       /* Накладываем поверх, чтобы скрыть следы тени */
       -webkit-box-shadow: none;
@@ -1338,6 +1338,9 @@ footer {
   z-index: 2;
   position: relative;
   white-space: nowrap;
+  display: inline-block;
+  /* overflow: hidden; */
+  margin: 5px auto;
   padding: 2px 4px;
   text-shadow: none;
   -webkit-box-shadow: 0 0 3px #000;

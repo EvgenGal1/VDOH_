@@ -197,6 +197,7 @@
         text-shadow: 0.3px 0.3px 0px $WhiteAlum;
         .token {
           background: $WetAsphalt;
+          cursor: pointer;
           // ??? хз зачем афтер
           &::after,
           &::before {
@@ -208,13 +209,12 @@
             width: 8px;
             height: 8px;
             box-shadow: 0 0 3px #000;
-            z-index: -1;
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
-          }
-          &::before {
+            z-index: -1;
             z-index: 0; /* Накладываем поверх, чтобы скрыть следы тени */
+            // ??? не раб - не скрываеться за блоком, видна тень если не скрывать
             box-shadow: none; /* Прячем тень */
           }
           &:hover {
@@ -235,6 +235,9 @@
       z-index: 2;
       position: relative;
       white-space: nowrap; // не переносит текст
+      display: inline-block;
+      /* overflow: hidden; */
+      margin: 5px auto;
       padding: 2px 4px;
       text-shadow: none;
       box-shadow: 0 0 3px #000;

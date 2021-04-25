@@ -35,9 +35,10 @@
 // атрибут - $('img[src]'), атриб.детали - $('img[src=img/img1.jpg]'), атриб.начало - $('img[src^=img/]'), атриб.конец - $('img[src$=.jpg]'), атриб.везде - $('img[src*=3]'),
 // чётные - $('menu li:even'), не чётные - $('menu li:odd'),
 // первый - $('li:first'), последний - $('li:last'), определённый(7) - $('li:nth-child(7)')
-// не выбор - $('img:not([src*=3])'),
-// имеет внутри тег - $('li:has(ul)'), имеет внутри текст - $('p:contains(lorem)'),
+// фильтры: не выбор - $('img:not([src*=3])'), индекс - :eq, больше индекса - :gt,меньше индекса - :lt(index),заголовки - :header, анимированые эл. - :animated
+// имеет внутри тег - $('li:has(ul)'), имеет внутри текст - $('p:contains(lorem)'), пустой - :empty, не пустой - :parent
 // скрытые - $('img:hidden'), видимые - $('img:visibility').
+// формы: выбор всех input, textarea, select, button - :input, :text, пароль - password, флажок - :checkbox, радио - :radio, изо - :image, файл - :file, кнопка - :button, отправка - :submit, сброс - :reset, вкл. - :enabled, откл. - :disabled, проверено - :checked, выбранно - :selected
 
 // переменные -> ===========================================================================================
 // var = $('а')
@@ -207,8 +208,10 @@ function highlightRelated1() {
   var getClBadge = $(".descr span");
   var getClToken = $(".tokens .token");
   // span:nth-child(1)
+  console.log(1);
   getClBadge.hover(
     function () {
+      console.log(2);
       $(this).css({
         background: "#555555",
         "border-radius": "8px",
@@ -241,6 +244,7 @@ function highlightRelated1() {
 // }
 // highlightRelated2();
 
+// вызов ф. highlightRelated1 которая выделяет .descr span
 function highlightRelated3() {
   console.log("DoC.3.1");
   var getTrHasClBadge = $("tr:has(.descr)");

@@ -316,21 +316,48 @@
         <hr /> -->
         <div class="DoC3" id="DoC3">
           <table>
-            <!-- шапка -->
+            <!-- ШАПКА -->
             <tr>
               <th>Название/Действие</th>
               <th>Описание/Альтернатива</th>
               <th>Пуск</th>
               <!-- /Настроки -->
             </tr>
-            <!-- Выбор/Выборка эл. -->
+            <!-- ПОДКЛЮЧЕНИЕ -->
+            <tr>
+              <td colspan="3">Подключение</td>
+            </tr>
+            <!-- !!! -->
+            <!-- Подключение -->
+            <tr>
+              <td class="descr">
+                Подключение: <br />
+                <span>Подкл файл</span> / <span>Подкл онлайн</span>
+              </td>
+              <td class="tokens">
+                <span class="token" data-tooltip="Подсказка 1">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span class="token" data-tooltip="Подсказка 2">
+                  <span class="jq">jquery</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- !!! -->
+            <!-- ВЫБОР/ВЫБОРКА ЭЛ. -->
             <tr>
               <td colspan="3">Выбор/Выборка элементов</td>
             </tr>
             <!-- Выбор эл. -->
             <tr>
               <td class="descr">
-                Два способа: <br />
+                Выбор элемента: <br />
                 <span>По умолчанию</span> / <span>Без конфликтный</span>
               </td>
               <td class="tokens">
@@ -395,6 +422,7 @@
             <!-- вложенность -->
             <tr>
               <td class="descr">
+                Иерархия: <br />
                 <span>вложеность(потомок)</span> / <span>дочерний</span> /
                 <span>ближайший</span> / <span>следюущей</span>
               </td>
@@ -437,6 +465,7 @@
             <!-- атрибуты -->
             <tr>
               <td class="descr">
+                Атрибут: <br />
                 <span>атрибут</span> / <span>свойства</span> /
                 <span>начало</span> / <span>конец</span> / <span>везде</span>
               </td>
@@ -452,7 +481,7 @@
                 <span> / </span>
                 <span
                   class="token"
-                  data-tooltip="выбор по свойству атритуба (в src путь)"
+                  data-tooltip="выбор по свойству атритуба (в img src путь)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'img[src=img1.jpg]'</span
@@ -461,7 +490,7 @@
                 <span> / </span>
                 <span
                   class="token"
-                  data-tooltip="выбор по начальному значению (img в начале пути)"
+                  data-tooltip="выбор по начальному значению (img/ в начале пути)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'img[src^=img/]'</span
@@ -470,7 +499,7 @@
                 <span> / </span>
                 <span
                   class="token"
-                  data-tooltip="выбор по конечному значению (jpg в конце пути)"
+                  data-tooltip="выбор по конечному значению (.jpg в конце пути)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'img[src$=.jpg]'</span
@@ -478,7 +507,7 @@
                 ><span id="tooltip"></span><span> / </span
                 ><span
                   class="token"
-                  data-tooltip="выбор по значению в наличии (3 в пути)"
+                  data-tooltip="выбор по значению в наличии (в пути есть 3)"
                 >
                   <span class="jq">$</span><span class="punct">(</span
                   ><span class="elem">'img[src*=3]'</span
@@ -487,39 +516,337 @@
               </td>
               <td class="act">Пип</td>
             </tr>
-            <!-- атрибуты -->
+            <!-- количественные -->
             <tr>
               <td class="descr">
-                <span>?</span> / <span>??</span> / <span>???</span> /
-                <span>????</span>
+                Число: <br />
+                <span>первый</span> / <span>последний</span> /
+                <span>определённый</span> / <span>чётный</span> /
+                <span>не чётный</span>
               </td>
               <td class="tokens">
-                <span class="token" data-tooltip="?">
+                <span class="token" data-tooltip="первый эл. (первый li)">
                   <span class="jq">$</span><span class="punct">(</span
-                  ><span class="elem">'menu li'</span
+                  ><span class="elem">'li:first'</span
                   ><span class="punct">)</span></span
                 ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token" data-tooltip="??">
+                <span class="token" data-tooltip="последний эл. (последний li)">
                   <span class="jq">$</span><span class="punct">(</span
-                  ><span class="elem">'menu > li'</span
+                  ><span class="elem">'li:last'</span
                   ><span class="punct">)</span></span
                 ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token" data-tooltip="???">
+                <span class="token" data-tooltip="определённый эл. (7ой li)">
                   <span class="jq">$</span><span class="punct">(</span
-                  ><span class="elem">'menu li a + p'</span
+                  ><span class="elem">'li:nth-child(7)'</span
                   ><span class="punct">)</span></span
                 ><span id="tooltip"></span>
                 <span> / </span>
-                <span class="token" data-tooltip="????">
+                <span class="token" data-tooltip="чётные эл. (все чётные li)">
                   <span class="jq">$</span><span class="punct">(</span
-                  ><span class="elem">'menu li a ~ p'</span
+                  ><span class="elem">'menu li:even'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span><span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="не чётные эл. (все не чётные li)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'menu li:odd'</span
                   ><span class="punct">)</span></span
                 ><span id="tooltip"></span>
               </td>
               <td class="act">Пип</td>
             </tr>
+            <!-- контент -->
+            <tr>
+              <td class="descr">
+                Контент: <br />
+                <span>текст</span> / <span>тег</span> / <span>пустой</span> /
+                <span>не пустой</span>
+              </td>
+              <td class="tokens">
+                <span
+                  class="token"
+                  data-tooltip="имеет внутри текст (в 'p' есть текcт 'lorem')"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'p:contains(lorem)'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="имеет внутри тег (в li есть тег 'ul')"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'li:has(ul)'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор пустых эл. (в li ничего)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'li:empty'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор эл. с потомками (в li есть тег(текст))"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'li:parent'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- Фильтры -->
+            <tr>
+              <td class="descr">
+                Фильтры: <br />
+                <span>Отрицание</span> / <span>Индекс</span> /
+                <span>Больше индекса</span> / <span>Меньше индекса</span> / <span>Заголовки</span> / <span>Анимация</span>
+              </td>
+              <td class="tokens">
+                <span
+                  class="token"
+                  data-tooltip="не выбор (в img в пути нет '3')"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img:not([src*=3])'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор по индексу (выбор 3го div)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'div:eq(2)'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор большего индекса (выбор divов с 4го)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'div:gt(2)'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор меньшего индекса (выбор divов до 3го)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'div:lt(2)'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span><span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор заголовков h1-h6"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':header'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор анимированых эл. (div с анимацией)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'div:animated'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- Формы -->
+            <tr>
+              <td class="descr">
+                Формы и их фильтры: <br />
+                <span>Ввод</span> / <span>Текст</span> /
+                <span>Пароль</span> / <span>Флажок</span> / <span>Радио</span> / <span>Изо</span> / <span>Файл</span> / <span>Кнопка</span> / <span>Отправка</span> / <span>Сброс</span> / <span>Вкл.</span> / <span>Откл.</span> / <span>Проверен</span> / <span>Выбран</span>
+              </td>
+              <td class="tokens">
+                <span
+                  class="token"
+                  data-tooltip="выбор input (всех input, textarea, select, button)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':input'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор input с type='text'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':text'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор input с type='password'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':password'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор input с type='checkbox'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':checkbox'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span><span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='radio'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':radio'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='image'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':image'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='file'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':file'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='button'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':button'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='submit'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':submit'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='reset'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">':reset'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор активных (выбраный input)'"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'input:enabled'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор запрещённых (отключенный input)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'input:disabled'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор input с type='checkbox' checked"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'input:checked'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span> / </span
+                ><span
+                  class="token"
+                  data-tooltip="выбор варианта из select options"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'option:selected'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- Видимость -->
+            <tr>
+              <td class="descr">
+                Видимость: <br />
+                <span>Скрытые</span> / <span>Видимые</span>
+              </td>
+              <td class="tokens">
+                <span
+                  class="token"
+                  data-tooltip="выбор скрытых эл. (img не занимающий места в document)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img:hidden'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span
+                  class="token"
+                  data-tooltip="выбор видимых эл. (img занимающий место в document)"
+                >
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">'img:visibility'</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- МЕТОДЫ -->
+            <tr>
+              <td colspan="3">Методы</td>
+            </tr>
+            <!-- !!! -->
+            <!-- Подключение -->
+            <tr>
+              <td class="descr">
+                Подключение: <br />
+                <span>Подкл файл</span> / <span>Подкл онлайн</span>
+              </td>
+              <td class="tokens">
+                <span class="token" data-tooltip="Подсказка 1">
+                  <span class="jq">$</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+                <span> / </span>
+                <span class="token" data-tooltip="Подсказка 2">
+                  <span class="jq">jquery</span><span class="punct">(</span
+                  ><span class="elem">''</span
+                  ><span class="punct">)</span></span
+                ><span id="tooltip"></span>
+              </td>
+              <td class="act">Пип</td>
+            </tr>
+            <!-- !!! -->
           </table>
         </div>
       </div>
