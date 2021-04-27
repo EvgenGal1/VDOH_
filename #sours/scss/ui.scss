@@ -191,7 +191,7 @@ h6 {
 
 .catalog-block,
 .game-block,
-.spravoch-block {
+.directory-block {
   @include flexbox();
   flex-flow: row wrap;
   justify-content: space-between;
