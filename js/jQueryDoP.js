@@ -13,7 +13,7 @@ function getText() {
   // .append("<p>???<p>");
   // .prepend()
   // ??? не раб - не добавл на главную. добавл все во всё
-  // var blImg_contClon = $(".block-img__content").clone();
+  // var blImg_contClon = $(".block-img-back__content").clone();
   // $(".block-img").append(blImg_contClon);
   // $(blImg_contClon).appendTo(".block-img");
 }

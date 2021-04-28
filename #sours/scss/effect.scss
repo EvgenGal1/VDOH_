@@ -1,6 +1,92 @@
 // <effect.scss(эффекты css)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 
-// <img()>˅=============================================================˅
+// <logotTip(ЕжеСвет)>˅=============================================================˅
+.header-logo-smail {
+  &:hover {
+    animation: logoImgColor 3s linear infinite 0s;
+    @keyframes logoImgColor {
+      25% {
+        background-color: red;
+      }
+      50% {
+        background-color: yellow;
+      }
+      75% {
+        background-color: blue;
+      }
+    }
+    .logo-down,
+    .logo-up {
+      display: none;
+    }
+    .logo-img {
+      position: inherit;
+      top: 0;
+      left: 0;
+      width: auto;
+      // анимаци логотипа
+      // ??? не раб плавный сброс с :hover
+      // transition: 5s linear 0.5s; // ease-in-out
+      // transition: transform 0.5s;
+      // transform: scale(0.5) rotate(360+90deg) scale(2) rotate(360+180deg);
+      animation: logoImgSize 3s linear infinite 0s; // logoImgSize2 logoImgSize3
+      // animation-fill-mode: forwards; // остановка на последнем кадре
+      // 1turn = 360deg = 400grad ≈ 6.2832rad
+      @keyframes logoImgSize {
+        0% {
+          transform: rotate(0deg);
+        }
+        12% {
+          transform: rotate(0.72turn) scale(0.5);
+        }
+        20% {
+          transform: rotate(1.25turn);
+        }
+        25% {
+          transform: rotate(1.25turn);
+        }
+        37% {
+          transform: rotate(1.87turn) scale(0.5);
+        }
+        45% {
+          transform: rotate(2.5turn);
+        }
+        50% {
+          transform: rotate(2.5turn);
+        }
+        62% {
+          transform: rotate(3.12turn) scale(0.5);
+        }
+        70% {
+          transform: rotate(3.75turn);
+        }
+        75% {
+          transform: rotate(3.75turn);
+        }
+        87% {
+          transform: rotate(4.37turn) scale(0.5);
+        }
+        95% {
+          transform: rotate(5turn);
+        }
+        100% {
+          transform: rotate(5turn);
+        }
+      }
+    }
+  }
+  .logo-img {
+    // ??? не раб плавный сброс с :hover
+    // animation: transform 0.5s;
+    // transition: transform 05s linear 0s;
+    // transition: transform 0.5s;
+  }
+}
+//</logotTip(ЕжеСвет)>˄=============================================================˄
+
+// <img(ВСЁ)>˅=============================================================˅
+
+// <img(меню)>--------------------------------------------------------------------------
 
 .block-img {
   position: relative;
@@ -13,14 +99,14 @@
       transform: rotateY(-540deg);
     }
 
-    .block-img__content {
+    .block-img-back__content {
       transform: rotateY(0deg);
     }
   }
 }
 
 .block-img__link,
-.block-img__content {
+.block-img-back__content {
   // Скрываем обратную поверхность
   backface-visibility: hidden;
   transition: 1s ease-in-out 0.5s;
@@ -33,7 +119,7 @@
   transform: rotateY(0deg);
 }
 
-.block-img__content {
+.block-img-back__content {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,13 +151,13 @@
   }
 }
 
-.block-img__title {
+.block-img-back__title {
   // margin: 0px 0px 20px 0px;
   font-size: 15px;
   font-family: $fontfamily3;
 }
 
-.block-img__text {
+.block-img-back__text {
   // margin: 0px 0px 15px 0px;
   font-size: 10px;
   font-family: $fontfamily3;
@@ -86,6 +172,8 @@
   text-transform: uppercase;
   text-decoration: underline;
 }
+
+// <img(пункты меню)>--------------------------------------------------------------------------
 
 .catalogs-items {
   .block-img__link {
@@ -174,11 +262,13 @@
   transition: 1s cubic-bezier(0.34, 1.56, 0.34, 1.56),
     background-color 0.5s ease-in, color 1.5s ease-out;
 }
-//</img()>˄=============================================================˄
+//</img(ВСЁ)>˄=============================================================˄
 
+// <gallery()>˅=============================================================˅
 // ! пока не использ.
 .gallery .gallery-grid img {
   width: 100%;
 }
+//</gallery()>˄=============================================================˄
 
 //</effect.scss(эффекты css)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

@@ -43,100 +43,11 @@ header {
     @include flexbox();
     flex-direction: column;
     justify-content: space-between;
-    &:hover {
-      animation: logoImgColor 3s linear infinite 0s;
-      @keyframes logoImgColor {
-        25% {
-          background-color: red;
-        }
-        50% {
-          background-color: yellow;
-        }
-        75% {
-          background-color: blue;
-        }
-      }
-      .logo-down,
-      .logo-up {
-        display: none;
-      }
-      .logo-img {
-        position: inherit;
-        top: 0;
-        left: 0;
-        width: auto;
-        // анимаци логотипа
-        // &:hover {
-        // transition: 5s linear 0.5s; // ease-in-out
-        // transition: transform 0.5s;
-        // transform: scale(0.5) rotate(360+90deg) scale(2) rotate(360+180deg);
-        animation: logoImgSize 3s linear infinite 0s; // infinite  // logoImgSize2 logoImgSize3
-        // animation-fill-mode: forwards; // остановка на последнем кадре
-        // }
-        // ??? не раб - плавные переход с уменьшением
-        // @keyframes logoImgSize1 {
-        //   0% {
-        //     transform: rotate(0deg);
-        //   }
-        //   // 45% {
-        //   //   transform: rotate(90deg);
-        //   // }
-        //   100% {
-        //     transform: rotate(90deg);
-        //   }
-        // }
-        @keyframes logoImgSize {
-          0% {
-            transform: rotate(0deg);
-          }
-          12% {
-            transform: rotate(0.72turn) scale(0.5);
-          }
-          20% {
-            transform: rotate(1.25turn);
-          }
-          25% {
-            transform: rotate(1.25turn);
-          }
-          37% {
-            transform: rotate(1.87turn) scale(0.5);
-          }
-          45% {
-            transform: rotate(2.5turn);
-          }
-          50% {
-            transform: rotate(2.5turn);
-          }
-          62% {
-            transform: rotate(3.12turn) scale(0.5);
-          }
-          70% {
-            transform: rotate(3.75turn);
-          }
-          75% {
-            transform: rotate(3.75turn);
-          }
-          87% {
-            transform: rotate(4.37turn) scale(0.5);
-          }
-          95% {
-            transform: rotate(5turn);
-          }
-          100% {
-            transform: rotate(5turn);
-          }
-        }
-        // !
-      }
-    }
     .logo-img {
       position: absolute;
       left: 22%;
       top: 22%;
       width: 48px;
-      animation: transform 0.5s;
-      transition: transform 05s linear 0s;
-      transition: transform 0.5s;
     }
     .logo-down {
       text-align: right;
@@ -144,13 +55,9 @@ header {
     .logo-up {
       text-align: left;
     }
-    &:hover {
-      // outline: none;
-    }
   }
 }
 //<MENU>====================================================
-// !!! posi
 .wrapper {
   .header-menu {
     position: relative;
@@ -174,7 +81,6 @@ header {
     }
   }
 }
-// !!!
 
 .header-menu {
   text-shadow: 0.5px 0.3px 0.5px #000;
