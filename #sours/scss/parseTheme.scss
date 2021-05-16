@@ -507,7 +507,8 @@
 }
 //</.m-s-switcher-4(NISNOM 1))>˄=======================================================================================˄
 
-// <.m-s-switcher-5(3 позмции)>˅=======================================================================================˅
+// <.m-s-switcher-5(3 позиции - горизонт)>˅=======================================================================================˅
+// ! https://habr.com/ru/sandbox/80843/
 .m-s-switcher-5 {
   .switcher {
     position: relative;
@@ -602,7 +603,169 @@
     left: 3px;
   }
 }
-//</.m-s-switcher-5(3 позмции)>˄=======================================================================================˄
+//</.m-s-switcher-5(3 позиции - горизонт)>˄=======================================================================================˄
+
+// <.m-s-switcher-6()>˅=======================================================================================˅
+.m-s-switcher-6 {
+}
+//</.m-s-switcher-6()>˄=======================================================================================˄
+
+// <.m-s-switcher-7(3 позиции - круг)>˅=======================================================================================˅
+//! https://codepen.io/PaulZi/pen/zBbVvV?editors=1100
+.m-s-switcher-7 {
+  .tristate {
+    position: relative;
+    display: inline-block;
+
+    // циферблат > стрелка
+    i {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      border-radius: 50%;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+        inset -1px -1px 2px rgba(0, 0, 0, 0.4);
+      &,
+      &:before,
+      &:after {
+        transition: all 0.3s;
+      }
+      // точки тенью
+      &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 30%;
+        top: 30%;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+        box-shadow: -30px 0 0 $DullGray, 0 30px 0 $DullGray, 30px 0 0 $DullGray;
+      }
+      // стрелка
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 0;
+        width: 50%;
+        border-bottom: solid 3px #666;
+        transform-origin: 20px 50%;
+      }
+    }
+
+    // label. знаки и их расположения
+    label {
+      position: absolute;
+      left: -40%;
+      top: 33%;
+      width: 30%;
+      height: 30%;
+      display: inline-block;
+      background-color: #ffa600;
+      text-align: center;
+      border-radius: 50px;
+      & + label {
+        left: calc(50% - 6px);
+        top: calc(100% + 1px);
+        & + label {
+          right: -40% !important;
+          left: 110%;
+          top: 33%;
+        }
+      }
+    }
+
+    // ??? не раб - разобратся как работает такая вложенность
+    // изменения при нажатии (:checked)
+    & > input[type="radio"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+
+      &:first-child {
+        z-index: 10;
+        &:checked {
+          z-index: 0;
+        }
+      }
+
+      // изменения в label при нажатии
+      // ??? не раб - разобратся как работает такая вложенность
+      // начальная позиция на .item3-state-off attr checked в -90'град
+      &:checked {
+        & + input[type="radio"] {
+          z-index: 10;
+        }
+        // третье положение
+        & + i {
+          background-color: #0f0;
+          & + label,
+          & + label + label {
+            background: none;
+          }
+        }
+        // второе положение
+        & + input[type="radio"] {
+          & + i {
+            background-color: #ff0;
+            & + label,
+            & + label + label + label {
+              background: none;
+            }
+          }
+          // первое положение
+          & + input[type="radio"] {
+            & + i {
+              background-color: #f00;
+              & + label + label,
+              & + label + label + label {
+                background: none;
+              }
+            }
+          }
+        }
+      }
+      // изменения в label при нажатии
+      // ??? не раб - разобратся как работает такая вложенность
+      // начальная позиция на .item3-state-off attr checked в -90'град
+      &:checked {
+        // третье положение?
+        & + i {
+          &:after {
+            transform: rotate(-180deg);
+          }
+        }
+        // второе положение?
+        & + input[type="radio"] {
+          & + i {
+            &:after {
+              transform: rotate(-90deg);
+            }
+          }
+          // первое положение?
+          & + input[type="radio"] {
+            & + i {
+              &:after {
+                transform: rotate(0deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//</.m-s-switcher-7(3 позиции - круг)>˄=======================================================================================˄
 
 // <.m-s-switcher-()>˅=======================================================================================˅
 // ! https://nisnom.com/veb-razrabotki/pure-css-toggle-buttons-on-off-switches/#more-3247

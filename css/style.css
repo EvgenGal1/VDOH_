@@ -206,7 +206,8 @@ header {
     -ms-flex-pack: end;
     justify-content: flex-end; }
   .header-menu .menu-list__items:not(:first-child) {
-    margin: 0 0 0px 10px; }
+    margin: 0 0 0px 10px;
+    z-index: 3; }
   .header-menu .menu-list__items:hover .ul li:not(:hover) {
     opacity: 0.5; }
   .header-menu .menu-list__items:hover .ul {
@@ -2744,6 +2745,104 @@ input[type="checkbox"]:checked
 
 .m-s-switcher-5 .switcher-radio-off:checked ~ .switcher-slider:after {
   left: 3px; }
+
+.m-s-switcher-7 .tristate {
+  position: relative;
+  display: inline-block; }
+  .m-s-switcher-7 .tristate i {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.4); }
+    .m-s-switcher-7 .tristate i, .m-s-switcher-7 .tristate i:before, .m-s-switcher-7 .tristate i:after {
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+    .m-s-switcher-7 .tristate i:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 30%;
+      top: 30%;
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      -webkit-box-shadow: -30px 0 0 #707070, 0 30px 0 #707070, 30px 0 0 #707070;
+      box-shadow: -30px 0 0 #707070, 0 30px 0 #707070, 30px 0 0 #707070; }
+    .m-s-switcher-7 .tristate i:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+      width: 50%;
+      border-bottom: solid 3px #666;
+      -webkit-transform-origin: 20px 50%;
+      -ms-transform-origin: 20px 50%;
+      transform-origin: 20px 50%; }
+  .m-s-switcher-7 .tristate label {
+    position: absolute;
+    left: -40%;
+    top: 33%;
+    width: 30%;
+    height: 30%;
+    display: inline-block;
+    background-color: #ffa600;
+    text-align: center;
+    border-radius: 50px; }
+    .m-s-switcher-7 .tristate label + label {
+      left: calc(50% - 6px);
+      top: calc(100% + 1px); }
+      .m-s-switcher-7 .tristate label + label + label {
+        right: -40% !important;
+        left: 110%;
+        top: 33%; }
+  .m-s-switcher-7 .tristate > input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    opacity: 0; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:first-child {
+      z-index: 10; }
+      .m-s-switcher-7 .tristate > input[type="radio"]:first-child:checked {
+        z-index: 0; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] {
+      z-index: 10; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + i {
+      background-color: #0f0; }
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + i + label,
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + i + label + label {
+        background: none; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + i {
+      background-color: #ff0; }
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + i + label,
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + i + label + label + label {
+        background: none; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + input[type="radio"] + i {
+      background-color: #f00; }
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + input[type="radio"] + i + label + label,
+      .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + input[type="radio"] + i + label + label + label {
+        background: none; }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + i:after {
+      -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg); }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + i:after {
+      -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+    .m-s-switcher-7 .tristate > input[type="radio"]:checked + input[type="radio"] + input[type="radio"] + i:after {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg); }
 
 .visual-block {
   /* left: 50%; */
