@@ -2,7 +2,14 @@
 //  подкл файл ->  сайт https://jquery.com -> конпка download jquery -> ссылка "Загрузите ..... jQuery 3.6.0" -> скачать/сохранить файл -> подкл файл <script src="/js/jQuery.js"></script>
 // подкл онлайн -> <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 // в подвал -> просто <script> перед </body>.
-// в шапку, пишем так -> $(document).ready(function(){ // код // }) или $(function(){ // код // })
+// в шапку, пишем так ->
+$(document).ready(function () {
+  // код //
+});
+// или
+$(function () {
+  // код //
+});
 // $(document).ready(function(){}
 // код для примера -> =========================================================================================
 // {
@@ -214,7 +221,7 @@ function highlightRelated1() {
       console.log(2);
       $(this).css({
         background: "#555555",
-        "border-radius": "8px",
+        "border-radius": "5px",
       });
     },
     function () {

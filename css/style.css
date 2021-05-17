@@ -1127,145 +1127,6 @@ footer {
 .directorys-items .block-body {
   margin: 0px 0px -20px 0px; }
 
-.directorys-block .DoC1 .DoC1-prob {
-  background: #bec0f3;
-  padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-.directorys-block .DoC1 .DoC1-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  margin: 10px;
-  padding: 10px;
-  font-size: 16px; }
-
-.directorys-block .DoC1 li {
-  padding: 5px;
-  margin: 5px;
-  list-style: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  background-color: #fcfda9; }
-
-.directorys-block .DoC1 a {
-  background: #000;
-  background-color: #fbd8d8;
-  margin: 5px;
-  padding: 5px;
-  font-size: 18px; }
-
-.directorys-block .DoC1 li div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.directorys-block .DoC1 img {
-  margin: 5px;
-  background-color: #fbd8d8; }
-
-.directorys-block .DoC1 p {
-  background: #000;
-  background-color: #fbd8d8;
-  margin: 5px;
-  padding: 2px;
-  font-size: 18px; }
-
-.directorys-block .DoC1 li ul {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: #fbd8d8; }
-
-.directorys-block .DoC1 .DoC1-status {
-  /* width: 150px; */
-  background-color: #fbd8d8;
-  margin: 5px;
-  padding: 5px;
-  text-align: center; }
-
-.directorys-block .DoC1 .DoC1-cl {
-  border: 1px solid red; }
-
-.directorys-block .DoC1 .DoC1-btn {
-  /* width: 150px; */
-  margin: 5px;
-  padding: 5px; }
-
-.directorys-block .DoC2 .DoC2-cont {
-  width: 100%;
-  display: table;
-  border: 1px solid #000;
-  padding: 2px; }
-  .directorys-block .DoC2 .DoC2-cont .DoC2-tabl {
-    table-layout: fixed;
-    width: 100%;
-    font-size: 20px;
-    padding: 1px; }
-    .directorys-block .DoC2 .DoC2-cont .DoC2-tabl caption {
-      border: 1px solid #000;
-      padding: 5px;
-      background-color: dimgray; }
-    .directorys-block .DoC2 .DoC2-cont .DoC2-tabl th,
-    .directorys-block .DoC2 .DoC2-cont .DoC2-tabl td {
-      border: 1px solid #000;
-      padding: 5px;
-      vertical-align: top;
-      color: blue; }
-    .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-head th {
-      vertical-align: middle;
-      text-align: center;
-      color: red; }
-    .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td {
-      padding: 10px;
-      vertical-align: middle;
-      text-align: center;
-      color: red;
-      background-color: #bec0f3; }
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td h4,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td div,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td ul li,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td img,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td p,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td input,
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td button {
-        margin: 10px;
-        padding: 10px;
-        font-size: 20px; }
-      .directorys-block .DoC2 .DoC2-cont .DoC2-tabl .DoC2-body td img {
-        width: 150px; }
-
 .directorys-block .DoC3 table {
   width: 100%;
   display: table; }
@@ -1283,7 +1144,8 @@ footer {
   vertical-align: middle;
   text-align: center; }
 
-.directorys-block .DoC3 td {
+.directorys-block .DoC3 td,
+.directorys-block .DoC3 #td {
   vertical-align: middle;
   font-size: 18px;
   font-weight: 600;
@@ -1309,14 +1171,18 @@ footer {
 .directorys-block .DoC3 td:last-child {
   width: 10%; }
 
-.directorys-block .DoC3 tr:hover td {
+.directorys-block .DoC3 tr:hover td,
+.directorys-block .DoC3 tr:hover #td {
   background-color: #707070;
   color: #000;
   text-shadow: 0.3px 0.3px 0px #a3a3a3; }
-  .directorys-block .DoC3 tr:hover td .token {
+  .directorys-block .DoC3 tr:hover td .token,
+  .directorys-block .DoC3 tr:hover #td .token {
     background: #555555;
     cursor: pointer; }
-    .directorys-block .DoC3 tr:hover td .token::after, .directorys-block .DoC3 tr:hover td .token::before {
+    .directorys-block .DoC3 tr:hover td .token::after, .directorys-block .DoC3 tr:hover td .token::before,
+    .directorys-block .DoC3 tr:hover #td .token::after,
+    .directorys-block .DoC3 tr:hover #td .token::before {
       content: "";
       position: absolute;
       background: #555555;
@@ -1335,13 +1201,23 @@ footer {
       -webkit-box-shadow: none;
       box-shadow: none;
       /* Прячем тень */ }
-    .directorys-block .DoC3 tr:hover td .token:hover {
+    .directorys-block .DoC3 tr:hover td .token:hover,
+    .directorys-block .DoC3 tr:hover #td .token:hover {
       background: #333333;
       border: 1px solid yellow; }
-      .directorys-block .DoC3 tr:hover td .token:hover::after, .directorys-block .DoC3 tr:hover td .token:hover::before {
+      .directorys-block .DoC3 tr:hover td .token:hover::after, .directorys-block .DoC3 tr:hover td .token:hover::before,
+      .directorys-block .DoC3 tr:hover #td .token:hover::after,
+      .directorys-block .DoC3 tr:hover #td .token:hover::before {
         background: #333333;
         border-bottom: 1px solid yellow;
         border-right: 1px solid yellow; }
+
+.directorys-block .DoC3 .descr .descr-hed {
+  font-size: 20px;
+  color: #000;
+  background-color: #707070; }
+  .directorys-block .DoC3 .descr .descr-hed:hover {
+    text-shadow: 0.3px 0.3px 0px #000; }
 
 .directorys-block .DoC3 .token {
   z-index: 2;
@@ -1361,8 +1237,16 @@ footer {
     color: #24f100; }
   .directorys-block .DoC3 .token .punct {
     color: #ff9900; }
+  .directorys-block .DoC3 .token .punct2 {
+    color: #921573; }
+  .directorys-block .DoC3 .token .teg {
+    color: #be0b32; }
   .directorys-block .DoC3 .token .elem {
     color: #ffd080; }
+  .directorys-block .DoC3 .token .fn {
+    color: #328dc2; }
+  .directorys-block .DoC3 .token .doc {
+    color: #ffffff; }
 
 .directorys-block .DoC3 #tooltip {
   z-index: 9999;

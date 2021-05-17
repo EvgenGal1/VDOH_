@@ -15,135 +15,6 @@
 //<>====================================================
 
 .directorys-block {
-  .DoC1 {
-    .DoC1-prob {
-      // width: 250px;
-      background: #bec0f3;
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .DoC1-ul {
-      display: flex;
-      flex-direction: row;
-      // flex-direction: column;
-      justify-content: space-evenly;
-      margin: 10px;
-      padding: 10px;
-      font-size: 16px;
-    }
-    li {
-      padding: 5px;
-      margin: 5px;
-      list-style: none;
-      flex-direction: column;
-      display: flex;
-      justify-content: space-between;
-      background-color: #fcfda9;
-    }
-    a {
-      background: #000;
-      background-color: #fbd8d8;
-      margin: 5px;
-      padding: 5px;
-      font-size: 18px;
-    }
-    li div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    img {
-      margin: 5px;
-      background-color: #fbd8d8;
-    }
-    p {
-      background: #000;
-      background-color: #fbd8d8;
-      margin: 5px;
-      padding: 2px;
-      font-size: 18px;
-    }
-    li ul {
-      flex-direction: column;
-      background-color: #fbd8d8;
-    }
-    .DoC1-status {
-      /* width: 150px; */
-      background-color: #fbd8d8;
-      margin: 5px;
-      padding: 5px;
-      text-align: center;
-    }
-    .DoC1-cl {
-      border: 1px solid red;
-    }
-    .DoC1-btn {
-      /* width: 150px; */
-      margin: 5px;
-      padding: 5px;
-    }
-  }
-
-  .DoC2 {
-    .DoC2-cont {
-      width: 100%;
-      display: table;
-      // margin-left: 10px;
-      border: 1px solid #000;
-      // width: 450px;
-      // height: 200px;
-      padding: 2px;
-      .DoC2-tabl {
-        table-layout: fixed;
-        width: 100%;
-        font-size: 20px;
-        padding: 1px;
-        caption {
-          border: 1px solid #000;
-          padding: 5px;
-          background-color: dimgray;
-        }
-        th,
-        td {
-          border: 1px solid #000;
-          padding: 5px;
-          vertical-align: top;
-          color: blue;
-        }
-
-        .DoC2-head th {
-          // width: 15px;
-          vertical-align: middle;
-          text-align: center;
-          color: red;
-        }
-        .DoC2-body td {
-          padding: 10px;
-          vertical-align: middle;
-          text-align: center;
-          color: red;
-          background-color: #bec0f3;
-          h4,
-          div,
-          ul li,
-          img,
-          p,
-          input,
-          button {
-            margin: 10px;
-            padding: 10px;
-            font-size: 20px;
-          }
-          img {
-            width: 150px;
-          }
-        }
-      }
-    }
-  }
-
   .DoC3 {
     table {
       width: 100%;
@@ -163,7 +34,8 @@
       vertical-align: middle;
       text-align: center;
     }
-    td {
+    td,
+    #td {
       vertical-align: middle;
       font-size: 18px;
       font-weight: 600;
@@ -191,7 +63,8 @@
       width: 10%;
     }
     tr:hover {
-      td {
+      td,
+      #td {
         background-color: $DullGray;
         color: #000;
         text-shadow: 0.3px 0.3px 0px $WhiteAlum;
@@ -231,6 +104,18 @@
         }
       }
     }
+    // название
+    .descr {
+      .descr-hed {
+        font-size: 20px;
+        color: #000;
+        background-color: #707070;
+        &:hover {
+          text-shadow: 0.3px 0.3px 0px #000;
+        }
+      }
+    }
+    //  описание
     .token {
       z-index: 2;
       position: relative;
@@ -250,10 +135,23 @@
       .punct {
         color: #ff9900;
       }
+      .punct2 {
+        color: #921573;
+      }
+      .teg {
+        color: #be0b32;
+      }
       .elem {
         color: #ffd080;
       }
+      .fn {
+        color: #328dc2;
+      }
+      .doc {
+        color: #ffffff;
+      }
     }
+    // подсказка
     #tooltip {
       z-index: 9999;
       display: none;
