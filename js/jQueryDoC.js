@@ -222,12 +222,14 @@ function highlightRelated1() {
       $(this).css({
         background: "#555555",
         "border-radius": "5px",
+        border: "1px solid #333333",
       });
     },
     function () {
       $(this).css({
         background: "none",
         "border-radius": "none",
+        border: "none",
       });
       // $(getClToken).css({ border: "1px solid yellow" });
       // $(getClToken).after().css({ border: "1px solid yellow" })
@@ -262,7 +264,7 @@ function highlightRelated3() {
   //   highlightRelated2();
   // });
 }
-highlightRelated3();
+// highlightRelated3();
 //</DoC3>˄=========================================================================˄
 // !!!
 

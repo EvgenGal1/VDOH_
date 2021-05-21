@@ -1127,6 +1127,158 @@ footer {
 .directorys-items .block-body {
   margin: 0px 0px -20px 0px; }
 
+.directorys-block .DoC2 table {
+  width: 100%;
+  display: table; }
+
+.directorys-block .DoC2 th {
+  width: 33%;
+  font-size: 23px;
+  font-style: italic;
+  background: #8b0000;
+  border-top: 5px solid #4b0000;
+  border-bottom: 2px solid black;
+  color: yellow;
+  text-shadow: 2px 2px black;
+  padding-bottom: 3px;
+  vertical-align: middle;
+  text-align: center; }
+
+.directorys-block .DoC2 td {
+  vertical-align: middle;
+  font-size: 18px;
+  background: #a3a3a3;
+  border-bottom: 1px solid black;
+  color: #555555;
+  border-top: 1px solid transparent;
+  padding: 5px 5px 7px; }
+
+.directorys-block .DoC2 .group {
+  background: #a3a3a3;
+  border: 1px solid #333333;
+  border-radius: 5px; }
+  .directorys-block .DoC2 .group:hover {
+    color: #000;
+    background: #707070;
+    border: 1px solid #000000; }
+    .directorys-block .DoC2 .group:hover .descr {
+      text-shadow: 0.3px 0.3px 0px #000;
+      background-color: #555555;
+      border-bottom: 1px solid #000000; }
+    .directorys-block .DoC2 .group:hover .tokens .token + span {
+      color: #000;
+      border: 1px solid #333333;
+      border-radius: 5px;
+      background-color: #707070; }
+      .directorys-block .DoC2 .group:hover .tokens .token + span:hover {
+        text-shadow: 0.3px 0.3px 0px #000;
+        background-color: #555555;
+        border: 1px solid #000000; }
+    .directorys-block .DoC2 .group:hover .token {
+      background: #555555;
+      -webkit-box-shadow: 0px 0px 5px #000;
+      box-shadow: 0px 0px 5px #000;
+      cursor: pointer;
+      color: red; }
+      .directorys-block .DoC2 .group:hover .token::after, .directorys-block .DoC2 .group:hover .token::before {
+        content: "";
+        position: absolute;
+        background: #555555;
+        left: -7px;
+        bottom: 5px;
+        width: 12px;
+        height: 12px;
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        z-index: -1;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+      .directorys-block .DoC2 .group:hover .token:hover {
+        background: #333333;
+        border: 1px solid yellow; }
+        .directorys-block .DoC2 .group:hover .token:hover::after, .directorys-block .DoC2 .group:hover .token:hover::before {
+          background: #333333;
+          border-bottom: 1px solid yellow;
+          border-left: 1px solid yellow; }
+      .directorys-block .DoC2 .group:hover .token .cont {
+        color: #000; }
+  .directorys-block .DoC2 .group .descr {
+    font-size: 20px;
+    color: #000;
+    background-color: #707070;
+    border-bottom: 1px solid #333333; }
+  .directorys-block .DoC2 .group .tokens {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 2px;
+    margin: 2px; }
+    .directorys-block .DoC2 .group .tokens > span:nth-child(1) {
+      padding: 2px;
+      border: 1px solid transparent; }
+    .directorys-block .DoC2 .group .tokens:hover > span:nth-child(1) {
+      color: #000;
+      border: 1px solid #333333;
+      border-radius: 5px;
+      background-color: #707070;
+      text-shadow: 0.3px 0.3px 0px #000;
+      background-color: #555555; }
+    .directorys-block .DoC2 .group .tokens:hover .token::after, .directorys-block .DoC2 .group .tokens:hover .token::before {
+      -webkit-box-shadow: -2px 2px 0px #000;
+      box-shadow: -2px 2px 0px #000; }
+  .directorys-block .DoC2 .group .token {
+    z-index: 2;
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    /* overflow: hidden; */
+    padding: 2px;
+    text-shadow: none;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+    background: #707070;
+    border: 1px solid #555555;
+    border-radius: 5px; }
+    .directorys-block .DoC2 .group .token .jq {
+      color: #24f100; }
+    .directorys-block .DoC2 .group .token .punct {
+      color: #ff9900; }
+    .directorys-block .DoC2 .group .token .punct2 {
+      color: #921573; }
+    .directorys-block .DoC2 .group .token .teg {
+      color: #be0b32; }
+    .directorys-block .DoC2 .group .token .elem {
+      color: #ffd080; }
+    .directorys-block .DoC2 .group .token .fn {
+      color: #328dc2; }
+    .directorys-block .DoC2 .group .token .doc {
+      color: #ffffff; }
+    .directorys-block .DoC2 .group .token .cont {
+      color: #333333; }
+      .directorys-block .DoC2 .group .token .cont:hover {
+        color: #fff !important; }
+  .directorys-block .DoC2 .group #tooltip {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 200px;
+    padding: 3px;
+    color: white;
+    font-size: 16px;
+    background-color: #333333;
+    border: 0.3px solid yellow;
+    border-radius: 5px;
+    opacity: 0.8; }
+
 .directorys-block .DoC3 table {
   width: 100%;
   display: table; }
@@ -1148,11 +1300,9 @@ footer {
 .directorys-block .DoC3 #td {
   vertical-align: middle;
   font-size: 18px;
-  font-weight: 600;
   background: #a3a3a3;
   border-bottom: 1px solid black;
   color: #555555;
-  text-shadow: 0.3px 0.3px 0px #000;
   border-top: 1px solid transparent;
   padding: 5px 5px 7px; }
 
@@ -1165,17 +1315,22 @@ footer {
   .directorys-block .DoC3 td[colspan]:hover {
     text-shadow: 0.5px 0.5px 0px #555555; }
 
-.directorys-block .DoC3 td:first-child {
-  width: 25%; }
+.directorys-block .DoC3 td.act,
+.directorys-block .DoC3 th.act {
+  display: none; }
 
 .directorys-block .DoC3 td:last-child {
   width: 10%; }
 
+.directorys-block .DoC3 tr:hover .descr-hed {
+  text-shadow: 0.3px 0.3px 0px #000;
+  background-color: #555555;
+  border: 1px solid #000000; }
+
 .directorys-block .DoC3 tr:hover td,
 .directorys-block .DoC3 tr:hover #td {
   background-color: #707070;
-  color: #000;
-  text-shadow: 0.3px 0.3px 0px #a3a3a3; }
+  color: #000; }
   .directorys-block .DoC3 tr:hover td .token,
   .directorys-block .DoC3 tr:hover #td .token {
     background: #555555;
@@ -1212,12 +1367,28 @@ footer {
         border-bottom: 1px solid yellow;
         border-right: 1px solid yellow; }
 
+.directorys-block .DoC3 tr:hover .cont {
+  color: #000; }
+
 .directorys-block .DoC3 .descr .descr-hed {
-  font-size: 20px;
+  font-size: 20px !important;
   color: #000;
+  border: 1px solid #333333;
+  border-radius: 5px;
   background-color: #707070; }
   .directorys-block .DoC3 .descr .descr-hed:hover {
-    text-shadow: 0.3px 0.3px 0px #000; }
+    text-shadow: 0.3px 0.3px 0px #000;
+    background-color: #555555; }
+
+.directorys-block .DoC3 .descr span {
+  display: inline-block;
+  margin: 0.5px auto;
+  padding: 2px;
+  border: 1px solid transparent; }
+  .directorys-block .DoC3 .descr span:hover {
+    background: #555555;
+    border-radius: 5px;
+    border: 1px solid #333333; }
 
 .directorys-block .DoC3 .token {
   z-index: 2;
@@ -1226,7 +1397,7 @@ footer {
   display: inline-block;
   /* overflow: hidden; */
   margin: 5px auto;
-  padding: 2px 4px;
+  padding: 2px;
   text-shadow: none;
   -webkit-box-shadow: 0 0 3px #000;
   box-shadow: 0 0 3px #000;
@@ -1247,6 +1418,10 @@ footer {
     color: #328dc2; }
   .directorys-block .DoC3 .token .doc {
     color: #ffffff; }
+  .directorys-block .DoC3 .token .cont {
+    color: #333333; }
+    .directorys-block .DoC3 .token .cont:hover {
+      color: #fff; }
 
 .directorys-block .DoC3 #tooltip {
   z-index: 9999;
@@ -1254,17 +1429,14 @@ footer {
   position: absolute;
   top: 0px;
   left: 0px;
-  max-width: 180px;
-  padding: 3px 5px;
+  max-width: 200px;
+  padding: 3px;
   color: white;
   font-size: 16px;
-  font-family: serif;
-  font-weight: normal;
-  letter-spacing: 1px;
   background-color: #333333;
   border: 0.3px solid yellow;
   border-radius: 5px;
-  opacity: 0.9; }
+  opacity: 0.8; }
 
 body {
   background-color: #e8e8e8;

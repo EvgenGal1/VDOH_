@@ -54,12 +54,15 @@
             <tr>
               <th>Название/Действие</th>
               <th>Описание/Альтернатива</th>
-              <th>Пуск</th>
+              <th class="act">Пуск</th>
               <!-- /Настроки -->
             </tr>
             <!-- ПОДКЛЮЧЕНИЕ ================================ -->
             <tr>
               <td colspan="3">ПОДКЛЮЧЕНИЕ</td>
+            </tr>
+            <tr>
+              <td colspan="2">ПОДКЛЮЧЕНИЕ</td>
             </tr>
             <!-- Подключение -->
             <tr>
@@ -74,14 +77,14 @@
                   class="token"
                   data-tooltip="сайт https://jquery.com - конпка download jquery - ссылка 'Загрузите ..... jQuery 3.6.0' - скачать/сохранить файл - подкл файл  <script src='/js/jQuery.js'> </script>"
                 >
-                  <span class="elm">https://jquery.com</span>
+                  <span class="cont">https://jquery.com</span>
                 </span>
                 <span> / </span>
                 <span
                   class="token"
                   data-tooltip=" script src= 'https://code.jquery.com/ jquery-3.3.1.min.js'> </script>"
                 >
-                  <span class="elm">https://code.jquery.com</span>
+                  <span class="cont">https://code.jquery.com</span>
                 </span>
                 <br />
                 <span
@@ -107,12 +110,10 @@
                   class="token"
                   data-tooltip="Перед закр. body. Сперва jQ, затем свой код"
                 >
-                  <span class="elm"
-                    >перед
-                    <span class="doc">< /</span>
-                    <span class="teg">bоdy</span>
-                    <span class="doc">></span>
-                  </span>
+                  <span class="cont">перед</span>
+                  <span class="doc">< /</span>
+                  <span class="teg">bоdy</span>
+                  <span class="doc">></span>
                 </span>
               </td>
               <td class="act">Пип</td>
@@ -586,8 +587,7 @@
             <tr>
               <td class="descr">
                 <span class="descr-hed">xX</span><br />
-                <span>база</span>
-                <span> / </span>
+                <span>база</span> / <span></span>
               </td>
               <td class="tokens">
                 <span class="token" data-tooltip="Xx">
@@ -604,19 +604,16 @@
             </tr>
             <!-- Получение базовые -->
             <!-- <tr><td id="td"  colspan="3">Получение базовые</td><tr> -->
-            <!-- текст, ... -->
+            <!-- текст, высота, штрина, ... -->
             <tr>
               <td class="descr">
                 <span class="descr-hed">Получение базовые</span><br />
-                <span>Текст</span>
-                <span> / </span>
-                <span>Html</span>
-                <span> / </span>
-                <span>Css</span>
-                <span> / </span>
+                <span>Текст</span> / <span>Высота</span> / <span>Ширина</span> /
+                <span>Html</span> / <span>Css</span> /
                 <span>Value</span>
               </td>
               <td class="tokens">
+                <!-- текст -->
                 <span
                   class="token"
                   data-tooltip="взять текст - .text(); вставить текст - .text('xX');"
@@ -635,11 +632,38 @@
                   <span id="tooltip"></span>
                 </span>
                 <span> / </span>
-                <span class="token" data-tooltip="2">
+                <!-- высота -->
+                <span
+                  class="token"
+                  data-tooltip="взять высоту - .height(); изменить высоту на 150px - .height(150);"
+                >
                   <span class="doc">.</span>
-                  <span class="jq">text</span>
+                  <span class="jq">height</span>
                   <span class="punct">(</span>
-                  <span class="elem">"xX"</span>
+                  <span class="elem"></span>
+                  <span class="punct">)</span>
+                  <span class="doc">.</span>
+                  <span class="jq">height</span>
+                  <span class="punct">(</span>
+                  <span class="elem">150</span>
+                  <span class="punct">)</span>
+                  <span id="tooltip"></span>
+                </span>
+                <span> / </span>
+                <!-- ширина -->
+                <span
+                  class="token"
+                  data-tooltip="взять ширину - .width(); изменить ширину на 150px - .width(150);"
+                >
+                  <span class="doc">.</span>
+                  <span class="jq">width</span>
+                  <span class="punct">(</span>
+                  <span class="elem"></span>
+                  <span class="punct">)</span>
+                  <span class="doc">.</span>
+                  <span class="jq">width</span>
+                  <span class="punct">(</span>
+                  <span class="elem">150</span>
                   <span class="punct">)</span>
                   <span id="tooltip"></span>
                 </span>
@@ -668,13 +692,8 @@
             <!-- <tr><td id="td"  colspan="3">Эффекты</td></tr> -->
             <tr>
               <td class="descr">
-                <span class="descr-hed">Эффекты</span>
-                <span>Шоу</span>
-                <span> / </span>
-                <span>Слайд</span>
-                <span> / </span>
-                <span>Ещё</span>
-                <span> / </span>
+                <span class="descr-hed">Эффекты</span><br />
+                <span>Шоу</span> / <span>Слайд</span> / <span>Ещё</span> /
                 <span>Далее</span>
               </td>
               <td class="tokens">
@@ -726,8 +745,7 @@
             <tr>
               <td class="descr">
                 <span class="descr-hed">xX</span><br />
-                <span>база</span>
-                <span> / </span>
+                <span>база</span> / <span></span>
               </td>
               <td class="tokens">
                 <span class="token" data-tooltip="Xx">
@@ -743,6 +761,76 @@
               <td class="act">Пип</td>
             </tr>
             <!-- / <span>Html</span> / <span>Css</span> / <span>Value</span> -->
+          </table>
+        </div>
+        <div class="DoC2">
+          <table>
+            <tr>
+              <th>Первый</th>
+              <th>Второй</th>
+              <th>Третий</th>
+            </tr>
+            <tr>
+              <td>
+                <!-- Подключение -->
+                <div class="group">
+                  <div class="descr">Подключение:</div>
+                  <div class="tokens">
+                    <span>Подкл. файл</span>
+                    <span
+                      class="token"
+                      data-tooltip="сайт https://jquery.com - конпка download jquery - ссылка 'Загрузите ..... jQuery 3.6.0' - скачать/сохранить файл - подкл файл &#60script src='/js/jQuery.js'>&#60/script>"
+                      ><span class="cont">https://jquery.com</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span>Подкл. онлайн</span
+                    ><span
+                      class="token"
+                      data-tooltip=" script src= 'https://code.jquery.com/ jquery-3.3.1.min.js'> &#60/script>"
+                    >
+                      <span class="cont">https://code.jquery.com</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span>Подкл. в подвал</span
+                    ><span
+                      class="token"
+                      data-tooltip="Перед закр. body. Сперва jQ, затем свой код"
+                    >
+                      <span class="cont">перед</span>
+                      <span class="doc">&#60/</span>
+                      <span class="teg">bоdy</span>
+                      <span class="doc">&#62</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span>В шапку</span
+                    ><span
+                      class="token"
+                      data-tooltip="Или $(document).ready(function(){''}); 
+                      Сперва jQ, затем свой код."
+                    >
+                      <span class="jq">$</span>
+                      <!-- <span class="punct">(</span>
+                      <span class="doc">document</span>
+                      <span class="punct">)</span>
+                      <span class="doc">.</span>
+                      <span class="jq">ready</span> -->
+                      <span class="punct">(</span>
+                      <span class="fn">function</span>
+                      <span class="punct2">(){</span>
+                      <span class="elem">''</span>
+                      <span class="punct2">}</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <span id="tooltip"></span>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
           </table>
         </div>
       </div>
