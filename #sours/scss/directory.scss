@@ -19,10 +19,10 @@
     table {
       width: 100%;
       display: table;
-      // background: #a3a3a3;
       // table-layout: fixed;
     }
-    th {
+    th,
+    tr.general > td {
       width: 33%;
       font-size: 23px;
       // font-weight: 700;
@@ -37,7 +37,7 @@
       text-align: center;
     }
     td {
-      vertical-align: middle;
+      vertical-align: top;
       font-size: 18px;
       // font-weight: 600;
       background: $WhiteAlum;
@@ -50,9 +50,13 @@
     }
     // группа
     .group {
+      // margin-bottom: 7px;
       background: #a3a3a3;
       border: 1px solid #333333;
       border-radius: 5px;
+      &:not(:nth-child(1)) {
+        margin-top: 7px;
+      }
       &:hover {
         color: #000;
         background: #707070;
@@ -62,58 +66,56 @@
           background-color: #555555;
           border-bottom: 1px solid #000000;
         }
-        .tokens {
-          .token {
-            // box-shadow: 1px 1px 5px #000;
-            // при наведение на tokens на 1ый спан сделать рамку
-            & + span {
-              // font-size: 20px !important;
-              color: #000;
-              border: 1px solid #333333;
-              border-radius: 5px;
-              background-color: #707070;
-
-              &:hover {
-                text-shadow: 0.3px 0.3px 0px #000;
-                background-color: #555555;
-                border: 1px solid #000000;
-              }
-            }
-          }
-        }
-        .token {
+        .token__name {
           background: $WetAsphalt;
-          box-shadow: 0px 0px 5px #000;
-          cursor: pointer;
-          color: red;
-          // ??? хз зачем афтер
-          &::after,
+          box-shadow: 0px 0px 3px #000;
           &::before {
+            z-index: -1; // Накладываем поверх, чтобы скрыть следы тени
             content: "";
             position: absolute;
+            background: $DullGray;
             background: $WetAsphalt;
-            left: -7px;
-            bottom: 5px;
-            width: 12px;
-            height: 12px;
+            right: -7px;
+            bottom: 4px;
+            width: 16px;
+            height: 16px;
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
-            z-index: -1; // Накладываем поверх, чтобы скрыть следы тени
-            // z-index: 0;
-            // ??? не раб - не скрываеться за блоком, видна тень если не скрывать
             box-shadow: none; // Прячем тень
+            // background: $SignalBlack;
+            // border-top: 1px solid $SignalBlack;
+            // border-right: 1px solid $SignalBlack;
           }
+        }
+        .token__el {
+          background: $WetAsphalt;
+          box-shadow: 0px 0px 3px #000;
+          cursor: pointer;
+          // &::after,
+          // &::before {
+          //   z-index: -1; // Накладываем поверх, чтобы скрыть следы тени
+          //   content: "";
+          //   position: absolute;
+          //   background: $WetAsphalt;
+          //   left: -7px;
+          //   bottom: 5px;
+          //   width: 12px;
+          //   height: 12px;
+          //   -ms-transform: rotate(45deg);
+          //   transform: rotate(45deg);
+          //   -webkit-transform: rotate(45deg);
+          //   box-shadow: none; // Прячем тень
+          // }
           &:hover {
             background: $SignalBlack;
             border: 1px solid yellow;
-            // ??? хз зачем афтер
-            &::after,
-            &::before {
-              background: $SignalBlack;
-              border-bottom: 1px solid yellow;
-              border-left: 1px solid yellow;
-            }
+            // &::after,
+            // &::before {
+            //   background: $SignalBlack;
+            //   border-bottom: 1px solid yellow;
+            //   border-left: 1px solid yellow;
+            // }
           }
           // цвет для ссылок
           .cont {
@@ -124,6 +126,7 @@
       //  описание/название группы
       .descr {
         font-size: 20px;
+        text-align: center;
         color: #000;
         background-color: #707070;
         border-bottom: 1px solid #333333;
@@ -135,30 +138,39 @@
         justify-content: space-between;
         padding: 2px;
         margin: 2px;
-        & > span:nth-child(1) {
-          padding: 2px;
-          border: 1px solid transparent;
-        }
         &:hover {
-          & > span:nth-child(1) {
-            color: #000;
+          .token__name {
             border: 1px solid #333333;
-            border-radius: 5px;
-            background-color: #707070;
+            // border-radius: 5px;
             text-shadow: 0.3px 0.3px 0px #000;
-            background-color: #555555;
-          }
-          .token {
-            // стрелка в лево
-            &::after,
             &::before {
-              box-shadow: -2px 2px 0px #000;
+              background-color: #555555;
+              box-shadow: 2px -2px 0px #000;
             }
+          }
+          .token__el {
+            box-shadow: 2px 2px 3px #000;
+            // стрелка в лево
+            // &::after,
+            // &::before {
+            //   box-shadow: -2px 2px 0px #000;
+            // }
           }
         }
       }
+      // название элем
+      .token__name {
+        // !
+        z-index: 2;
+        position: relative;
+        white-space: nowrap; // не переносит текст
+        display: inline-block;
+        // !
+        padding: 2px;
+        border: 1px solid transparent;
+      }
       // вид/элемент/код
-      .token {
+      .token__el {
         z-index: 2;
         position: relative;
         white-space: nowrap; // не переносит текст
@@ -174,14 +186,20 @@
         .jq {
           color: #24f100;
         }
+        .jquery {
+          color: #ffff00;
+        }
         .punct {
           color: #ff9900;
         }
         .punct2 {
-          color: #921573;
+          color: #ec31be;
+        }
+        .punct3 {
+          color: #bebebe;
         }
         .teg {
-          color: #be0b32;
+          color: #e91240;
         }
         .elem {
           color: #ffd080;
@@ -218,198 +236,6 @@
         border-radius: 5px;
         opacity: 0.8;
       }
-    }
-  }
-
-  .DoC3 {
-    table {
-      width: 100%;
-      display: table;
-      // table-layout: fixed;
-    }
-    th {
-      font-size: 23px;
-      font-weight: 700;
-      font-style: italic;
-      background: $DarkRed;
-      border-top: 5px solid $CrimsonBrown;
-      border-bottom: 2px solid black;
-      color: yellow;
-      text-shadow: 1px 1px black;
-      padding: 8px;
-      vertical-align: middle;
-      text-align: center;
-    }
-    td,
-    #td {
-      vertical-align: middle;
-      font-size: 18px;
-      // font-weight: 600;
-      background: $WhiteAlum;
-      border-bottom: 1px solid black;
-      color: $WetAsphalt;
-      // text-shadow: 0.3px 0.3px 0px $WhiteAlum;
-      // text-shadow: 0.3px 0.3px 0px #000;
-      border-top: 1px solid transparent;
-      padding: 5px 5px 7px;
-    }
-    td[colspan] {
-      vertical-align: middle;
-      text-align: center;
-      background-color: $DullGray;
-      color: #000;
-      text-shadow: none;
-      &:hover {
-        text-shadow: 0.5px 0.5px 0px $WetAsphalt;
-      }
-    }
-    td.act,
-    th.act {
-      display: none;
-    }
-    td:first-child {
-      // width: 25%;
-    }
-    td:last-child {
-      width: 10%;
-    }
-    tr:hover {
-      .descr-hed {
-        text-shadow: 0.3px 0.3px 0px #000;
-        background-color: #555555;
-        border: 1px solid #000000;
-      }
-      td,
-      #td {
-        background-color: $DullGray;
-        color: #000;
-        // text-shadow: 0.3px 0.3px 0px $WhiteAlum;
-        .token {
-          background: $WetAsphalt;
-          cursor: pointer;
-          // ??? хз зачем афтер
-          &::after,
-          &::before {
-            content: "";
-            position: absolute;
-            background: $WetAsphalt;
-            left: 75%;
-            bottom: -5px;
-            width: 8px;
-            height: 8px;
-            box-shadow: 0 0 3px #000;
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            z-index: -1;
-            z-index: 0; /* Накладываем поверх, чтобы скрыть следы тени */
-            // ??? не раб - не скрываеться за блоком, видна тень если не скрывать
-            box-shadow: none; /* Прячем тень */
-          }
-          &:hover {
-            background: $SignalBlack;
-            border: 1px solid yellow;
-            // ??? хз зачем афтер
-            &::after,
-            &::before {
-              background: $SignalBlack;
-              border-bottom: 1px solid yellow;
-              border-right: 1px solid yellow;
-            }
-          }
-        }
-      }
-      .cont {
-        color: #000;
-      }
-    }
-    // название
-    .descr {
-      // первый
-      .descr-hed {
-        font-size: 20px !important;
-        color: #000;
-        border: 1px solid #333333;
-        border-radius: 5px;
-        background-color: #707070;
-        &:hover {
-          text-shadow: 0.3px 0.3px 0px #000;
-          background-color: #555555;
-        }
-      }
-      // перечень
-      span {
-        display: inline-block;
-        margin: 0.5px auto;
-        padding: 2px;
-        border: 1px solid transparent;
-        &:hover {
-          background: #555555;
-          border-radius: 5px;
-          border: 1px solid #333333;
-        }
-      }
-    }
-    //  описание
-    .token {
-      z-index: 2;
-      position: relative;
-      white-space: nowrap; // не переносит текст
-      display: inline-block;
-      /* overflow: hidden; */
-      margin: 5px auto;
-      padding: 2px;
-      text-shadow: none;
-      box-shadow: 0 0 3px #000;
-      background: $DullGray;
-      border: 1px solid #555555;
-      border-radius: 5px;
-      .jq {
-        color: #24f100;
-      }
-      .punct {
-        color: #ff9900;
-      }
-      .punct2 {
-        color: #921573;
-      }
-      .teg {
-        color: #be0b32;
-      }
-      .elem {
-        color: #ffd080;
-      }
-      .fn {
-        color: #328dc2;
-      }
-      .doc {
-        color: #ffffff;
-      }
-      .cont {
-        color: #333333;
-        &:hover {
-          color: #fff;
-        }
-      }
-    }
-    // подсказка
-    #tooltip {
-      z-index: 9999;
-      display: none;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      max-width: 200px;
-      padding: 3px;
-      color: white;
-      font-size: 16px;
-      // font-family: serif;
-      // font-weight: normal;
-      // letter-spacing: 1px;
-      background-color: #333333;
-      border: 0.3px solid yellow;
-      border-radius: 5px;
-      opacity: 0.8;
     }
   }
 }
