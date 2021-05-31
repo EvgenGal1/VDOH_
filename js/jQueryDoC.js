@@ -133,6 +133,97 @@ $(".DoC1-ul li:nth-child(7) p").fadeTo(1000, 0).fadeTo(3000, 1);
   */
 }
 
+// *** при наведении на tokens(строка назв. + код элемента) .short(подробности) появятся, при отпускании исчезнут. Можно обычным CSS через hover.
+function short2Visible() {
+  var tokens = $(".tokens");
+  var short2 = $(".short2");
+  $(tokens).hover(
+    function () {
+      $(this).find(short2).css("display", "flex");
+    },
+    function () {
+      $(this).find(short2).css("display", "none");
+    }
+  );
+  // ??? не раб - при нажатии (варианты - mouseover,mouseenter)
+  // .mousedown(function () {
+  //   $(".short").css("display", "inline-block");
+  // }),
+  // .mouseup(function () {
+  //   $(".short").css("display", "none");
+  // });
+  // ??? не раб - each и this
+  // $("token__el").each(function () {
+  //   this.css("display", "none");
+  // });
+  // ??? не раб - индекс
+  // $("token__el").eq($(this).index());
+  // и
+  // var i = $(".token__el").index(this);
+}
+// short2Visible();
+
+// *** при минимальном ввиде(без наведения) кода элемента, заместо мин. примера(#ul) показывать формулу (#id)
+// *
+function hiddShort() {
+  var tokens = $(".tokens");
+  var short = $(".short");
+  $(tokens).hover(
+    function () {
+      $(this).find(".short").hide();
+    },
+    function () {
+      $(this).find(short).show();
+    }
+  );
+  // ? не раб - is в ф()
+  // $(this).is(".short").css("display", "none");
+  // ? не раб - is в var
+  // var dop2hid = $(".short").is();
+  // $(tokens).hover(function () {
+  //   if (dop2hid) {
+  //     $(".short").hide();
+  //   }
+  // ? не раб - hover
+  // $(tokens).on("hover", function () {
+  //   $(".short").fadeOut();
+  // });
+  // ? не раб -  if true
+  //     var short2= $(".short").hidden();
+  // if (($(short2 = true)) {
+  //   $(".short").css("display", "none");
+  // }
+}
+// hiddShort();
+
+// !!!
+// ??? не раб - перебор и исчезание через условие if. не особо удачно
+function hidSpan() {
+  var tokens = $(".tokens");
+  var short = $(".short");
+  var shNon = $(".hS").find("span.short");
+  var hSSpan = $(".hS").find("span");
+  $(".hS span").addClass("short2");
+  if (hSSpan.hasClass("short")) {
+    shNon.removeClass("short2");
+  }
+  // else {
+  //   $('.hS span').removeClass('short')
+  // }
+  console.log(5);
+}
+// hidSpan ()
+// !!!
+
+// *** вызов ф() для попеременного появления доп. кода в token
+function alternatelyTokens() {
+  // hidSpan();
+  short2Visible();
+  hiddShort();
+}
+alternatelyTokens();
+
+
 console.log("DoC1.1");
 // ??? не раб - добавл. класс со стилями срабатывает сразу, не через время
 // ??? не раб - хочу добаыть имя класса и позже в ф() добавить к нем теги на которые и будет раб ф(). пока не получ
@@ -190,7 +281,7 @@ changeAttr2("DoC1-div1", "title", "Подсказка 2");
 // }
 // addBackgroundToken();
 
-// всплывашка (pop-up) для .token
+// *** всплывашка (pop-up) для .token
 function showPopUp() {
   $("[data-tooltip]")
     .mousemove(function (eventObject) {

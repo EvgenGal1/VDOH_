@@ -75,8 +75,8 @@
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">Подкл. онлайн</span
-                    ><span
+                    <span class="token__name">Подкл. онлайн</span>
+                    <span
                       class="token__el"
                       data-tooltip=" script src= 'https://code.jquery.com/ jquery-3.3.1.min.js'> </script>"
                     >
@@ -91,17 +91,26 @@
                       Сперва jQ, затем свой код.
                       Для чтение jQ после загрузки старницы"
                     >
-                      <span class="cont">Ссылку на файл </span>
-                      <span class="jquery">jQuery </span>
-                      <span class="punct3"><</span>
-                      <span class="teg">script</span>
-                      <span class="jq">src</span>
-                      <span class="punct3">=</span>
-                      <span class="elem">"/js/... .js"</span>
-                      <span class="punct3">>< /</span>
+                      <span class="short2">
+                        <span class="cont">Ссылку на файл </span>
+                        <span class="gap"> </span>
+                        <span class="jquery"> jQuery </span>
+                        <span class="gap"> </span>
+                      </span>
+                      <span class="punct3"> <</span>
+                      <span class="short2">
+                        <span class="teg">script </span>
+                        <span class="gap"> </span>
+                        <span class="jq"> src</span>
+                        <span class="punct3">=</span>
+                        <span class="elem">"/js/... .js"</span>
+                        <span class="punct3">>< /</span>
+                      </span>
                       <span class="teg">script</span>
                       <span class="punct3">></span>
+                      <span class="gap"> </span>
                       <span class="cont">перед</span>
+                      <span class="gap"> </span>
                       <span class="punct3">< /</span>
                       <span class="teg">bоdy</span>
                       <span class="punct3">></span>
@@ -114,13 +123,19 @@
                       data-tooltip="$(document).ready(function(){''});
                       Для чтение jQ после загрузки"
                     >
-                      <span class="cont">Ссылку на файл </span>
-                      <span class="jquery">jQuery </span>
-                      <span class="cont">в </span>
-                      <span class="punct3"><</span>
-                      <span class="teg">head</span>
-                      <span class="punct3">></span>
-                      <span class="cont">. Свой код в функции</span>
+                      <span class="short2">
+                        <span class="cont">Ссылку на файл </span>
+                        <span class="gap"> </span>
+                        <span class="jquery">jQuery </span>
+                        <span class="gap"> </span>
+                        <span class="cont">в </span>
+                        <span class="gap"> </span>
+                        <span class="punct3"><</span>
+                        <span class="teg">head</span>
+                        <span class="punct3">></span>
+                        <span class="cont">. Свой код в функции</span>
+                        <span class="gap"> </span>
+                      </span>
                       <span class="jq">$</span>
                       <span class="punct">(</span>
                       <span class="fn">function</span>
@@ -151,10 +166,12 @@
                     <span
                       class="token__el"
                       data-tooltip="Получение элемента/DOM/jQuery эл. в ковычках"
-                      ><span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">"</span>
+                    >
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
                       <span class="cont">elem</span>
-                      <span class="elem">"</span>
+                      <span class="elem">'</span>
                       <span class="punct">)</span>
                     </span>
                   </div>
@@ -162,25 +179,37 @@
                     <span class="token__name">Без конфликтный</span>
                     <span
                       class="token__el"
-                      data-tooltip="Уникальный синтаксис при подкл. др. библиотеках"
+                      data-tooltip="Уникальный синтаксис при подкл. др. библиотек"
                       ><span class="jq">jquery</span><span class="punct">(</span
-                      ><span class="elem">"</span>
+                      ><span class="elem">'</span>
                       <span class="cont">elem</span>
-                      <span class="elem">"</span><span class="punct">)</span>
+                      <span class="elem">'</span><span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Контекст</span>
                     <span
                       class="token__el"
-                      data-tooltip="Не обязательный парамент. Доп. выборка"
-                      ><span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">"</span>
-                      <span class="cont">elem </span>
-                      <!-- <span class="elem">,</span> -->
-                      <span class="cont">context</span>
-                      <span class="elem">"</span>
+                      data-tooltip="Не обязательный парамент. Доп. выборка (находим inout с id=forms3. пишем без кавычек и #)"
+                    >
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="cont short">elem</span>
+                      <span class="cont short2">input</span>
+                      <span class="elem">'</span>
+                      <span class="punct3">,</span>
+                      <span class="elem short">[</span>
+                      <span class="cont short">context</span>
+                      <span class="cont short2">form3</span>
+                      <span class="elem short">]</span>
                       <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Html</span>
+                    <span class="token__el" data-tooltip="000"
+                      ><span class="cont">000</span>
                     </span>
                   </div>
                 </div>
@@ -193,10 +222,14 @@
                       class="token__el"
                       data-tooltip="выбор по наличию атрибута (в img атриб. src)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'img[src]'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img[src]'</span>
+                      </span>
+                      <span class="elem short">Tag[Attr]</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Свойства</span>
@@ -325,10 +358,17 @@
                       class="token__el"
                       data-tooltip="выбор скрытых эл. (img не занимающий места в document)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'img:hidden'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img</span>
+                      </span>
+                      <span class="elem">:hidden</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Видимые</span>
@@ -336,10 +376,17 @@
                       class="token__el"
                       data-tooltip="выбор видимых эл. (img занимающий место в document)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'img:visibility'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img</span>
+                      </span>
+                      <span class="elem">:visibility</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                 </div>
               </td>
@@ -350,17 +397,30 @@
                   <div class="tokens">
                     <span class="token__name">Все</span>
                     <span class="token__el" data-tooltip="выбор всех элементов">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'*'</span><span class="punct">)</span>
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'</span>
+                      </span>
+                      <span class="elem">*</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Тег</span>
                     <span class="token__el" data-tooltip="выбор всех тегов (а)">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'a'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2"></span>
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="elem short2">a</span>
+                      <span class="elem short">Tag</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Класс</span>
@@ -368,10 +428,14 @@
                       class="token__el"
                       data-tooltip="выбор класса (класс menu)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'.menu'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="elem short2">.menu</span>
+                      <span class="elem short">.Class</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Id</span>
@@ -379,10 +443,14 @@
                       class="token__el"
                       data-tooltip="выбор идентифокатора (id ul)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'#ul'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="elem short2">#ul</span>
+                      <span class="elem short">#Id</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Перечисление</span>
@@ -390,10 +458,14 @@
                       class="token__el"
                       data-tooltip="выбор перечисленых эл. (тег a, класс .menu, id #ul)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'a, .menu, #ul'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="elem short2">a, .menu, #ul</span>
+                      <span class="elem short">Tag, .Class, #Id</span>
+                      <span class="elem short2"></span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                 </div>
                 <!-- количественные -->
@@ -403,34 +475,93 @@
                     <span class="token__name">Первый</span>
                     <span
                       class="token__el"
-                      data-tooltip="первый эл. (первый li)"
+                      data-tooltip="выберет один первый эл. (первый li)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:first'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li</span>
+                      </span>
+                      <span class="elem">:first</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Последний</span>
                     <span
                       class="token__el"
-                      data-tooltip="последний эл. (последний li)"
+                      data-tooltip="выберет один последний эл. (последний li)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:last'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li</span>
+                      </span>
+                      <span class="elem">:last</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">Определённый</span>
+                    <span class="token__name">Первые</span>
                     <span
                       class="token__el"
-                      data-tooltip="определённый эл. (7ой li)"
+                      data-tooltip="выберет все первые потомки (все первые li в родителе)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:nth-child(7)'</span
-                      ><span class="punct">)</span></span
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li</span>
+                      </span>
+                      <span class="elem">:first-child</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Последние</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="выберет все последние потомки (все последние li в родителе)"
                     >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li</span>
+                      </span>
+                      <span class="elem">:last-child</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Определённые</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="выберет все Nые потомки (все Nые li). Можно указ. even, odd, формулу. индекс начинается с 1;
+                      схож с :eq(index)
+                      "
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li</span>
+                      </span>
+                      <span class="elem">:nth-child(n)</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Единственный</span>
@@ -438,10 +569,17 @@
                       class="token__el"
                       data-tooltip="единственный потомок (в div выбор <a> если он один)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'div a:only-child'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'div a</span>
+                      </span>
+                      <span class="elem">:only-child</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Чётный</span>
@@ -449,10 +587,17 @@
                       class="token__el"
                       data-tooltip="чётные эл. (все чётные li)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu li:even'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'menu li</span>
+                      </span>
+                      <span class="elem">:even</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Не Чётный</span>
@@ -460,10 +605,17 @@
                       class="token__el"
                       data-tooltip="не чётные эл. (все не чётные li)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu li:odd'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'menu li</span>
+                      </span>
+                      <span class="elem">:odd</span>
+                      <span class="short2">
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
                   </div>
                 </div>
                 <!-- контент -->
@@ -473,12 +625,15 @@
                     <span class="token__name">Tекст</span>
                     <span
                       class="token__el"
-                      data-tooltip="имеет внутри текст (в 'p' есть текcт 'lorem')"
+                      data-tooltip="имеет внутри текст (в 'p' есть текcт 'text')"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'p:contains(lorem)'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'p</span>
+                      <span class="elem">:contains(text)</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Тег</span>
@@ -486,10 +641,16 @@
                       class="token__el"
                       data-tooltip="имеет внутри тег (в li есть тег 'ul')"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:has(ul)'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'li</span>
+                      <span class="elem">:has(</span>
+                      <span class="elem short">selector</span>
+                      <span class="elem short2">ul</span>
+                      <span class="elem">)</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Пустой</span>
@@ -497,10 +658,13 @@
                       class="token__el"
                       data-tooltip="выбор пустых эл. (в li ничего)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:empty'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'li</span>
+                      <span class="elem">:empty</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Не Пустой</span>
@@ -508,10 +672,13 @@
                       class="token__el"
                       data-tooltip="выбор эл. с потомками (в li есть тег(текст))"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'li:parent'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'li</span>
+                      <span class="elem">:parent</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                 </div>
               </td>
@@ -525,10 +692,12 @@
                       class="token__el"
                       data-tooltip="выбор всех потомков (все li)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu li'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'menu li'</span>
+                      <span class="elem short">ancest descend</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Родитель > (Ребенок)</span>
@@ -536,10 +705,12 @@
                       class="token__el"
                       data-tooltip="выбор только прямых потомков (сыновей)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu > li'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'menu > li'</span>
+                      <span class="elem short">parent > child</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Предыдущий + (Следующий)</span>
@@ -547,10 +718,12 @@
                       class="token__el"
                       data-tooltip="выбор ближайшего ниже (только первый <p>)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu li a + p'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'menu li a + p'</span>
+                      <span class="elem short">prev + next</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">Предыдущие ~ (Братский)</span>
@@ -558,10 +731,12 @@
                       class="token__el"
                       data-tooltip="выбор всех следующих (все дочерние <p>)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'menu li a ~ p'</span
-                      ><span class="punct">)</span></span
-                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'menu li a ~ p'</span>
+                      <span class="elem short">prev ~ siblings</span>
+                      <span class="punct short2">)</span>
+                    </span>
                   </div>
                 </div>
                 <!-- Формы -->
@@ -761,10 +936,11 @@
             <tr class="general">
               <td>Базовые</td>
               <td>Манипуляции</td>
-              <td>Переход</td>
+              <td>Наборы эл.</td>
             </tr>
             <!-- методы взаимодействия -->
             <tr>
+              <!-- базовые -->
               <td>
                 <!-- Атрибуты -->
                 <div class="group">
@@ -775,12 +951,19 @@
                       class="token__el"
                       data-tooltip="Выбрать тег с атрибутом (<a> с href)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'a'</span><span class="punct">)</span>
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">attr</span><span class="punct">(</span
-                      ><span class="elem">'href'</span
-                      ><span class="punct">)</span>
+                      <span class="jq">attr</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">href</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
@@ -796,13 +979,21 @@
                     xX может быть функцией;
                       "
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'a'</span><span class="punct">)</span>
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
                       <span class="jq">attr</span><span class="punct">(</span>
-                      <span class="elem">'title'</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">title</span>
+                      <span class="elem">'</span>
                       <span class="punct3">, </span>
-                      <span class="elem">'xX'</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">xX</span>
+                      <span class="elem">'</span>
                       <span class="punct">)</span>
                     </span>
                   </div>
@@ -812,14 +1003,19 @@
                       class="token__el"
                       data-tooltip="удалить атрибут (у img удалить src)"
                     >
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">'img'</span
-                      ><span class="punct">)</span>
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">removeAttr</span
-                      ><span class="punct">(</span
-                      ><span class="elem">'src'</span
-                      ><span class="punct">)</span>
+                      <span class="jq">removeAttr</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">src</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
@@ -827,33 +1023,102 @@
                 <div class="group">
                   <div class="descr">Класс:</div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Имеет кл.</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="проверит наличие класса (у div есть .cl)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'div'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">hasClass</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'cl'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Добавить кл.</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="добавит класс (к не чётным img присвоить .cl)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img:odd'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">addClass</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'cl'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Удалить кл.</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="Удалит класс (у всех ссылок удалит .cl)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">removeClass</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'cl'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Переключить кл.</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="Нет класса - добавит, иначе - удалит (при действии со span будет переключать .cl)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'span'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">toggleClass</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'cl'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Условие кл.</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="При условии switch верно - добавит, иначе - удалит (при switch верно, длобавит .cl ссылке)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">toggleClass</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'cl'</span>
+                      <span class="punct3">,</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">switch</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
@@ -866,13 +1131,15 @@
                       class="token__el"
                       data-tooltip="Записать текст из <p> в переменную pTex"
                     >
-                      <span class="fn">var</span>
-                      <span class="doc">pTex</span>
-                      <span class="teg">=</span>
-                      <span class="jq">$</span>
-                      <span class="punct">(</span>
-                      <span class="elem">'p'</span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="fn">var</span>
+                        <span class="doc">pTex</span>
+                        <span class="teg">=</span>
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
                       <span class="jq">text</span>
                       <span class="punct">(</span>
@@ -886,10 +1153,12 @@
                       class="token__el"
                       data-tooltip="Из переменной pTex, записать текст в <span>"
                     >
-                      <span class="jq">$</span>
-                      <span class="punct">(</span>
-                      <span class="elem">'span'</span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'span'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
                       <span class="jq">text</span>
                       <span class="punct">(</span>
@@ -902,33 +1171,43 @@
                 <div class="group">
                   <div class="descr">HTML:</div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Взять</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="возмёт html код (получит <p></p>)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">html</span>
+                      <span class="punct">(</span>
+                      <span class="elem"></span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Вставить</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="вставит html код (в div вставит <p> с текстом 'xX')"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'div'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">html</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">< p>xX< /p></span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
@@ -936,33 +1215,49 @@
                 <div class="group">
                   <div class="descr">CSS:</div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Взять</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="возмет css значение у свойсва (у <p> возмёт значение border)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">css</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">border</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Установить</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="установит css свойсва и значение (у <div> сделает цвет текста черным); можно передавать в объекте несколько свойств - .css({ 'color': '#ddd', 'width': '100%'});"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'div'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">css</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">color</span>
+                      <span class="elem">'</span>
+                      <span class="punct3">, </span>
+                      <span class="elem">'</span>
+                      <span class="col short2">#000</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
@@ -970,33 +1265,44 @@
                 <div class="group">
                   <div class="descr">Значение:</div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Получить</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="получит значение у input, textarea, select (в переменную запишет значение textarea); Для эл. select и checkbox использ. селекторы :selected и :checked (select option:selected, input:checkbox:checked)"
+                    >
+                      <span class="short2">
+                        <span class="fn">var</span>
+                        <span class="doc">tAr</span>
+                        <span class="teg">=</span>
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'textarea'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">val</span>
+                      <span class="punct">(</span>
+                      <span class="elem"></span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Установить</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="установит значение атрибута (в input запишет переменную tAr)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'input'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">val</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'tAr'</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
@@ -1018,15 +1324,20 @@
                       <span class="punct">(</span>
                       <span class="elem"></span>
                       <span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">width</span>
-                      <span class="punct">(</span>
-                      <span class="fn">150</span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="punct3">.</span>
+                        <span class="jq">width</span>
+                        <span class="punct">(</span>
+                        <span class="fn">150</span>
+                        <span class="punct">)</span>
+                      </span>
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">внутр./внешн.</span>
+                    <span class="token__name">
+                      <span>Внутр.</span>
+                      <span class="short2">/Внешн.</span>
+                    </span>
                     <span
                       class="token__el"
                       data-tooltip="внутр. с padding/ внешн. с border и отступ"
@@ -1036,11 +1347,13 @@
                       <span class="punct">(</span>
                       <span class="elem"></span>
                       <span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">outerWidth</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="punct3">.</span>
+                        <span class="jq">outerWidth</span>
+                        <span class="punct">(</span>
+                        <span class="elem"></span>
+                        <span class="punct">)</span>
+                      </span>
                     </span>
                   </div>
                   <div class="tokens">
@@ -1049,11 +1362,13 @@
                       class="token__el"
                       data-tooltip="Взять/Именить (250 - по умолчанию 'px')"
                     >
-                      <span class="punct3">.</span>
-                      <span class="jq">height</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="punct3">.</span>
+                        <span class="jq">height</span>
+                        <span class="punct">(</span>
+                        <span class="elem"></span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
                       <span class="jq">height</span>
                       <span class="punct">(</span>
@@ -1062,16 +1377,21 @@
                     </span>
                   </div>
                   <div class="tokens">
-                    <span class="token__name">внутр./внешн.</span>
+                    <span class="token__name">
+                      <span class="short2">Внутр./</span>
+                      <span>Внешн.</span>
+                    </span>
                     <span
                       class="token__el"
                       data-tooltip="внутр. с padding/ внешн. с border и отступ"
                     >
-                      <span class="punct3">.</span>
-                      <span class="jq">innerHeight</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
+                      <span class="short2">
+                        <span class="punct3">.</span>
+                        <span class="jq">innerHeight</span>
+                        <span class="punct">(</span>
+                        <span class="elem"></span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
                       <span class="jq">externalHeight</span>
                       <span class="punct">(</span>
@@ -1081,142 +1401,770 @@
                   </div>
                 </div>
               </td>
+              <!-- манипуляции -->
               <td>
-                <!-- 000 -->
+                <!-- внутрь -->
                 <div class="group">
-                  <div class="descr">000:</div>
+                  <div class="descr">Вставить Внутрь:</div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
-                <!-- 000 -->
+                <!-- снаружи -->
                 <div class="group">
-                  <div class="descr">000:</div>
+                  <div class="descr">Вставить Снаружи:</div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- вокруг -->
+                <div class="group">
+                  <div class="descr">Обернуть:</div>
+                  <div class="tokens">
+                    <span class="token__name">Каждый</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="добавит вокруг каждого эл. обёртку (span обернём в <p>)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'span'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">wrap</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">< p>< /p></span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Все</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="добавит общую для всех эл. обёртку (все <a> обернём в <p>)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">wrapAll</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">< p>< /p></span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Внутреннее</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="обернёт всё в выбранных эл. (в <p> текст сделает курсивным)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">wrapInner</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">< em>< /em></span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- заменить -->
+                <div class="group">
+                  <div class="descr">Заменить:</div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- удалять -->
+                <div class="group">
+                  <div class="descr">Удалить:</div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- копировать -->
+                <div class="group">
+                  <div class="descr">Копировать:</div>
+                  <div class="tokens">
+                    <span class="token__name">Клон</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="склонирует эл. и выберет клон (сделает клон <p>)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">clone</span>
+                      <span class="punct">(</span>
+                      <span class="elem"></span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Событие</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="склонирует эл. и его обраб. событий, выберет клон (клон выбранного эл. будет с событием, например click)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'</span>
+                        <span class="this">this</span>
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">clone</span>
+                      <span class="punct">(</span>
+                      <span class="fn">true</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
               </td>
+              <!-- наборы -->
               <td>
-                <!-- 000 -->
+                <!-- доступ -->
                 <div class="group">
-                  <div class="descr">000:</div>
+                  <div class="descr">Перебор:</div>
+                  <!-- Каждый -->
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Каждый</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="Перебор ел. с выполн. ф() для каждого. По индексу(i) с 0. (перебор всех li и применение ф() для каждого по отдельности)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'li'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">each</span>
+                      <span class="punct">(</span>
+                      <span class="fn short">fn</span>
+                      <span class="fn short2">function</span>
+                      <span class="punct2 short2">(</span>
+                      <span class="this short2">i</span>
+                      <!-- <span class="punct3 short2">,</span> -->
+                      <!-- <span class="this short2">e</span> -->
+                      <span class="punct2 short2">){</span>
+                      <span class="punct2 short2">}</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
+                  <!-- map -->
                   <div class="tokens">
-                    <span class="token__name">000</span>
+                    <span class="token__name">Карта</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
-                      <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>
-                <!-- 000 -->
+                <!-- перемещение -->
                 <div class="group">
-                  <div class="descr">000:</div>
+                  <div class="descr">Перемещение:</div>
+                  <!-- Найти внутри -->
                   <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                    <span class="token__name">Найти в</span>
+                    <span class="token__el" data-tooltip="Внутри выбранного эл., найдёт всех потомков (в div найдёт все p.rT)">
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'div'</span>
+                        <span class="punct">)</span>
+                      </span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">find</span>
+                      <span class="punct">(</span>
+                      <span class="elem short2">'p.rT'</span>
+                      <span class="elem short">expr</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" data-tooltip="000">
-                      <span class="jq">$</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                       <span class="punct3">.</span>
-                      <span class="jq">xXx</span><span class="punct">(</span
-                      ><span class="elem">' '</span><span class="punct">)</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- фильтры  -->
+                <div class="group">
+                  <div class="descr">Фильтры:</div>
+                  <!-- Фильтер -->
+                  <div class="tokens">
+                    <span class="token__name">Фильтер</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">filter</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <!-- 3.1 -->
+            <tr class="general">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-- 3.2 -->
+            <tr>
+              <!-- 1 -->
+              <td>
+                <!-- данные -->
+                <div class="group">
+                  <div class="descr">Работа с Данными:</div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- плагины  -->
+                <div class="group">
+                  <div class="descr">Плагины :</div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <!-- 2 -->
+              <td>
+                <div class="group">
+                  <div class="tokens">
+                    <span class="token__name">Длина</span>
+                    <span
+                      class="token__el"
+                      data-tooltip="Подсчитывает количество элементов. Быстрее аьтернативы size() (сколько li)"
+                    >
+                      <span class="jq short2">$</span>
+                      <span class="punct short2">(</span>
+                      <span class="elem short2">'li'</span>
+                      <span class="punct short2">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">length</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <!-- 3 -->
+              <td>
+                <div class="group">
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">000</span>
+                    <span class="token__el" data-tooltip="000">
+                      <span class="jq">$</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
+                      <span class="punct3">.</span>
+                      <span class="jq">xXx</span>
+                      <span class="punct">(</span>
+                      <span class="elem">' '</span>
+                      <span class="punct">)</span>
                     </span>
                   </div>
                 </div>

@@ -1179,7 +1179,7 @@ footer {
         background: #707070;
         background: #555555;
         right: -7px;
-        bottom: 4px;
+        bottom: 3px;
         width: 16px;
         height: 16px;
         -ms-transform: rotate(45deg);
@@ -1216,18 +1216,24 @@ footer {
     padding: 2px;
     margin: 2px; }
     .directorys-block .DoC2 .group .tokens:hover .token__name {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
       border: 1px solid #333333;
       text-shadow: 0.3px 0.3px 0px #000; }
       .directorys-block .DoC2 .group .tokens:hover .token__name::before {
         background-color: #555555;
-        -webkit-box-shadow: 2px -2px 0px #000;
-        box-shadow: 2px -2px 0px #000; }
+        -webkit-box-shadow: 4px -4px 0px #000;
+        box-shadow: 4px -4px 0px #000; }
     .directorys-block .DoC2 .group .tokens:hover .token__el {
       -webkit-box-shadow: 2px 2px 3px #000;
       box-shadow: 2px 2px 3px #000; }
   .directorys-block .DoC2 .group .token__name {
     z-index: 2;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     white-space: nowrap;
     display: inline-block;
     padding: 2px;
@@ -1235,16 +1241,23 @@ footer {
   .directorys-block .DoC2 .group .token__el {
     z-index: 2;
     position: relative;
-    white-space: nowrap;
-    display: inline-block;
-    /* overflow: hidden; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding: 2px;
+    white-space: nowrap;
     text-shadow: none;
     -webkit-box-shadow: 0 0 3px #000;
     box-shadow: 0 0 3px #000;
     background: #707070;
     border: 1px solid #555555;
     border-radius: 5px; }
+    .directorys-block .DoC2 .group .token__el span {
+      text-shadow: 0 0 3px #000; }
+    .directorys-block .DoC2 .group .token__el .gap {
+      width: 8px; }
+    .directorys-block .DoC2 .group .token__el .short2 {
+      text-shadow: none; }
     .directorys-block .DoC2 .group .token__el .jq {
       color: #24f100; }
     .directorys-block .DoC2 .group .token__el .jquery {
@@ -1254,19 +1267,26 @@ footer {
     .directorys-block .DoC2 .group .token__el .punct2 {
       color: #ec31be; }
     .directorys-block .DoC2 .group .token__el .punct3 {
-      color: #bebebe; }
+      color: #e9e9e9; }
     .directorys-block .DoC2 .group .token__el .teg {
       color: #e91240; }
     .directorys-block .DoC2 .group .token__el .elem {
       color: #ffd080; }
     .directorys-block .DoC2 .group .token__el .fn {
       color: #328dc2; }
+    .directorys-block .DoC2 .group .token__el .this {
+      color: #ffa500; }
     .directorys-block .DoC2 .group .token__el .doc {
       color: #ffffff; }
+    .directorys-block .DoC2 .group .token__el .col {
+      color: #000; }
     .directorys-block .DoC2 .group .token__el .cont {
-      color: #333333; }
-      .directorys-block .DoC2 .group .token__el .cont:hover {
-        color: #fff !important; }
+      color: #333333;
+      text-shadow: none; }
+    .directorys-block .DoC2 .group .token__el:hover .cont {
+      color: #fff; }
+  .directorys-block .DoC2 .group .short2 {
+    display: none; }
   .directorys-block .DoC2 .group #tooltip {
     z-index: 9999;
     display: none;
