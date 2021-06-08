@@ -162,13 +162,13 @@
           .token__name .short2,
           .token__el .short22 {
             // display: inline-block;
-            // ф() - shortVisible()
+            // f() - shortVisible()
           }
           .token__name .short,
           .token__el .short {
             // display: none;
             // display: none !important;
-            // ф() - shortVisible()
+            // f() - shortVisible()
           }
         }
       }
@@ -220,7 +220,7 @@
         }
         .short2 {
           // display: none;
-          text-shadow: none;
+          // text-shadow: none;
         }
         .jq {
           color: #24f100;
@@ -246,6 +246,9 @@
         .fn {
           color: #328dc2;
         }
+        .num {
+          color: #8c00ff;
+        }
         .this {
           color: #ffa500;
         }
@@ -257,6 +260,7 @@
         }
         .cont {
           color: #333333;
+          color: #1d1d1d;
           text-shadow: none;
         }
         &:hover {

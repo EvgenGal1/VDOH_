@@ -176,7 +176,7 @@ function hiddShort() {
       $(this).find(short).show();
     }
   );
-  // ? не раб - is в ф()
+  // ? не раб - is в f()
   // $(this).is(".short").css("display", "none");
   // ? не раб - is в var
   // var dop2hid = $(".short").is();
@@ -203,19 +203,23 @@ function hidSpan() {
   var short = $(".short");
   var shNon = $(".hS").find("span.short");
   var hSSpan = $(".hS").find("span");
-  $(".hS span").addClass("short2");
+  $("li").each(function (i) {});
+  $(".hS span")
+    .addClass("short2")
+    .filter(function (i) {
+      return i == 1 || $(this).hasClass("new_style") == true;
+    });
   if (hSSpan.hasClass("short")) {
     shNon.removeClass("short2");
   }
   // else {
   //   $('.hS span').removeClass('short')
   // }
-  console.log(5);
 }
 // hidSpan ()
 // !!!
 
-// *** вызов ф() для попеременного появления доп. кода в token
+// *** вызов f() для попеременного появления доп. кода в token
 function alternatelyTokens() {
   // hidSpan();
   short2Visible();
@@ -223,10 +227,65 @@ function alternatelyTokens() {
 }
 alternatelyTokens();
 
+// *** всем span.cont у кого есть текст и текст('||'), сделать padding 0 5px. и убрать .gap(пробел)
+function iliPadd() {
+  var contSp = $("span.cont:contains()");
+  var contSpIli = $("span.cont:contains('||')");
+  // ? не раб - в связке 2 :contains
+  // var contSpBr = $("span.cont:contains('[')");
+
+  $(".gap").css("display", "none");
+  $(contSp).css("padding", "0 5px");
+  $(".token__el span")
+    .filter(contSpIli)
+    .css({ "font-weight": "900", "text-shadow": "0px 0px 0px black" });
+  // ? не раб .filter с :contains
+  // .filter(".cont:contains("||")")
+  // ? не раб связка 2 :contains
+  // .filter(contSpBr)
+  // .css("padding", "0px")
+  // ? не раб .is
+  // .is(function () {
+  //   if ($(this).text() == "[") {
+  //     $(this).css("padding", "0");
+  //   }
+  // });
+}
+iliPadd();
+
+// *** всем span.cont у кого есть текст('[' или ']'), сделать padding 0px.
+function ramk() {
+  $("span.cont").is(function () {
+    if (
+      $(this).text() == "[" ||
+      $(this).text() == "]"
+      // ? не раб .contains
+      // .contains("[") или .contains() == "["
+    ) {
+      $(this).css("padding", "0");
+    }
+  });
+}
+ramk();
+
+// !
+// ??? сделать другой цвет блокам у которых пока нет подсказки
+function сolNul() {
+  var datT = $("span[data-tooltip^=000]");
+  $(datT).closest(".tokens").css("color", "#ff0000"); // блоку
+  $(".tokens").find(datT).css("background", "#100835"); // перемен
+  $(".tokens").has(datT).css("outline", "3px solid #000000"); // блоку
+  // console.log(1);
+  // console.log(2);
+  // console.log(3);
+  // console.log(4);
+}
+сolNul();
+// !
 
 console.log("DoC1.1");
 // ??? не раб - добавл. класс со стилями срабатывает сразу, не через время
-// ??? не раб - хочу добаыть имя класса и позже в ф() добавить к нем теги на которые и будет раб ф(). пока не получ
+// ??? не раб - хочу добаыть имя класса и позже в f() добавить к нем теги на которые и будет раб f(). пока не получ
 // скрываем(делает прозрачным) переданый эл. за 1ое переданое время и возвращаем эл. за 2ое переданное время + добавляем класс со стилям
 function elementOut(element, time1, time2, newClass, time3) {
   // получаем аргументы в вызове функц

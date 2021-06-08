@@ -1256,8 +1256,6 @@ footer {
       text-shadow: 0 0 3px #000; }
     .directorys-block .DoC2 .group .token__el .gap {
       width: 8px; }
-    .directorys-block .DoC2 .group .token__el .short2 {
-      text-shadow: none; }
     .directorys-block .DoC2 .group .token__el .jq {
       color: #24f100; }
     .directorys-block .DoC2 .group .token__el .jquery {
@@ -1274,6 +1272,8 @@ footer {
       color: #ffd080; }
     .directorys-block .DoC2 .group .token__el .fn {
       color: #328dc2; }
+    .directorys-block .DoC2 .group .token__el .num {
+      color: #8c00ff; }
     .directorys-block .DoC2 .group .token__el .this {
       color: #ffa500; }
     .directorys-block .DoC2 .group .token__el .doc {
@@ -1282,6 +1282,7 @@ footer {
       color: #000; }
     .directorys-block .DoC2 .group .token__el .cont {
       color: #333333;
+      color: #1d1d1d;
       text-shadow: none; }
     .directorys-block .DoC2 .group .token__el:hover .cont {
       color: #fff; }
