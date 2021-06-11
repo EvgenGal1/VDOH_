@@ -1,3 +1,5 @@
+// <jQueryDoC.js(справочник jQuery)>˅=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=˅
+
 // подключение -> ===========================================================================================
 //  подкл файл ->  сайт https://jquery.com -> конпка download jquery -> ссылка "Загрузите ..... jQuery 3.6.0" -> скачать/сохранить файл -> подкл файл <script src="/js/jQuery.js"></script>
 // подкл онлайн -> <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -133,15 +135,20 @@ $(".DoC1-ul li:nth-child(7) p").fadeTo(1000, 0).fadeTo(3000, 1);
   */
 }
 
-// *** при наведении на tokens(строка назв. + код элемента) .short(подробности) появятся, при отпускании исчезнут. Можно обычным CSS через hover.
-function short2Visible() {
+// <DoC2(таблица jQuery)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+
+// *** при наведении на tokens(строка назв. + код элемента) - .short(формула) исчезает, а .short2(пример) появятся, при отпускании наоборот. Можно обычным CSS через hover.
+function shortAnd2Change() {
   var tokens = $(".tokens");
+  var short = $(".short");
   var short2 = $(".short2");
   $(tokens).hover(
     function () {
+      $(this).find(".short").hide();
       $(this).find(short2).css("display", "flex");
     },
     function () {
+      $(this).find(short).show();
       $(this).find(short2).css("display", "none");
     }
   );
@@ -160,22 +167,6 @@ function short2Visible() {
   // $("token__el").eq($(this).index());
   // и
   // var i = $(".token__el").index(this);
-}
-// short2Visible();
-
-// *** при минимальном ввиде(без наведения) кода элемента, заместо мин. примера(#ul) показывать формулу (#id)
-// *
-function hiddShort() {
-  var tokens = $(".tokens");
-  var short = $(".short");
-  $(tokens).hover(
-    function () {
-      $(this).find(".short").hide();
-    },
-    function () {
-      $(this).find(short).show();
-    }
-  );
   // ? не раб - is в f()
   // $(this).is(".short").css("display", "none");
   // ? не раб - is в var
@@ -184,7 +175,7 @@ function hiddShort() {
   //   if (dop2hid) {
   //     $(".short").hide();
   //   }
-  // ? не раб - hover
+  // ? не раб - on hover
   // $(tokens).on("hover", function () {
   //   $(".short").fadeOut();
   // });
@@ -194,7 +185,7 @@ function hiddShort() {
   //   $(".short").css("display", "none");
   // }
 }
-// hiddShort();
+// shortAnd2Change();
 
 // !!!
 // ??? не раб - перебор и исчезание через условие if. не особо удачно
@@ -219,21 +210,12 @@ function hidSpan() {
 // hidSpan ()
 // !!!
 
-// *** вызов f() для попеременного появления доп. кода в token
-function alternatelyTokens() {
-  // hidSpan();
-  short2Visible();
-  hiddShort();
-}
-alternatelyTokens();
-
 // *** всем span.cont у кого есть текст и текст('||'), сделать padding 0 5px. и убрать .gap(пробел)
 function iliPadd() {
   var contSp = $("span.cont:contains()");
-  var contSpIli = $("span.cont:contains('||')");
+  var contSpIli = $("span.cont:contains('||'), span.cont:contains('=')");
   // ? не раб - в связке 2 :contains
   // var contSpBr = $("span.cont:contains('[')");
-
   $(".gap").css("display", "none");
   $(contSp).css("padding", "0 5px");
   $(".token__el span")
@@ -268,20 +250,36 @@ function ramk() {
 }
 ramk();
 
-// !
-// ??? сделать другой цвет блокам у которых пока нет подсказки
+// !!!
+// *** сделать др. цвет и рамку, блокам у которых пока нет подсказки
+// * сделать рамки блокам (строке не получилось), внутри которой у span нет допов.(".short, .short2")
 function сolNul() {
   var datT = $("span[data-tooltip^=000]");
-  $(datT).closest(".tokens").css("color", "#ff0000"); // блоку
-  $(".tokens").find(datT).css("background", "#100835"); // перемен
-  $(".tokens").has(datT).css("outline", "3px solid #000000"); // блоку
-  // console.log(1);
-  // console.log(2);
-  // console.log(3);
-  // console.log(4);
+  // * находит у кого есть '000' в подсказке и выделяет родителя или потомка
+  $(datT).closest(".tokens").css("color", "#ff0000"); // блоку/родителю
+  $(".tokens").find(datT).css("background", "#100835"); // переменой/потомку
+  $(".tokens").has(datT).css("outline", "3px solid #000000"); // блоку/родителю
+  // * находит у кого нет в наличии .shortов и выделяет .token__el
+  $(".token__el").not(":has(.short, .short2)").css("outline", "1px solid red");
+  // .has(".short, .short2") // находит .shortы, выделяет .token__el
+  // ? не раб - ч/з f() задавал стили строке .tokens внутри которой у span нет .shortов
+  // $(".tokens")
+  //   .filter(function (i, e) {
+  //     return $(".token__el ")
+  //     // ? .find('span').css("outline", "3px solid blue")
+  //       .not(":has(.short, .short2)")
+  //       // ? .end()
+  //       .css("outline", "1px solid red");
+  //   })
+  //   // ? .end() или add()
+  //   .css("outline", "2px solid blue");
+  // ? не раб - closest. стили пришли ко всем
+  // $(".tokens span").not(".short, .short2").closest(".tokens").css("outline", "1px solid red")
 }
 сolNul();
-// !
+// !!!
+
+//</DoC2(таблица jQuery)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
 
 console.log("DoC1.1");
 // ??? не раб - добавл. класс со стилями срабатывает сразу, не через время
@@ -340,7 +338,8 @@ changeAttr2("DoC1-div1", "title", "Подсказка 2");
 // }
 // addBackgroundToken();
 
-// *** всплывашка (pop-up) для .token
+// *** подсказка(data-tooltip) для .token_el(код эл.)
+// !!! https://habr.com/ru/post/165805/
 function showPopUp() {
   $("[data-tooltip]")
     .mousemove(function (eventObject) {
@@ -362,6 +361,134 @@ function showPopUp() {
     });
 }
 showPopUp();
+
+// !!
+// *** подсказка(floatTip) для .token_el(код эл.)
+// !!! http://htmlbook.ru/faq/mozhno-li-izmenit-vid-vsplyvayushchey-podskazki
+// onmousemove - событие для опред. перемещ. курсора мыши по экрану
+document.onmousemove = moveTip;
+function moveTip(e) {
+  floatTipStyle = document.getElementById("floatTip").style;
+  w = 250; // Ширина подсказки
+
+  // Для браузера IE6-8
+  if (document.all) {
+    // clientX - расстояние от Левой границы Экрана до Курсора без учета прокрутки
+    // scrollLeft - Получает значение отступа прокрутки СЛева
+    x = event.clientX + document.body.scrollLeft;
+    // clientY - расстояние от Верхней границы Экрана до Курсора без учета прокрутки
+    // Получает значение отступа прокрутки СВерху
+    y = event.clientY + document.body.scrollTop;
+
+    // Для остальных браузеров (можно оставить только х= и у=)
+  } else {
+    // pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
+    x = e.pageX; // Координата X курсора
+    // pageY - расстояние от Начала Документа до Курсора с учетом прокрутки
+    y = e.pageY; // Координата Y курсора
+  }
+
+  // Показывать слой справа от курсора
+  // clientWidth - ширина элемента внутри рамок border
+  if (x + w + 10 < document.body.clientWidth) {
+    floatTipStyle.left = x + "px";
+
+    // ??? проба покажет в центре
+    // } else if (x - w + 10 < document.body.clientWidth / 2) {
+    // }
+    // else if (x + w + 10 == document.body.clientWidth) {
+    //   floatTipStyle.left = x - w / 2 + "px";
+
+    // Показывать слой слева от курсора
+  } else {
+    floatTipStyle.left = x - w + "px";
+  }
+
+  // Положение от  верхнего края окна браузера
+  floatTipStyle.top = y + 20 + "px";
+}
+
+function toolTip(msg) {
+  floatTipStyle = document.getElementById("floatTip").style;
+  if (msg) {
+    // Выводим текст подсказки
+    document.getElementById("floatTip").innerHTML = msg;
+    // Показываем подсказку
+    floatTipStyle.display = "block";
+  } else {
+    // Прячем подсказку
+    floatTipStyle.display = "none";
+  }
+}
+// !!
+
+// !!
+// *** подсказка(toolTipOv) для .token_el(код эл.)
+// !!! http://www.webmasters.by/articles/web-programming/72-create-simple-tooltips-with-css-and-jquery.html
+function simple_tooltipov(target_items, name) {
+  console.log(1);
+  // $(target_items).each(function (i) {
+  $(target_items).each(function (i) {
+    console.log(2);
+    $(this).append(
+      "<div class='" +
+        name +
+        "' id='" +
+        name +
+        i +
+        "'><p>" +
+        $(this).attr("title") +
+        "</p></div>"
+    );
+    console.log(3.1);
+    var my_tooltipov = $("#" + name + i);
+    console.log(3.2);
+    $(this)
+      .removeAttr("title")
+      .mouseover(function () {
+        console.log(4);
+        my_tooltipov.css({ opacity: 0.8}).fadeIn(50);
+        console.log(5);
+      })
+      .mousemove(function (e) {
+        console.log(6);
+        w = 250; // Ширина подсказки
+        x = e.pageX; // Координата X курсора. pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
+        y = e.pageY; // Координата Y курсора. pageY - расстояние от Начала Документа до Курсора с учетом прокруткиs
+        // Показывать слой справа от курсора
+        // clientWidth - ширина элемента внутри рамок border
+        if (x + w + 10 < document.body.clientWidth) {
+          my_tooltipov.css({ left: x + "px" });
+        }
+        // Показывать слой слева от курсора
+        else {
+          my_tooltipov.css({ left: x - w + "px" });
+        }
+        // Положение от  верхнего края окна браузера
+        my_tooltipov.css({ top: y + 15 + "px" });
+        console.log(6.1);
+      })
+      .mouseout(function () {
+        console.log(7);
+        my_tooltipov.fadeOut(500);
+      });
+    // !
+    // $(this).removeAttr("title").mouseover(function(){
+    //   my_tooltipov.css({opacity:0.8, display:"none"}).fadeIn(400);
+    //   }).mousemove(function(kmouse){
+    //   my_tooltipov.css({left:kmouse.pageX+15, top:kmouse.pageY+15});
+    //   }).mouseout(function(){
+    //   my_tooltipov.fadeOut(400);
+    //   });  
+      // !
+    console.log(8);
+  });
+  console.log(9);
+}
+// $(document).ready(function () {
+simple_tooltipov("div.rtr span", "tooltipOv");
+// });
+// !!
 
 // ??? не раб - не могу прописать чтоб при наведении на (.descr span) или (.tokens .token) выделялся ктото противоположный из них. думаю тут нужен цикл (each или массив).
 // добав. рамку кл.token при наведении на кл.descr и убрать.
@@ -443,3 +570,4 @@ function highlightRelated3() {
 // ->
 // ->
 // ->
+//</<jQueryDoC.js(справочник jQuery)>˄=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=¡=˄
