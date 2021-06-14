@@ -297,44 +297,8 @@
         opacity: 0.8;
       }
     }
-    // !
-    .rT {
-      // & [title]
-      .rTtR,
-      & [tooltip]:hover:after {
-        z-index: 9999;
-        // display: none;
-        position: absolute;
-        top: -50px;
-        left: 10px;
-        max-width: 200px;
-        padding: 3px;
-        color: white;
-        font-size: 16px;
-        // font-family: serif;
-        // font-weight: normal;
-        // letter-spacing: 1px;
-        background-color: #333333;
-        border: 0.3px solid yellow;
-        border-radius: 5px;
-        opacity: 0.8;
-        content: attr(tooltip);
-      }
-      & [tooltip]:hover:after {
-        // content: attr(tooltip);
-        // border: #777;
-        // background-color: #aaa;
-        // padding: 5px;
-      }
-    }
-    .token__el {
-      &:hover {
-        & [title]:hover:after {
-          display: block;
-        }
-      }
-    }
 
+    // !
     #floatTip {
       z-index: 999;
       display: none;
@@ -356,66 +320,29 @@
       z-index: 999;
       display: none;
       position: absolute;
-      min-width: 250px;
+      max-width: 250px;
       padding: 0px;
       color: white;
       font-size: 16px;
-      background-color: #333333;
+      background-color: #000000;
       border: 0.3px solid yellow;
       border-radius: 5px;
-      // opacity: 0.8;
-      // !
-      // position: absolute;
-      // z-index: 999;
-      // left: -9999px;
-      // background-color: #dedede;
-      // padding: 5px;
-      // border: 1px solid #fff;
-      // width: 250px;
     }
-    .tooltipOv p {
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      background-color: #222;
-      padding: 2px 7px;
-      // background-color: #00f;
-      padding: 3px 5px;
-      font-size: 16px;
-      /* text-align: center; */
-      letter-spacing: center;
-      /* line-height: 100%; */
-      /* padding: 2px 7px; */
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      // !
-      // position: absolute;
-      // z-index: 999;
-      // left: -9999px;
-      // background-color: #dedede;
-      // padding: 5px;
-      // border: 1px solid #fff;
-      // width: 250px;
+    .tooltipOv {
+      p {
+        color: #ffffff;
+        background-color: #333333;
+        padding: 3px 5px;
+        font-size: 16px;
+        letter-spacing: center;
+        /* line-height: 100%; */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      div {
+        color: #ff0;
+      }
     }
-    // !!
-    .tooltip {
-      position: absolute;
-      z-index: 999;
-      left: -9999px;
-      background-color: #dedede;
-      padding: 5px;
-      border: 1px solid #fff;
-      width: 250px;
-    }
-
-    .tooltip p {
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      background-color: #222;
-      padding: 2px 7px;
-    }
-    // !!
   }
 }
 //</Основной блок Справочника>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄

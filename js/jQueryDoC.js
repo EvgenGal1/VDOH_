@@ -422,42 +422,37 @@ function toolTip(msg) {
 }
 // !!
 
-// !!
-// *** подсказка(toolTipOv) для .token_el(код эл.)
+// ! подсказка(toolTipOv) для .token_el(код эл.)
 // !!! http://www.webmasters.by/articles/web-programming/72-create-simple-tooltips-with-css-and-jquery.html
+// ??? не раб - вызываеться на каждый span (даже вложенные) в .token__el, из-за этого мигает при движении(смене spana). дочерний выбор не помогает
+// ! ПРИЧИНА -  Вариант с помощью jQuery событие hover не прерывается наведением на дочерние элементы, в то время как mouseover и mouseleave прерываются
 function simple_tooltipov(target_items, name) {
-  console.log(1);
-  // $(target_items).each(function (i) {
   $(target_items).each(function (i) {
-    console.log(2);
-    $(this).append(
+    $(this).after(
       "<div class='" +
         name +
         "' id='" +
         name +
-        i +
-        "'><p>" +
-        $(this).attr("title") +
-        "</p></div>"
+        i + // "'><p>" +
+        "'>" +
+        $(this).attr("title") + // "</p></div>"
+        "</div>"
     );
-    console.log(3.1);
     var my_tooltipov = $("#" + name + i);
-    console.log(3.2);
+    console.log(this);
     $(this)
       .removeAttr("title")
-      .mouseover(function () {
-        console.log(4);
-        my_tooltipov.css({ opacity: 0.8}).fadeIn(50);
-        console.log(5);
+      .mouseover(function (i) {
+        my_tooltipov.css({ opacity: 0.8, display: "block" }); // .fadeIn(50);
       })
       .mousemove(function (e) {
-        console.log(6);
         w = 250; // Ширина подсказки
         x = e.pageX; // Координата X курсора. pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
         y = e.pageY; // Координата Y курсора. pageY - расстояние от Начала Документа до Курсора с учетом прокруткиs
         // Показывать слой справа от курсора
         // clientWidth - ширина элемента внутри рамок border
         if (x + w + 10 < document.body.clientWidth) {
+          // my_tooltipov.css({ left: x + "px" });
           my_tooltipov.css({ left: x + "px" });
         }
         // Показывать слой слева от курсора
@@ -466,28 +461,86 @@ function simple_tooltipov(target_items, name) {
         }
         // Положение от  верхнего края окна браузера
         my_tooltipov.css({ top: y + 15 + "px" });
-        console.log(6.1);
       })
       .mouseout(function () {
-        console.log(7);
-        my_tooltipov.fadeOut(500);
+        my_tooltipov.fadeOut(100);
       });
-    // !
-    // $(this).removeAttr("title").mouseover(function(){
-    //   my_tooltipov.css({opacity:0.8, display:"none"}).fadeIn(400);
-    //   }).mousemove(function(kmouse){
-    //   my_tooltipov.css({left:kmouse.pageX+15, top:kmouse.pageY+15});
-    //   }).mouseout(function(){
-    //   my_tooltipov.fadeOut(400);
-    //   });  
-      // !
-    console.log(8);
   });
-  console.log(9);
 }
-// $(document).ready(function () {
-simple_tooltipov("div.rtr span", "tooltipOv");
-// });
+// simple_tooltipov(".tokens > .token__el", "tooltipOv");
+
+// *** Вывод подсказки у кода элемента.
+// ! ТРАВНИК(перебор f(simpleTooltip[Ov]))
+// function generateTooltip($targetItem, index, name) { // опцион.
+function generateTooltip($targetItem) {
+  const title = $targetItem.attr("title");
+  const $tooltip = $(
+    // `<div class="${name}" id="${name}${index}">${title}</div>` // опцион.
+    `<div class="${"tooltipOv"}">${title}</div>`
+  );
+  $targetItem.after($tooltip);
+  return $tooltip;
+}
+
+function handleMouseOver($tooltip) {
+  $tooltip.css({ opacity: 0.8 }).fadeIn(50);
+}
+
+function handleMouseOut($tooltip) {
+  $tooltip.fadeOut(100);
+}
+
+function handleMouseMove(event, $tooltip) {
+  const PAGE_OFFSET_RIGHT = 10;
+  const TOOLTIP_OFFSET_TOP = 20;
+  const tooltipWidth = $tooltip.width();
+  const tooltipIsInPageBounds =
+    event.pageX + tooltipWidth + PAGE_OFFSET_RIGHT < document.body.clientWidth;
+  const nextLeftOffset = tooltipIsInPageBounds
+    ? event.pageX
+    : event.pageX - tooltipWidth;
+
+  $tooltip.css({
+    left: nextLeftOffset + "px",
+    top: event.pageY + TOOLTIP_OFFSET_TOP + "px",
+  });
+}
+
+// function simpleTooltip(selector, name) { // опцион.
+function simpleTooltip(selector) {
+  const $targetItems = $(selector);
+  // $targetItems.each(function (i) {
+  $targetItems.each(function () {
+    const $targetItem = $(this); // ? не раб .filter('.token__el');
+    // const $tooltip = generateTooltip($targetItem, i, name); // опцион.
+    const $tooltip = generateTooltip($targetItem);
+
+    $targetItem.removeAttr("title");
+
+    /**
+     * Вариант с помощью jQuery событие hover не прерывается наведением на дочерние элементы, в то время как mouseover и mouseleave прерываются
+     */
+    $targetItem
+      .hover(
+        () => handleMouseOver($tooltip),
+        () => handleMouseOut($tooltip)
+      )
+      .mousemove((event) => handleMouseMove(event, $tooltip));
+
+    /**
+     * Вариант без jQuery
+     * (для работы нужно закомментить вариант с jQuery)
+     */
+    // this.addEventListener("mouseenter", () => handleMouseOver($tooltip));
+    // this.addEventListener("mouseleave", () => handleMouseOut($tooltip));
+    // this.addEventListener("mousemove", (event) =>
+    //   handleMouseMove(event, $tooltip)
+    // );
+  });
+}
+// simpleTooltip(".tokens > .token__el", "tooltipOv"); // опцион.
+simpleTooltip(".tokens > .token__el");
+// simpleTooltip(".tokens"); // ? не раб
 // !!
 
 // ??? не раб - не могу прописать чтоб при наведении на (.descr span) или (.tokens .token) выделялся ктото противоположный из них. думаю тут нужен цикл (each или массив).

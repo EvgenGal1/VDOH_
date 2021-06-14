@@ -1313,25 +1313,6 @@ footer {
     border-radius: 5px;
     opacity: 0.8; }
 
-.directorys-block .DoC2 .rT .rTtR,
-.directorys-block .DoC2 .rT [tooltip]:hover:after {
-  z-index: 9999;
-  position: absolute;
-  top: -50px;
-  left: 10px;
-  max-width: 200px;
-  padding: 3px;
-  color: white;
-  font-size: 16px;
-  background-color: #333333;
-  border: 0.3px solid yellow;
-  border-radius: 5px;
-  opacity: 0.8;
-  content: attr(tooltip); }
-
-.directorys-block .DoC2 .token__el:hover [title]:hover:after {
-  display: block; }
-
 .directorys-block .DoC2 #floatTip {
   z-index: 999;
   display: none;
@@ -1349,44 +1330,26 @@ footer {
   z-index: 999;
   display: none;
   position: absolute;
-  min-width: 250px;
+  max-width: 250px;
   padding: 0px;
   color: white;
   font-size: 16px;
-  background-color: #333333;
+  background-color: #000000;
   border: 0.3px solid yellow;
   border-radius: 5px; }
 
 .directorys-block .DoC2 .tooltipOv p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  background-color: #222;
-  padding: 2px 7px;
+  color: #ffffff;
+  background-color: #333333;
   padding: 3px 5px;
   font-size: 16px;
-  /* text-align: center; */
   letter-spacing: center;
   /* line-height: 100%; */
-  /* padding: 2px 7px; */
   border-top-left-radius: 5px;
   border-top-right-radius: 5px; }
 
-.directorys-block .DoC2 .tooltip {
-  position: absolute;
-  z-index: 999;
-  left: -9999px;
-  background-color: #dedede;
-  padding: 5px;
-  border: 1px solid #fff;
-  width: 250px; }
-
-.directorys-block .DoC2 .tooltip p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  background-color: #222;
-  padding: 2px 7px; }
+.directorys-block .DoC2 .tooltipOv div {
+  color: #ff0; }
 
 body {
   background-color: #e8e8e8;

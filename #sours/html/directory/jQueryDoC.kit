@@ -2264,7 +2264,7 @@
                     <span class="token__name">Предыдущий</span>
                     <span
                       class="token__el"
-                      data-tooltip="к текущему набору эл. добав. предыдущий (к имеющемуся набору, добавляем прошлый a.la(если есть), и всем устанав. ширину в 150px)"
+                      title="<div>к текущему набору эл. добав. предыдущий <p>(к имеющемуся набору, добавляем прошлый a.la(если есть), <div>и всем устанав. ширину в 150px)"
                     >
                       <!-- <span class="short2">
                         <span class="jq">$</span>
@@ -2292,13 +2292,12 @@
                   <!-- возврат -->
                   <div class="tokens">
                     <span class="token__name">Возврат</span>
-
+                    <!-- data-tooltip="вернёт предыдущий набор эл. (вернётся назад по набору и у этого эл. ставим класс .kurt)" -->
                     <!-- onMouseOver="toolTip('вернёт предыдущий набор эл.<br>(вернётся назад по набору и у этого эл. ставим класс .kurt)')"
-                      onMouseOut="toolTip()" -->
-
+                    onMouseOut="toolTip()" -->
                     <span
                       class="token__el"
-                      data-tooltip="вернёт предыдущий набор эл. (вернётся назад по набору и у этого эл. ставим класс .kurt)"
+                      title="<p>вернёт предыдущий набор эл.</p><div>(вернётся назад по набору и у этого эл. ставим класс .kurt)</div>"
                     >
                       <!-- <span class="short2">
                         <span class="jq">$</span>
@@ -2325,9 +2324,9 @@
                     <!-- onmouseover - событие наведения курсора на эл. -->
                     <!-- onmouseout - событие выхода курсора за эл. -->
                     <span
-                    class="token__el"
-                    onMouseOver="toolTip('вернёт предыдущий набор эл. <br> (вернётся назад по набору и у этого эл. ставим класс .kurt)')"
-                    onMouseOut="toolTip()"
+                      class="token__el"
+                      onMouseOver="toolTip('вернёт предыдущий набор эл. <br> (вернётся назад по набору и у этого эл. ставим класс .kurt)')"
+                      onMouseOut="toolTip()"
                     >
                       <span class="punct3">.</span>
                       <span class="jq">end</span>
@@ -2342,13 +2341,13 @@
                     </span>
                   </div>
                   <!-- со всем -->
-                  <div class="tokens rtr">
+                  <div class="tokens">
+                    <span class="token__name">со всем</span>
+                    <!-- ??? не раб - вызываеться на каждый span (даже вложенные) в .token__el, из-за этого мигает при движении(смене spana). дочерний выбор не пмогает -->
                     <span
-                      class="token__name"
+                      class="token__el"
                       title="<p>вернёт предыдущий набор эл.</p><div>(вернётся назад по набору и у этого эл. ставим класс .kurt)</div>"
-                      >со всем</span
                     >
-                    <span class="token__el">
                       <span class="punct3">.</span>
                       <span class="jq">end</span>
                       <span class="punct">()</span>
@@ -2362,9 +2361,27 @@
                     </span>
                   </div>
                   <!-- голый -->
-                  <div class="tokens rtr">
-                    <!-- class="token__name" -->
-                    <span  title="12">голый</span>
+                  <div class="tokens">
+                    <span
+                      class="token__name"
+                      >голый</span
+                    >
+                    <span
+                      class="token__el"
+                      title="<p>вернёт предыдущий набор эл.</p><div>(вернётся назад по набору и у этого эл. ставим класс .kurt)</div>"
+                    >
+                      <span class="punct3">.</span>
+                      <span class="jq">end</span>
+                      <span class="punct">()</span>
+                      <span class="short2">
+                        <span class="punct3">.</span>
+                        <span class="jq">addClass</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'kurt'</span>
+                        <span class="punct">)</span>
+                      </span>
+                    </span>
+                      
                     <!-- <div class="tooltip">
                       <p>Это обыкновенный Tooltips</p>
                     </div> -->
