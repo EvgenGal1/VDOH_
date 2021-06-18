@@ -1226,14 +1226,6 @@ footer {
     .directorys-block .DoC2 .group .tokens:hover .token__el {
       -webkit-box-shadow: 2px 2px 3px #000;
       box-shadow: 2px 2px 3px #000; }
-    .directorys-block .DoC2 .group .tokens:hover .token__name .short2,
-    .directorys-block .DoC2 .group .tokens:hover .token__el .short2 {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
-    .directorys-block .DoC2 .group .tokens:hover .token__name .short,
-    .directorys-block .DoC2 .group .tokens:hover .token__el .short {
-      display: none; }
   .directorys-block .DoC2 .group .token__name {
     z-index: 2;
     position: relative;
@@ -1244,6 +1236,10 @@ footer {
     display: inline-block;
     padding: 2px;
     border: 1px solid transparent; }
+  .directorys-block .DoC2 .group .tNp {
+    color: #ff0;
+    padding: 10px;
+    background-color: #3a0b0b; }
   .directorys-block .DoC2 .group .token__el {
     z-index: 2;
     position: relative;
@@ -1273,7 +1269,8 @@ footer {
     .directorys-block .DoC2 .group .token__el .punct2 {
       color: #ec31be; }
     .directorys-block .DoC2 .group .token__el .punct3 {
-      color: #e9e9e9; }
+      color: #b9b9b9;
+      font-weight: 900; }
     .directorys-block .DoC2 .group .token__el .teg {
       color: #e91240; }
     .directorys-block .DoC2 .group .token__el .elem {
@@ -1312,44 +1309,50 @@ footer {
     border: 0.3px solid yellow;
     border-radius: 5px;
     opacity: 0.8; }
-
-.directorys-block .DoC2 #floatTip {
-  z-index: 999;
-  display: none;
-  position: absolute;
-  max-width: 250px;
-  padding: 0px 3px;
-  color: white;
-  font-size: 16px;
-  background-color: #333333;
-  border: 0.3px solid yellow;
-  border-radius: 5px;
-  opacity: 0.8; }
-
-.directorys-block .DoC2 .tooltipOv {
-  z-index: 999;
-  display: none;
-  position: absolute;
-  max-width: 250px;
-  padding: 0px;
-  color: white;
-  font-size: 16px;
-  background-color: #000000;
-  border: 0.3px solid yellow;
-  border-radius: 5px; }
-
-.directorys-block .DoC2 .tooltipOv p {
-  color: #ffffff;
-  background-color: #333333;
-  padding: 3px 5px;
-  font-size: 16px;
-  letter-spacing: center;
-  /* line-height: 100%; */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px; }
-
-.directorys-block .DoC2 .tooltipOv div {
-  color: #ff0; }
+  .directorys-block .DoC2 .group #floatTip {
+    z-index: 999;
+    display: none;
+    position: absolute;
+    max-width: 250px;
+    padding: 0px 3px;
+    color: white;
+    font-size: 16px;
+    background-color: #333333;
+    border: 0.3px solid yellow;
+    border-radius: 5px;
+    opacity: 0.8; }
+  .directorys-block .DoC2 .group .tooltipOv {
+    z-index: 999;
+    display: none;
+    position: absolute;
+    padding: 0 3px 2px;
+    font-size: 16px;
+    border: 0.3px solid yellow;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #000000;
+    background-color: #333333;
+    opacity: 0.5; }
+    .directorys-block .DoC2 .group .tooltipOv::before {
+      width: 200px;
+      height: 200px;
+      background-image: url(../../img/элемент/Клик.png); }
+    .directorys-block .DoC2 .group .tooltipOv p {
+      letter-spacing: center;
+      line-height: 100%;
+      margin: 1px -3px -2px;
+      padding: 0px 3px 2px;
+      font-size: 16px;
+      color: #ff0;
+      color: #ffd000;
+      background-color: #333333;
+      background-color: #000000;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; }
+    .directorys-block .DoC2 .group .tooltipOv .ttO-exemPlus {
+      color: #ffd000;
+      display: none;
+      padding: 0px; }
 
 body {
   background-color: #e8e8e8;

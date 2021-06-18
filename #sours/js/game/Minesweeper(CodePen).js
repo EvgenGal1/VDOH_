@@ -58,10 +58,11 @@ const setup = () => {
     const tile = document.createElement("div");
     tile.classList.add("tile");
     // ??? не раб - не видит чтоли
-    board.appendChild(tile);
+    // board.appendChild(tile);
   }
   tiles = document.querySelectorAll(".tile");
   boardSize = Math.sqrt(tiles.length);
+  // ??? не раб - выводит ошибки в Sources в браузере
   board.style.width = boardSize * tileSize + "px";
 
   document.documentElement.style.setProperty("--tileSize", `${tileSize}px`);

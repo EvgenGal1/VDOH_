@@ -1,0 +1,81 @@
+// *** по клику на код эл.(.token__el) показать в подсказке(.tooltipOv) ещё доп. примеры(.ttO-exemPlus)
+// * к доп. примерам(.ttO-exemPlus) добавить обозначения(+++ и ⮟ (●))
+function clickTokenElShowExemPl() {
+  const $tokenEls = $(".token__el");
+  $tokenEls.each(function () {
+    const $tokenEl = $(this);
+    const $totipOvs = $(".tooltipOv");
+    const $totipOv = $($tokenEl).next($totipOvs);
+    const $hasttOePl = $($totipOv).has(".ttO-exemPlus");
+    const $exampl = $(".ttO-exemPlus");
+
+    $($tokenEl).click(function () {
+      if ($($totipOv).css("opacity") == 0.8) {
+        $($totipOv).fadeTo(150, 1);
+      } else {
+        $($totipOv).fadeTo(150, 0.8);
+      }
+    });
+
+    $($hasttOePl).append("<span class='ttPlus'>+++</span>");
+    $(".ttPlus").css({
+      color: "red",
+      opacity: "1",
+      position: "absolute",
+      right: "0px",
+      bottom: "-25px",
+      fontSize: "30px",
+      fontWeight: "bold",
+      textShadow: "black 1px 1px 0px",
+    });
+    $($hasttOePl).append("<span class='ttArrow'>⮟</span>");
+    $(".ttArrow").css({
+      color: "red",
+      opacity: "1",
+      fontSize: "20px",
+      fontWeight: "bold",
+      textShadow: "black 1px 1px 0px",
+    });
+    $($tokenEl).click(function () {
+      $($exampl).slideToggle(150, function () {
+        if ($(this).is(":hidden")) {
+          $($exampl).hide();
+          $(".ttPlus").slideToggle(100); // .css('display', 'block');
+          //
+          $(".ttArrow").css({
+            color: "red",
+            // transform: 'rotate("45deg")',
+          });
+          // ??? не раб - transform и .animate
+          //.animate({transform: 'rotate(0deg)'})
+        } else {
+          $($exampl).show();
+          $(".ttPlus").fadeToggle(100); // .css('display', 'none');
+          $(".ttArrow").css({
+            color: "green",
+            // transform: 'rotate("+now+180deg")',
+          });
+          // ??? не раб - transform и .animate
+          // .animate({transform: 'rotate(180deg)', color: 'red'})
+        }
+      });
+      return false;
+    });
+  });
+}
+clickTokenElShowExemPl();
+
+$(".ttO-exemPlus:contains(●)").css({color: 'red'})
+
+<div class='ttO-exemPlus'>в < p> текст сделает курсивным</div>"
+
+<!-- &#709; &#711; &#748; ˅ &#129155; &#129087; &#129091; &#129083; &#129095; &#9660; &#9660; &#9660; &#8595; &#11167; &#11163; &#129171; &#8964; -->
+<!-- <div class='example'>⮟</div>
+<!-- ⊕⨁🟠⨷⧁⭙⊛⊗🟤🟡🔴◯⬤⚫○ -->
+<!-- при 3 кликах к .descr добав. .tNp -->
+
+<br>
+<p></p>
+<span>● </span>
+<div class='ttO-exemPlus'></div>"
+

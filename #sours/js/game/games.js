@@ -1,6 +1,8 @@
 // <games.js(сбор игровых скриптов)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˅
 
-// @prepros-append Minesweeper(CodePen).js
+// @prepros-append 
+//??? не раб - выдаёт ошибки в Sources в браузере
+// Minesweeper(CodePen).js
 
 //??? не раб - где то конфликт в main и js змейки так не работают. js подкл отдельно к snake.kit
 // @prepros-append

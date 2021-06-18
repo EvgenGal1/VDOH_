@@ -136,6 +136,271 @@ $(".DoC1-ul li:nth-child(7) p").fadeTo(1000, 0).fadeTo(3000, 1);
 }
 
 // <DoC2(таблица jQuery)>˅=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=˅
+// добав. фон <span> с классом .token
+// function addBackgroundToken() {
+//   var classToken = $(".DoC3 td span[class*=token]");
+//   $(classToken).css("background", "#707070");
+// }
+// addBackgroundToken();
+
+// <Подсказки(.tooltipOv(.ttO-exemPlus), attr=data-tooltip, #floatTip)>˅=======================================================================================˅
+
+// *** подсказка(data-tooltip) для .token_el(код эл.)
+// !!! https://habr.com/ru/post/165805/
+function showPopUp() {
+  $("[data-tooltip]")
+    .mousemove(function (eventObject) {
+      $data_tooltip = $(this).attr("data-tooltip");
+
+      $("#tooltip")
+        .text($data_tooltip)
+        .css({
+          top: eventObject.pageY + 20,
+          left: eventObject.pageX + 0,
+        })
+        .show();
+    })
+    .mouseout(function () {
+      $("#tooltip").hide().text("").css({
+        top: 0,
+        left: 0,
+      });
+    });
+}
+// showPopUp(); // ! откл. - нет переносов
+
+// *** подсказка(floatTip) для .token_el(код эл.)
+// !!! http://htmlbook.ru/faq/mozhno-li-izmenit-vid-vsplyvayushchey-podskazki
+// onmousemove - событие для опред. перемещ. курсора мыши по экрану
+document.onmousemove = moveTip;
+function moveTip(e) {
+  // раб на событиях прописаных в .token__el как атрибуты
+  // onmouseover - событие наведения курсора на эл.
+  // onmouseout - событие выхода курсора за эл.
+  // onMouseOver="toolTip('вернёт предыдущий набор эл. <br> (вернётся назад по набору и у этого эл. ставим класс .kurt)')"
+  // onMouseOut="toolTip()"
+  floatTipStyle = document.getElementById("floatTip").style;
+  w = 250; // Ширина подсказки
+  // Для браузера IE6-8
+  if (document.all) {
+    // clientX - расстояние от Левой границы Экрана до Курсора без учета прокрутки
+    // scrollLeft - Получает значение отступа прокрутки СЛева
+    x = event.clientX + document.body.scrollLeft;
+    // clientY - расстояние от Верхней границы Экрана до Курсора без учета прокрутки
+    // Получает значение отступа прокрутки СВерху
+    y = event.clientY + document.body.scrollTop;
+    // Для остальных браузеров (можно оставить только х= и у=)
+  } else {
+    // pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
+    x = e.pageX; // Координата X курсора
+    // pageY - расстояние от Начала Документа до Курсора с учетом прокрутки
+    y = e.pageY; // Координата Y курсора
+  }
+  // Показывать слой справа от курсора
+  // clientWidth - ширина элемента внутри рамок border
+  if (x + w + 10 < document.body.clientWidth) {
+    floatTipStyle.left = x + "px";
+    // ??? проба покажет в центре
+    // } else if (x - w + 10 < document.body.clientWidth / 2) {
+    // }
+    // else if (x + w + 10 == document.body.clientWidth) {
+    //   floatTipStyle.left = x - w / 2 + "px";
+    // Показывать слой слева от курсора
+  } else {
+    floatTipStyle.left = x - w + "px";
+  }
+  // Положение от  верхнего края окна браузера
+  floatTipStyle.top = y + 20 + "px";
+}
+function toolTip(msg) {
+  floatTipStyle = document.getElementById("floatTip").style;
+  if (msg) {
+    // Выводим текст подсказки
+    document.getElementById("floatTip").innerHTML = msg;
+    // Показываем подсказку
+    floatTipStyle.display = "block";
+  } else {
+    // Прячем подсказку
+    floatTipStyle.display = "none";
+  }
+}
+// раб на событиях прописаных в .token__el как атрибуты // ! откл. - удалены attr в html - пробы другого
+
+// * подсказка(toolTipOv) для .token_el(код эл.)
+// !!! http://www.webmasters.by/articles/web-programming/72-create-simple-tooltips-with-css-and-jquery.html
+function simple_tooltipov(target_items, name) {
+  $(target_items).each(function (i) {
+    $(this).after(
+      "<div class='" +
+        name +
+        "' id='" +
+        name +
+        i + // "'><p>" +
+        "'>" +
+        $(this).attr("title") + // "</p></div>"
+        "</div>"
+    );
+    var my_tooltipov = $("#" + name + i);
+    console.log(this);
+    $(this)
+      .removeAttr("title")
+      .mouseover(function (i) {
+        my_tooltipov.css({ opacity: 0.8, display: "block" }); // .fadeIn(50);
+      })
+      .mousemove(function (e) {
+        w = 250; // Ширина подсказки
+        x = e.pageX; // Координата X курсора. pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
+        y = e.pageY; // Координата Y курсора. pageY - расстояние от Начала Документа до Курсора с учетом прокруткиs
+        // Показывать слой справа от курсора
+        // clientWidth - ширина элемента внутри рамок border
+        if (x + w + 10 < document.body.clientWidth) {
+          // my_tooltipov.css({ left: x + "px" });
+          my_tooltipov.css({ left: x + "px" });
+        }
+        // Показывать слой слева от курсора
+        else {
+          my_tooltipov.css({ left: x - w + "px" });
+        }
+        // Положение от  верхнего края окна браузера
+        my_tooltipov.css({ top: y + 15 + "px" });
+      })
+      .mouseout(function () {
+        my_tooltipov.fadeOut(100);
+      });
+  });
+}
+// simple_tooltipov(".tokens > .token__el", "tooltipOv"); // ! откл. - не раб - события mouseover и mouseleave(в отл. от hover) прерываются на дочерних эл.(мигает на spanах)
+
+// *** Вывод подсказки(toolTipOv) у кода элемента(.token_el).
+// !!! ТРАВНИК(перебор f(simpleTooltip[Ov]))
+function simpleTooltipOv(selector) {
+  const $targetItems = $(selector); // опцион. (selector, name)
+  $targetItems.each(function () {
+    // опцион. function (i)
+    const $targetItem = $(this); // ? не раб .filter('.token__el');
+    const $tooltip = generateTooltip($targetItem); // опцион. ($targetItem, i, name);
+    $targetItem.removeAttr("title");
+    // Вариант jQuery - закомментить JS. Cобытие hover не прерывается наведением на дочерние элементы, в то время как mouseover и mouseleave прерываются
+    $targetItem
+      .hover(
+        () => handleMouseOver($tooltip),
+        () => handleMouseOut($tooltip)
+      )
+      .mousemove((event) => handleMouseMove(event, $tooltip));
+    // Вариант JS - закомментить jQuery
+    // this.addEventListener("mouseenter", () => handleMouseOver($tooltip));
+    // this.addEventListener("mouseleave", () => handleMouseOut($tooltip));
+    // this.addEventListener("mousemove", (event) =>
+    //   handleMouseMove(event, $tooltip)
+    // );
+  });
+  // создать div.tooltipOv после .token__el с содержимом его title
+  function generateTooltip($targetItem) {
+    // опцион. ($targetItem, index, name)
+    const title = $targetItem.attr("title");
+    const $tooltip = $(
+      `<div class="${"tooltipOv"}">${title}</div>` // опцион. <div class="${name}" id="${name}${index}">${title}</div>
+    );
+    $targetItem.after($tooltip);
+    return $tooltip;
+  }
+  // показать div.tooltipOv
+  function handleMouseOver($tooltip) {
+    $tooltip.css({ opacity: 0.8 }).fadeIn(50);
+  }
+  // скрыть div.tooltipOv
+  function handleMouseOut($tooltip) {
+    $tooltip.fadeOut(100);
+  }
+  // перемещение на div.tooltipOv
+  function handleMouseMove(event, $tooltip) {
+    const PAGE_OFFSET_RIGHT = 10;
+    const TOOLTIP_OFFSET_TOP = 20;
+    const tooltipWidth = $tooltip.width();
+    const tooltipIsInPageBounds =
+      event.pageX + tooltipWidth + PAGE_OFFSET_RIGHT <
+      document.body.clientWidth;
+    const nextLeftOffset = tooltipIsInPageBounds
+      ? event.pageX
+      : event.pageX - tooltipWidth;
+    $tooltip.css({
+      left: nextLeftOffset + "px",
+      top: event.pageY + TOOLTIP_OFFSET_TOP + "px",
+    });
+  }
+}
+// simpleTooltip(".tokens"); // ? не раб
+simpleTooltipOv(".tokens > .token__el"); // опцион. (".tokens > .token__el", "tooltipOv")
+
+// *** по клику на код эл.(.token__el) показать в подсказке(.tooltipOv) ещё доп. примеры(.ttO-exemPlus)
+// * к доп. примерам(.ttO-exemPlus) добавить обозначения(+++ и ⮟ (●))
+// $(".ttO-exemPlus:last-child").css({color: 'red'})
+function clickTokenElShowExemPl() {
+  // $(".ttO-exemPlus:contains(●)").css({color: 'red'})
+  const $tokenEls = $(".token__el");
+  $tokenEls.each(function () {
+    const $tokenEl = $(this);
+    const $totipOvs = $(".tooltipOv");
+    const $totipOv = $($tokenEl).next($totipOvs);
+    const $hasttOePl = $($totipOv).has(".ttO-exemPlus");
+    const $exampl = $(".ttO-exemPlus");
+
+    $(".ttO-exemPlus span").css({ color: "white" });
+
+    $($tokenEl).click(function () {
+      if ($($totipOv).css("opacity") == 0.8) {
+        $($totipOv).fadeTo(150, 1);
+      } else {
+        $($totipOv).fadeTo(150, 0.8);
+      }
+    });
+    
+    $($tokenEl).click(function () {
+      $($exampl).slideToggle(150, function () {
+        if ($(this).is(":hidden")) {
+          $(this).hide().next(".ttPlus").slideToggle(100);
+          console.log(1);
+          $(this).children(".ttArrow").css({
+            color: "blue",
+          });
+          console.log(2);
+          // ??? не раб - transform'rotate(90deg) и .animate()
+        } else {
+          $(this).show().next(".ttPlus").fadeToggle(100);
+          console.log(3);
+          $(this).find(".ttArrow").css({
+            color: "red",
+          });
+          console.log(4);
+          // ??? не раб - transform'rotate(90deg) и .animate()
+        }
+      });
+      return false;
+    });
+    $($hasttOePl).append("<span class='ttPlus'>+++</span>");
+    $(".ttPlus").css({
+      color: "red",
+      opacity: "1",
+      position: "absolute",
+      right: "0px",
+      bottom: "-25px",
+      fontSize: "30px",
+      fontWeight: "bold",
+      textShadow: "black 1px 1px 0px",
+    });
+    $($hasttOePl).append("<span class='ttArrow'>⮟</span>");
+    $(".ttArrow").css({
+      color: "red",
+      opacity: "1",
+      fontSize: "20px",
+      fontWeight: "bold",
+      textShadow: "black 1px 1px 0px",
+    });
+  });
+}
+clickTokenElShowExemPl();
+
+//</Подсказки(.tooltipOv(.ttO-exemPlus), attr=data-tooltip, #floatTip)>˄=======================================================================================˄
 
 // *** при наведении на tokens(строка назв. + код элемента) - .short(формула) исчезает, а .short2(пример) появятся, при отпускании наоборот. Можно обычным CSS через hover.
 function shortAnd2Change() {
@@ -185,30 +450,7 @@ function shortAnd2Change() {
   //   $(".short").css("display", "none");
   // }
 }
-// shortAnd2Change();
-
-// !!!
-// ??? не раб - перебор и исчезание через условие if. не особо удачно
-function hidSpan() {
-  var tokens = $(".tokens");
-  var short = $(".short");
-  var shNon = $(".hS").find("span.short");
-  var hSSpan = $(".hS").find("span");
-  $("li").each(function (i) {});
-  $(".hS span")
-    .addClass("short2")
-    .filter(function (i) {
-      return i == 1 || $(this).hasClass("new_style") == true;
-    });
-  if (hSSpan.hasClass("short")) {
-    shNon.removeClass("short2");
-  }
-  // else {
-  //   $('.hS span').removeClass('short')
-  // }
-}
-// hidSpan ()
-// !!!
+shortAnd2Change();
 
 // *** всем span.cont у кого есть текст и текст('||'), сделать padding 0 5px. и убрать .gap(пробел)
 function iliPadd() {
@@ -217,7 +459,7 @@ function iliPadd() {
   // ? не раб - в связке 2 :contains
   // var contSpBr = $("span.cont:contains('[')");
   $(".gap").css("display", "none");
-  $(contSp).css("padding", "0 5px");
+  $(contSp).css("padding", "0 1px");
   $(".token__el span")
     .filter(contSpIli)
     .css({ "font-weight": "900", "text-shadow": "0px 0px 0px black" });
@@ -251,14 +493,21 @@ function ramk() {
 ramk();
 
 // !!!
-// *** сделать др. цвет и рамку, блокам у которых пока нет подсказки
+// *** сделать кр. цвет назв. блоков у которых пока нет в подсказке <p>
 // * сделать рамки блокам (строке не получилось), внутри которой у span нет допов.(".short, .short2")
 function сolNul() {
-  var datT = $("span[data-tooltip^=000]");
+  // ! есть 000
   // * находит у кого есть '000' в подсказке и выделяет родителя или потомка
-  $(datT).closest(".tokens").css("color", "#ff0000"); // блоку/родителю
-  $(".tokens").find(datT).css("background", "#100835"); // переменой/потомку
-  $(".tokens").has(datT).css("outline", "3px solid #000000"); // блоку/родителю
+  var datT = $("div:contains(000)"); // var datT = $("span:contains(000)");
+  $(".tokens").has(datT).css("outline", "3px solid #000000")
+  // $(datT).closest(".tokens").css("color", "#ff0000"); // блоку/родителю
+  // $(".tokens").find(datT).css("background", "#100835"); // переменой/потомку
+  // ! не в подсказке <p>
+  var $hasP = $(".tooltipOv").not(":has(p)");
+  $($hasP).closest(".tokens").css("color", "#ff0000"); // блоку/родителю
+  // var $hasExPlus = $(".tooltipOv").not(":has(.ttO-exemPlus)");
+  // $($hasExPlus).find(".token__el").css({ background: "#000000" }); // ? не раб блоку/родителю
+  // !
   // * находит у кого нет в наличии .shortов и выделяет .token__el
   $(".token__el").not(":has(.short, .short2)").css("outline", "1px solid red");
   // .has(".short, .short2") // находит .shortы, выделяет .token__el
@@ -277,6 +526,15 @@ function сolNul() {
   // $(".tokens span").not(".short, .short2").closest(".tokens").css("outline", "1px solid red")
 }
 сolNul();
+
+// * при клике на назв. группы (.descr) у него переключается класс
+function fewClickDescr() {
+  var count = 0;
+  $(".descr").click(function () {
+    $(this).toggleClass("tNp", count++ % 4 == 0);
+  });
+}
+fewClickDescr();
 // !!!
 
 //</DoC2(таблица jQuery)>˄=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=˄
@@ -331,216 +589,6 @@ changeAttr2("DoC1-div1", "title", "Подсказка 2");
 // !!!
 //</DoC3>˅=========================================================================˅
 
-// добав. фон <span> с классом .token
-// function addBackgroundToken() {
-//   var classToken = $(".DoC3 td span[class*=token]");
-//   $(classToken).css("background", "#707070");
-// }
-// addBackgroundToken();
-
-// *** подсказка(data-tooltip) для .token_el(код эл.)
-// !!! https://habr.com/ru/post/165805/
-function showPopUp() {
-  $("[data-tooltip]")
-    .mousemove(function (eventObject) {
-      $data_tooltip = $(this).attr("data-tooltip");
-
-      $("#tooltip")
-        .text($data_tooltip)
-        .css({
-          top: eventObject.pageY + 20,
-          left: eventObject.pageX + 0,
-        })
-        .show();
-    })
-    .mouseout(function () {
-      $("#tooltip").hide().text("").css({
-        top: 0,
-        left: 0,
-      });
-    });
-}
-showPopUp();
-
-// !!
-// *** подсказка(floatTip) для .token_el(код эл.)
-// !!! http://htmlbook.ru/faq/mozhno-li-izmenit-vid-vsplyvayushchey-podskazki
-// onmousemove - событие для опред. перемещ. курсора мыши по экрану
-document.onmousemove = moveTip;
-function moveTip(e) {
-  floatTipStyle = document.getElementById("floatTip").style;
-  w = 250; // Ширина подсказки
-
-  // Для браузера IE6-8
-  if (document.all) {
-    // clientX - расстояние от Левой границы Экрана до Курсора без учета прокрутки
-    // scrollLeft - Получает значение отступа прокрутки СЛева
-    x = event.clientX + document.body.scrollLeft;
-    // clientY - расстояние от Верхней границы Экрана до Курсора без учета прокрутки
-    // Получает значение отступа прокрутки СВерху
-    y = event.clientY + document.body.scrollTop;
-
-    // Для остальных браузеров (можно оставить только х= и у=)
-  } else {
-    // pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
-    x = e.pageX; // Координата X курсора
-    // pageY - расстояние от Начала Документа до Курсора с учетом прокрутки
-    y = e.pageY; // Координата Y курсора
-  }
-
-  // Показывать слой справа от курсора
-  // clientWidth - ширина элемента внутри рамок border
-  if (x + w + 10 < document.body.clientWidth) {
-    floatTipStyle.left = x + "px";
-
-    // ??? проба покажет в центре
-    // } else if (x - w + 10 < document.body.clientWidth / 2) {
-    // }
-    // else if (x + w + 10 == document.body.clientWidth) {
-    //   floatTipStyle.left = x - w / 2 + "px";
-
-    // Показывать слой слева от курсора
-  } else {
-    floatTipStyle.left = x - w + "px";
-  }
-
-  // Положение от  верхнего края окна браузера
-  floatTipStyle.top = y + 20 + "px";
-}
-
-function toolTip(msg) {
-  floatTipStyle = document.getElementById("floatTip").style;
-  if (msg) {
-    // Выводим текст подсказки
-    document.getElementById("floatTip").innerHTML = msg;
-    // Показываем подсказку
-    floatTipStyle.display = "block";
-  } else {
-    // Прячем подсказку
-    floatTipStyle.display = "none";
-  }
-}
-// !!
-
-// ! подсказка(toolTipOv) для .token_el(код эл.)
-// !!! http://www.webmasters.by/articles/web-programming/72-create-simple-tooltips-with-css-and-jquery.html
-// ??? не раб - вызываеться на каждый span (даже вложенные) в .token__el, из-за этого мигает при движении(смене spana). дочерний выбор не помогает
-// ! ПРИЧИНА -  Вариант с помощью jQuery событие hover не прерывается наведением на дочерние элементы, в то время как mouseover и mouseleave прерываются
-function simple_tooltipov(target_items, name) {
-  $(target_items).each(function (i) {
-    $(this).after(
-      "<div class='" +
-        name +
-        "' id='" +
-        name +
-        i + // "'><p>" +
-        "'>" +
-        $(this).attr("title") + // "</p></div>"
-        "</div>"
-    );
-    var my_tooltipov = $("#" + name + i);
-    console.log(this);
-    $(this)
-      .removeAttr("title")
-      .mouseover(function (i) {
-        my_tooltipov.css({ opacity: 0.8, display: "block" }); // .fadeIn(50);
-      })
-      .mousemove(function (e) {
-        w = 250; // Ширина подсказки
-        x = e.pageX; // Координата X курсора. pageX - расстояние от Левой границы Документа до Курсора с учетом прокрутки
-        y = e.pageY; // Координата Y курсора. pageY - расстояние от Начала Документа до Курсора с учетом прокруткиs
-        // Показывать слой справа от курсора
-        // clientWidth - ширина элемента внутри рамок border
-        if (x + w + 10 < document.body.clientWidth) {
-          // my_tooltipov.css({ left: x + "px" });
-          my_tooltipov.css({ left: x + "px" });
-        }
-        // Показывать слой слева от курсора
-        else {
-          my_tooltipov.css({ left: x - w + "px" });
-        }
-        // Положение от  верхнего края окна браузера
-        my_tooltipov.css({ top: y + 15 + "px" });
-      })
-      .mouseout(function () {
-        my_tooltipov.fadeOut(100);
-      });
-  });
-}
-// simple_tooltipov(".tokens > .token__el", "tooltipOv");
-
-// *** Вывод подсказки у кода элемента.
-// ! ТРАВНИК(перебор f(simpleTooltip[Ov]))
-// function generateTooltip($targetItem, index, name) { // опцион.
-function generateTooltip($targetItem) {
-  const title = $targetItem.attr("title");
-  const $tooltip = $(
-    // `<div class="${name}" id="${name}${index}">${title}</div>` // опцион.
-    `<div class="${"tooltipOv"}">${title}</div>`
-  );
-  $targetItem.after($tooltip);
-  return $tooltip;
-}
-
-function handleMouseOver($tooltip) {
-  $tooltip.css({ opacity: 0.8 }).fadeIn(50);
-}
-
-function handleMouseOut($tooltip) {
-  $tooltip.fadeOut(100);
-}
-
-function handleMouseMove(event, $tooltip) {
-  const PAGE_OFFSET_RIGHT = 10;
-  const TOOLTIP_OFFSET_TOP = 20;
-  const tooltipWidth = $tooltip.width();
-  const tooltipIsInPageBounds =
-    event.pageX + tooltipWidth + PAGE_OFFSET_RIGHT < document.body.clientWidth;
-  const nextLeftOffset = tooltipIsInPageBounds
-    ? event.pageX
-    : event.pageX - tooltipWidth;
-
-  $tooltip.css({
-    left: nextLeftOffset + "px",
-    top: event.pageY + TOOLTIP_OFFSET_TOP + "px",
-  });
-}
-
-// function simpleTooltip(selector, name) { // опцион.
-function simpleTooltip(selector) {
-  const $targetItems = $(selector);
-  // $targetItems.each(function (i) {
-  $targetItems.each(function () {
-    const $targetItem = $(this); // ? не раб .filter('.token__el');
-    // const $tooltip = generateTooltip($targetItem, i, name); // опцион.
-    const $tooltip = generateTooltip($targetItem);
-
-    $targetItem.removeAttr("title");
-
-    /**
-     * Вариант с помощью jQuery событие hover не прерывается наведением на дочерние элементы, в то время как mouseover и mouseleave прерываются
-     */
-    $targetItem
-      .hover(
-        () => handleMouseOver($tooltip),
-        () => handleMouseOut($tooltip)
-      )
-      .mousemove((event) => handleMouseMove(event, $tooltip));
-
-    /**
-     * Вариант без jQuery
-     * (для работы нужно закомментить вариант с jQuery)
-     */
-    // this.addEventListener("mouseenter", () => handleMouseOver($tooltip));
-    // this.addEventListener("mouseleave", () => handleMouseOut($tooltip));
-    // this.addEventListener("mousemove", (event) =>
-    //   handleMouseMove(event, $tooltip)
-    // );
-  });
-}
-// simpleTooltip(".tokens > .token__el", "tooltipOv"); // опцион.
-simpleTooltip(".tokens > .token__el");
-// simpleTooltip(".tokens"); // ? не раб
 // !!
 
 // ??? не раб - не могу прописать чтоб при наведении на (.descr span) или (.tokens .token) выделялся ктото противоположный из них. думаю тут нужен цикл (each или массив).
@@ -552,10 +600,8 @@ function highlightRelated1() {
   var getClBadge = $(".descr span");
   var getClToken = $(".tokens .token");
   // span:nth-child(1)
-  console.log(1);
   getClBadge.hover(
     function () {
-      console.log(2);
       $(this).css({
         background: "#555555",
         "border-radius": "5px",

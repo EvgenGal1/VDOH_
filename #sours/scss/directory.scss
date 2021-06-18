@@ -160,16 +160,12 @@
             //   box-shadow: -2px 2px 0px #000;
             // }
           }
-          .token__name .short2,
-          .token__el .short2 {
-            // display: inline-block;
-            display: flex;
+          .short {
+            // display: none;
             // f() - shortAnd2Change()
           }
-          .token__name .short,
-          .token__el .short {
-            display: none;
-            // display: none !important;
+          .short2 {
+            // display: flex;
             // f() - shortAnd2Change()
           }
         }
@@ -183,6 +179,12 @@
         display: inline-block;
         padding: 2px;
         border: 1px solid transparent;
+        
+      }
+      .tNp {
+        color: #ff0;
+        padding: 10px;
+        background-color: #3a0b0b;
       }
       // вид/элемент/код
       .token__el {
@@ -221,7 +223,6 @@
         }
         .short2 {
           display: none;
-          // text-shadow: none;
         }
         .jq {
           color: #24f100;
@@ -236,7 +237,8 @@
           color: #ec31be;
         }
         .punct3 {
-          color: #e9e9e9;
+          color: #b9b9b9;
+          font-weight: 900;
         }
         .teg {
           color: #e91240;
@@ -277,7 +279,7 @@
       .short2 {
         display: none;
       }
-      // подсказка
+      // подсказка стандарт+
       #tooltip {
         z-index: 9999;
         display: none;
@@ -296,51 +298,62 @@
         border-radius: 5px;
         opacity: 0.8;
       }
-    }
-
-    // !
-    #floatTip {
-      z-index: 999;
-      display: none;
-      position: absolute;
-      // top: 0px;
-      // left: 0px;
-      // width: 250px;
-      max-width: 250px;
-      padding: 0px 3px;
-      color: white;
-      font-size: 16px;
-      background-color: #333333;
-      border: 0.3px solid yellow;
-      border-radius: 5px;
-      opacity: 0.8;
-    }
-    // !
-    .tooltipOv {
-      z-index: 999;
-      display: none;
-      position: absolute;
-      max-width: 250px;
-      padding: 0px;
-      color: white;
-      font-size: 16px;
-      background-color: #000000;
-      border: 0.3px solid yellow;
-      border-radius: 5px;
-    }
-    .tooltipOv {
-      p {
-        color: #ffffff;
-        background-color: #333333;
-        padding: 3px 5px;
+      // подсказка события в html
+      #floatTip {
+        z-index: 999;
+        display: none;
+        position: absolute;
+        // top: 0px;
+        // left: 0px;
+        // width: 250px;
+        max-width: 250px;
+        padding: 0px 3px;
+        color: white;
         font-size: 16px;
-        letter-spacing: center;
-        /* line-height: 100%; */
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        background-color: #333333;
+        border: 0.3px solid yellow;
+        border-radius: 5px;
+        opacity: 0.8;
       }
-      div {
-        color: #ff0;
+      // подсказка
+      .tooltipOv {
+        z-index: 999;
+        display: none;
+        position: absolute;
+        // max-width: 250px;
+        padding: 0 3px 2px;
+        font-size: 16px;
+        border: 0.3px solid yellow;
+        border-radius: 5px;
+        color: #ffffff;
+        // color: #ff0;
+        background-color: #000000;
+        background-color: #333333;
+        opacity: 0.5;
+        &::before{
+          width: 200px;
+          height: 200px;
+          background-image: url(../../img/элемент/Клик.png);
+        }
+        p {
+          letter-spacing: center;
+          line-height: 100%;
+          margin: 1px -3px -2px;
+          padding: 0px 3px 2px;
+          font-size: 16px;
+          color: #ff0;
+          color: #ffd000;
+          background-color: #333333;
+          background-color: #000000;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        // доп click подсказка в title
+        .ttO-exemPlus {
+          color: #ffd000;
+          display: none;
+          padding: 0px;
+        }
       }
     }
   }
