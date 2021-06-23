@@ -11,6 +11,11 @@
     margin: 0px 0px -20px 0px;
   }
 }
+.rotate {
+  // transform: rotate -90deg;
+  transform: rotate(15deg);
+  padding: 5px;
+}
 
 //<>====================================================
 
@@ -24,6 +29,10 @@
       th,
       tr.general > td {
         width: 33%;
+      }
+      th,
+      tr.general > td,
+      .general {
         font-size: 23px;
         // font-weight: 700;
         font-style: italic;
@@ -32,9 +41,12 @@
         border-bottom: 2px solid black;
         color: yellow;
         text-shadow: 2px 2px black;
-        padding-bottom: 3px;
+        padding: 3px;
         vertical-align: middle;
         text-align: center;
+      }
+      div.general {
+        margin: 5px -5px 7px;
       }
       td {
         vertical-align: top;
@@ -179,7 +191,6 @@
         display: inline-block;
         padding: 2px;
         border: 1px solid transparent;
-        
       }
       .tNp {
         color: #ff0;
@@ -330,7 +341,7 @@
         background-color: #000000;
         background-color: #333333;
         opacity: 0.5;
-        &::before{
+        &::before {
           width: 200px;
           height: 200px;
           background-image: url(../../img/элемент/Клик.png);

@@ -79,3 +79,11 @@ $(".ttO-exemPlus:contains(●)").css({color: 'red'})
 <span>● </span>
 <div class='ttO-exemPlus'></div>"
 
+<span class="cont short">[</span>
+<span class="doc short">class</span>
+<span class="cont short">||</span>
+<span class="punct3 short">,</span>
+<span class="doc short">switch</span>
+<span class="cont short">||</span>
+<span class="fn short">fn</span>
+<span class="cont short">]</span>

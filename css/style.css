@@ -1127,12 +1127,21 @@ footer {
 .directorys-items .block-body {
   margin: 0px 0px -20px 0px; }
 
+.rotate {
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+  padding: 5px; }
+
 .directorys-block .DoC2 table {
   width: 100%;
   display: table; }
   .directorys-block .DoC2 table th,
   .directorys-block .DoC2 table tr.general > td {
-    width: 33%;
+    width: 33%; }
+  .directorys-block .DoC2 table th,
+  .directorys-block .DoC2 table tr.general > td,
+  .directorys-block .DoC2 table .general {
     font-size: 23px;
     font-style: italic;
     background: #8b0000;
@@ -1140,9 +1149,11 @@ footer {
     border-bottom: 2px solid black;
     color: yellow;
     text-shadow: 2px 2px black;
-    padding-bottom: 3px;
+    padding: 3px;
     vertical-align: middle;
     text-align: center; }
+  .directorys-block .DoC2 table div.general {
+    margin: 5px -5px 7px; }
   .directorys-block .DoC2 table td {
     vertical-align: top;
     font-size: 18px;

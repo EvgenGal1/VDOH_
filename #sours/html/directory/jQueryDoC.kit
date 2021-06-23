@@ -993,17 +993,17 @@
                 </div>
               </td>
             </tr>
-            <!-- МЕТОДЫ -->
+            <!-- МЕТОДЫ: МАНИПУЛЯЦИИ -->
             <tr class="general">
-              <td colspan="3">МЕТОДЫ</td>
+              <td colspan="3">МЕТОДЫ: МАНИПУЛЯЦИИ</td>
             </tr>
-            <!-- методы -->
+            <!-- методы НАЗВАНИЯ -->
             <tr class="general">
               <td>Базовые</td>
-              <td>Манипуляции</td>
-              <td>Наборы эл.</td>
+              <td>Содержимое</td>
+              <td>Наборы</td>
             </tr>
-            <!-- методы взаимодействия -->
+            <!-- методы МАНИПУЛЯЦИИ -->
             <tr>
               <!-- базовые -->
               <td>
@@ -1015,8 +1015,7 @@
                     <span class="token__name">Взять/Изменить</span>
                     <span
                       class="token__el"
-                      title="вернёт || изменит attr у выбран. эл. <br>Сущ. знач. атрибута заменит; <br>val может быть функцией; <br>Передача объектом: <br>.attr({class: 'cl',title: 'xX'}); <p>к < a> добавит || изменит title=xX</p>;
-                      "
+                      title="вернёт || изменит attr у выбран. эл. <br>Сущ. знач. атрибута заменит; <br>val может быть функцией; <br>Передача объектом: <br>.attr({class: 'cl',title: 'xX'}); <p>к < a> добавит/изменит title=xX</p>"
                     >
                       <span class="short2">
                         <span class="jq">$</span>
@@ -1172,7 +1171,7 @@
                       class="token__el"
                       title="взять/изменить значение свойств у выбраного эл.<br>вернёт propName || изменит на val || применит fn<br>получит значения свойства только для первого эл.<br>для измен. полей ввода(checked, selected, disabled)
                       <p>е/и первый input не актив., вернёт true. иначе false</p>
-                      <div class='ttO-exemPlus'><span>● </span>объектом. у attr 1 значение св-ва станет val1<br>.prop({propName1:val1, propName2:val2})<br><span>● </span>cделает все флажки неактивными<br>$('input[type='checkbox']').prop({disabled:true})<br><span>● </span>fh() вызов на каждый index - позиц, val - значен.</div>"
+                      <div class='ttO-exemPlus'><span>● </span>объектом. у attr 1 значение св-ва станет val1<br>.prop({propName1:val1, propName2:val2})<br><span>● </span>cделает все флажки неактивными<br>$('input[type='checkbox']').prop({disabled:true})<br><span>● </span>fn() вызов на каждый index - позиц, val - значен.</div>"
                     >
                       <span class="short2">
                         <span class="jq">$</span>
@@ -1211,97 +1210,6 @@
                       <span class="punct">(</span>
                       <span class="elem short2">"myProp"</span>
                       <span class="doc short">propName</span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                </div>
-                <!-- Текст -->
-                <div class="group">
-                  <div class="descr">Текст:</div>
-                  <!-- Взять -->
-                  <div class="tokens">
-                    <span class="token__name">Взять</span>
-                    <span
-                      class="token__el"
-                      title="Записать текст 
-                      <p>из < p> в переменную pTex</p>"
-                    >
-                      <span class="short2">
-                        <span class="fn">var</span>
-                        <span class="doc">pTex</span>
-                        <span class="teg">=</span>
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'p'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">text</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">Записать</span>
-                    <span
-                      class="token__el"
-                      title="Из переменной pTex, записать текст в <span>"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'span'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">text</span>
-                      <span class="punct">(</span>
-                      <span class="elem">pTex</span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                </div>
-                <!-- HTML -->
-                <div class="group">
-                  <div class="descr">HTML:</div>
-                  <div class="tokens">
-                    <span class="token__name">Взять</span>
-                    <span
-                      class="token__el"
-                      title="возмёт html код (получит < p>< /p>)"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'p'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">html</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">Вставить</span>
-                    <span
-                      class="token__el"
-                      title="вставит html код (в div вставит < p> с текстом 'xX')"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'div'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">html</span>
-                      <span class="punct">(</span>
-                      <span class="elem">'</span>
-                      <span class="elem short2">< p>xX< /p></span>
-                      <span class="elem">'</span>
                       <span class="punct">)</span>
                     </span>
                   </div>
@@ -1497,16 +1405,152 @@
                     </span>
                   </div>
                 </div>
-              </td>
-              <!-- манипуляции -->
-              <td>
-                <!-- внутрь -->
+                <!-- позиция -->
                 <div class="group">
-                  <div class="descr">Вставить Внутрь:</div>
+                  <div class="descr">Позиция:</div>
+                  <div class="tokens">
+                    <span class="token__name">Позиция</span>
+                    <span
+                      class="token__el"
+                      title="найдёт у эл. ближайшего предка с позиционированием (position - fixed, absolute, relative). Для цепочек, найденых эл. (у #toY найдёт предка с position)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">#toY</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">offsetParent</span>
+                      <span class="punct">()</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Позиция</span>
+                    <span
+                      class="token__el"
+                      title="найдёт у эл. ближайшего предка с позиционированием (position - fixed, absolute, relative). Для цепочек, найденых эл. (у #toY найдёт предка с position)"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">#toY</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">offset || position</span>
+                      <span class="punct">()</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <!-- содержимое -->
+              <td>
+                <!-- Добавление -->
+                <div class="group">
+                  <div class="descr">Добавление:</div>
+                  <!-- Текст -->
+                  <div class="tokens">
+                    <span class="token__name">Текст</span>
+                    <span
+                      class="token__el"
+                      title="возьмёт/изменит текст выбран. эл.<br>вернёт || изменит на val || вызов fn()<br>val - заменит всё содержимое эл.<br>fn() вызов на каждый эл.<br>приним. index - позиц., val - значен.
+                      <p>в перемен. запишет текст из < p></p>
+                      <div class='ttO-exemPlus'><span>● </span>Из перемен, запишет текст в span<br>$('span').text(pTex)<br><span>● </span>в < p> ч/з f() запишет index и text<br>$('p').text(function (index, text) {<br>return (<br>'Индекс - ' + index+ ('. Было: ' + text)<br>  );});</div>"
+                    >
+                      <span class="short2">
+                        <span class="fn">var</span>
+                        <span class="doc">pTex</span>
+                        <span class="teg">=</span>
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">text</span>
+                      <span class="punct">(</span>
+                      <span class="cont short">[</span>
+                      <span class="doc short">val</span>
+                      <span class="cont short">||</span>
+                      <span class="fn short">fn</span>
+                      <span class="cont short">]</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- html -->
+                  <div class="tokens">
+                    <span class="token__name">HTML</span>
+                    <span
+                      class="token__el"
+                      title="возьмёт/изменит html выбран. эл.<br>вернёт || изменит html || вызов fn()<br>val - заменит содержимое всех эл.<br>fn() вызов на каждый эл.<br>приним. index - позиц., val - значен.
+                      <p>вернёт html содерж. 1го эл. .rTy</p>
+                      <div class='ttO-exemPlus'><span>● </span>в span вставит < p> с текстом 'xX'<br>$('span').html('< p>xX< /p>')<br><span>● </span>в < p> ч/з fn() запишет ind и html<br>$('p').html(function(index, html){<br>return (<br>'Инд. - ' + index+ ('. Было: ' + html)<br>);});</div>"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'.rTy'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">html</span>
+                      <span class="punct">(</span>
+                      <span class="cont short">[</span>
+                      <span class="doc short">val</span>
+                      <span class="cont short">||</span>
+                      <span class="fn short">fn</span>
+                      <span class="cont short">]</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Перед/После -->
+                  <div class="tokens">
+                    <span class="token__name">Перед / После</span>
+                    <span class="token__el" title="помещает cont перед || после эл.<br>порядок - эл.-метод-содержимое<br>cont - html, jQ объ., DOM эл.<br>передача ч/з запятую, массивом<br>fn() для каждого эл.<br>index - позиция, html - значение<p>перед .rTe переместит div</p><div class='ttO-exemPlus'><span>● </span>после < /li> поставит < img><br>$('li').after(< img>)<br><span>● </span>после < /р> поставит < div></br>с именем кл. прошлого< /p><br>$('p').after(function(){<br>return'< div>'+this.className +'<br>< /div>';});</div>">
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'.rTe'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">before</span>
+                      <span class="cont short">||</span>
+                      <span class="punct3 short">.</span>
+                      <span class="jq short">after</span>
+                      <span class="punct">(</span>
+                      <span class="doc short">cont</span>
+                      <span class="cont short">||</span>
+                      <span class="fn short">fn</span>
+                      <span class="elem short2">'div'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Пред/Посл -->
+                  <div class="tokens">
+                    <span class="token__name">Пред / Посл</span>
+                    <span class="token__el" title="добавит содерж. перед || после эл.<br>порядок - содержимое-метод-эл.<br>elem - html, jQ объ., DOM эл.<br>для передачи одного содержимого<p>< li> с 1 поставит после div</p><div class='ttO-exemPlus'><span>● </span>< img> поставит перед < /li> <br>$('< img>').after('li')</div>">
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'< li>1< /li>'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">insertAfter</span>
+                      <span class="cont short">||</span>
+                      <span class="jq short">Before</span>
+                      <span class="punct">(</span>
+                      <span class="doc short">elem</span>
+                      <span class="elem short2">'div'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
                   <!-- внутрь -->
                   <div class="tokens">
                     <span class="token__name">Внутрь</span>
-                    <span class="token__el" title="000">
+                    <span class="token__el" title="помещает cont перед || после эл.<br>порядок - эл.-метод-содержимое<br>cont - html, jQ объ., DOM эл.<br>передача ч/з запятую, массивом<br>fn() для каждого эл.<br>index - позиция, html - значение<p>перед .rTe переместит div</p><div class='ttO-exemPlus'><span>● </span>после < /li> поставит < img><br>$('li').after(< img>)<br><span>● </span>после < /р> поставит < div></br>с именем кл. прошлого< /p><br>$('p').after(function(){<br>return'< div>'+this.className +'<br>< /div>';});</div>">
                       <span class="short2">
                         <span class="jq">$</span>
                         <span class="punct">(</span>
@@ -1545,56 +1589,6 @@
                       <span class="punct">)</span>
                     </span>
                   </div>
-                </div>
-                <!-- снаружи -->
-                <div class="group">
-                  <div class="descr">Вставить Снаружи:</div>
-                  <!-- ПредПосле -->
-                  <div class="tokens">
-                    <span class="token__name">Пред / После</span>
-                    <span class="token__el" title="000">
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'em.rT'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">before</span>
-                      <span class="cont short">||</span>
-                      <span class="jq">After</span>
-                      <span class="punct">(</span>
-                      <span class="elem">'</span>
-                      <span class="elem short2">?</span>
-                      <span class="elem">'</span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                  <!-- ЕщёПредПосле -->
-                  <div class="tokens">
-                    <span class="token__name">000</span>
-                    <span class="token__el" title="000">
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'em.rT'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">insertAfter</span>
-                      <span class="cont short">||</span>
-                      <span class="jq">Before</span>
-                      <span class="punct">(</span>
-                      <span class="elem">'</span>
-                      <span class="elem short2">?</span>
-                      <span class="elem">'</span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                </div>
-                <!-- вокруг -->
-                <div class="group">
-                  <div class="descr">Обернуть:</div>
                   <div class="tokens">
                     <span class="token__name">Каждый</span>
                     <span
@@ -1658,7 +1652,7 @@
                       <span class="punct">)</span>
                     </span>
                   </div>
-                  <!-- вокруг -->
+                  <!-- Обёртка -->
                   <div class="tokens">
                     <span class="token__name">Обёртка </span>
                     <span
@@ -1706,6 +1700,50 @@
                       <span class="elem">'</span>
                       <span class="elem short2">?</span>
                       <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- копировать -->
+                <div class="group">
+                  <div class="descr">Копировать:</div>
+                  <div class="tokens">
+                    <span class="token__name">Клон</span>
+                    <span
+                      class="token__el"
+                      title="склонирует эл. и выберет клон <p>сделает клон < p>"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'p'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">clone</span>
+                      <span class="punct">(</span>
+                      <span class="elem"></span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <div class="tokens">
+                    <span class="token__name">Событие</span>
+                    <span
+                      class="token__el"
+                      title="склонирует эл. и его обраб. событий, выберет клон <p>клон выбранного эл. будет с событием, например click"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'</span>
+                        <span class="this">this</span>
+                        <span class="elem">'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">clone</span>
+                      <span class="punct">(</span>
+                      <span class="fn">true</span>
                       <span class="punct">)</span>
                     </span>
                   </div>
@@ -1767,50 +1805,6 @@
                       <span class="elem">'</span>
                       <span class="elem short2">?</span>
                       <span class="elem">'</span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                </div>
-                <!-- копировать -->
-                <div class="group">
-                  <div class="descr">Копировать:</div>
-                  <div class="tokens">
-                    <span class="token__name">Клон</span>
-                    <span
-                      class="token__el"
-                      title="склонирует эл. и выберет клон <p>сделает клон < p>"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'p'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">clone</span>
-                      <span class="punct">(</span>
-                      <span class="elem"></span>
-                      <span class="punct">)</span>
-                    </span>
-                  </div>
-                  <div class="tokens">
-                    <span class="token__name">Событие</span>
-                    <span
-                      class="token__el"
-                      title="склонирует эл. и его обраб. событий, выберет клон <p>клон выбранного эл. будет с событием, например click"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">'</span>
-                        <span class="this">this</span>
-                        <span class="elem">'</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">clone</span>
-                      <span class="punct">(</span>
-                      <span class="fn">true</span>
                       <span class="punct">)</span>
                     </span>
                   </div>
@@ -2051,24 +2045,6 @@
                       <span class="doc short">expr</span>
                       <span class="cont short">]</span>
                       <span class="punct">)</span>
-                    </span>
-                  </div>
-                  <!-- позиция -->
-                  <div class="tokens">
-                    <span class="token__name">Позиция</span>
-                    <span
-                      class="token__el"
-                      title="найдёт у эл. ближайшего предка с позиционированием (position - fixed, absolute, relative). Для цепочек, найденых эл. (у #toY найдёт предка с position)"
-                    >
-                      <span class="short2">
-                        <span class="jq">$</span>
-                        <span class="punct">(</span>
-                        <span class="elem">#toY</span>
-                        <span class="punct">)</span>
-                      </span>
-                      <span class="punct3">.</span>
-                      <span class="jq">offsetParent</span>
-                      <span class="punct">()</span>
                     </span>
                   </div>
                 </div>
@@ -2398,11 +2374,201 @@
                 </div>
               </td>
             </tr>
+            <!-- МЕТОДЫ: СОБЫТИЯ -->
+            <tr class="general">
+              <td colspan="3">МЕТОДЫ: СОБЫТИЯ</td>
+            </tr>
+            <!-- методы НАЗВАНИЯ -->
+            <tr class="general">
+              <td>Базовые</td>
+              <td>Манипуляторы</td>
+              <td>Загрузчики</td>
+            </tr>
+            <!-- методы СОБЫТИЯ -->
+            <tr>
+              <!-- базовые -->
+              <td>
+                <!-- базовые -->
+                <div class="group">
+                  <div class="descr">базовые:</div>
+                  <!-- Взять/Изменить -->
+                  <div class="tokens">
+                    <span class="token__name">Взять/Изменить</span>
+                    <span
+                      class="token__el"
+                      title="вернёт || изменит attr у выбран. эл. <br>Сущ. знач. атрибута заменит; <br>val может быть функцией; <br>Передача объектом: <br>.attr({class: 'cl',title: 'xX'}); <p>к < a> добавит || изменит title=xX</p>;
+                      "
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">attr</span><span class="punct">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">title</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct3 short2">, </span>
+                      <span class="cont short">||</span>
+                      <span class="elem short2">'</span>
+                      <span class="cont short">[</span>
+                      <span class="doc short">val</span>
+                      <span class="elem short2">xX</span>
+                      <span class="cont short">]</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Удалить -->
+                  <div class="tokens">
+                    <span class="token__name">Удалить</span>
+                    <span
+                      class="token__el"
+                      title="удалит атрибут <p>у img удалит src</p>"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">removeAttr</span>
+                      <span class="punct">(</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">'src'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <!-- Манипуляторы -->
+              <td>
+                <!-- Атрибуты -->
+                <div class="group">
+                  <div class="descr">Манипуляторы:</div>
+                  <!-- Взять/Изменить -->
+                  <div class="tokens">
+                    <span class="token__name">Взять/Изменить</span>
+                    <span
+                      class="token__el"
+                      title="вернёт || изменит attr у выбран. эл. <br>Сущ. знач. атрибута заменит; <br>val может быть функцией; <br>Передача объектом: <br>.attr({class: 'cl',title: 'xX'}); <p>к < a> добавит || изменит title=xX</p>;
+                      "
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">attr</span><span class="punct">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">title</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct3 short2">, </span>
+                      <span class="cont short">||</span>
+                      <span class="elem short2">'</span>
+                      <span class="cont short">[</span>
+                      <span class="doc short">val</span>
+                      <span class="elem short2">xX</span>
+                      <span class="cont short">]</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Удалить -->
+                  <div class="tokens">
+                    <span class="token__name">Удалить</span>
+                    <span
+                      class="token__el"
+                      title="удалит атрибут <p>у img удалит src</p>"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">removeAttr</span>
+                      <span class="punct">(</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">'src'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <!-- Загрузчики -->
+              <td>
+                <!-- Загрузчики -->
+                <div class="group">
+                  <div class="descr">Загрузчики:</div>
+                  <!-- Взять/Изменить -->
+                  <div class="tokens">
+                    <span class="token__name">Взять/Изменить</span>
+                    <span
+                      class="token__el"
+                      title="вернёт || изменит attr у выбран. эл. <br>Сущ. знач. атрибута заменит; <br>val может быть функцией; <br>Передача объектом: <br>.attr({class: 'cl',title: 'xX'}); <p>к < a> добавит || изменит title=xX</p>;
+                      "
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'a'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">attr</span><span class="punct">(</span>
+                      <span class="elem short2">'</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">title</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct3 short2">, </span>
+                      <span class="cont short">||</span>
+                      <span class="elem short2">'</span>
+                      <span class="cont short">[</span>
+                      <span class="doc short">val</span>
+                      <span class="elem short2">xX</span>
+                      <span class="cont short">]</span>
+                      <span class="elem short2">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Удалить -->
+                  <div class="tokens">
+                    <span class="token__name">Удалить</span>
+                    <span
+                      class="token__el"
+                      title="удалит атрибут <p>у img удалит src</p>"
+                    >
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'img'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">removeAttr</span>
+                      <span class="punct">(</span>
+                      <span class="doc short">attr</span>
+                      <span class="elem short2">'src'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
             <!-- 3.1 -->
             <tr class="general">
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
             </tr>
             <!-- 3.2 -->
             <tr>
@@ -2546,6 +2712,7 @@
               <!-- 2 -->
               <td>
                 <div class="group">
+                  <div class="descr">22 :</div>
                   <div class="tokens">
                     <span class="token__name">Длина</span>
                     <span
@@ -2617,10 +2784,58 @@
                     </span>
                   </div>
                 </div>
+                <div class="general">События</div>
+                <!-- события -->
+                <div class="group">
+                  <div class="descr">События:</div>
+                  <!-- события -->
+                  <div class="tokens">
+                    <span class="token__name">Внутрь</span>
+                    <span class="token__el" title="000">
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'em.rT'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">append</span>
+                      <span class="cont short">||</span>
+                      <span class="jq">To</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">?</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                  <!-- Ещё события -->
+                  <div class="tokens">
+                    <span class="token__name">Ещё события?</span>
+                    <span class="token__el" title="000">
+                      <span class="short2">
+                        <span class="jq">$</span>
+                        <span class="punct">(</span>
+                        <span class="elem">'em.rT'</span>
+                        <span class="punct">)</span>
+                      </span>
+                      <span class="punct3">.</span>
+                      <span class="jq">prepend</span>
+                      <span class="cont short">||</span>
+                      <span class="jq">To</span>
+                      <span class="punct">(</span>
+                      <span class="elem">'</span>
+                      <span class="elem short2">?</span>
+                      <span class="elem">'</span>
+                      <span class="punct">)</span>
+                    </span>
+                  </div>
+                </div>
               </td>
               <!-- 3 -->
               <td>
                 <div class="group">
+                  <div class="descr">333 :</div>
                   <div class="tokens">
                     <span class="token__name">000</span>
                     <span class="token__el" title="000">

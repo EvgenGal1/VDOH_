@@ -354,29 +354,7 @@ function clickTokenElShowExemPl() {
         $($totipOv).fadeTo(150, 0.8);
       }
     });
-    
-    $($tokenEl).click(function () {
-      $($exampl).slideToggle(150, function () {
-        if ($(this).is(":hidden")) {
-          $(this).hide().next(".ttPlus").slideToggle(100);
-          console.log(1);
-          $(this).children(".ttArrow").css({
-            color: "blue",
-          });
-          console.log(2);
-          // ??? не раб - transform'rotate(90deg) и .animate()
-        } else {
-          $(this).show().next(".ttPlus").fadeToggle(100);
-          console.log(3);
-          $(this).find(".ttArrow").css({
-            color: "red",
-          });
-          console.log(4);
-          // ??? не раб - transform'rotate(90deg) и .animate()
-        }
-      });
-      return false;
-    });
+
     $($hasttOePl).append("<span class='ttPlus'>+++</span>");
     $(".ttPlus").css({
       color: "red",
@@ -395,6 +373,34 @@ function clickTokenElShowExemPl() {
       fontSize: "20px",
       fontWeight: "bold",
       textShadow: "black 1px 1px 0px",
+      transform: "rotate(-90deg)",
+    });
+
+    $($tokenEl).click(function () {
+      $($exampl).slideToggle(150, function () {
+        if ($(this).is(":hidden")) {
+          $(this)
+            .hide()
+            .next(".ttPlus")
+            .slideToggle(100)
+            .nextAll(".ttArrow")
+            .css({
+              color: "red",
+              transform: "rotate(-90deg)",
+            });
+          console.log(2);
+          // ??? не раб - transform'rotate(90deg) и .animate()
+        } else {
+          $(this).show().next(".ttPlus").fadeToggle(100);
+          $(".ttArrow").addClass("rotate").css({
+            color: "green",
+            transform: "rotate(-90deg)",
+          });;
+          console.log(4);
+          // ??? не раб - transform'rotate(90deg) и .animate()
+        }
+      });
+      return false;
     });
   });
 }
@@ -452,10 +458,10 @@ function shortAnd2Change() {
 }
 shortAnd2Change();
 
-// *** всем span.cont у кого есть текст и текст('||'), сделать padding 0 5px. и убрать .gap(пробел)
+// *** всем span.cont у кого есть текст и текст('|'), сделать padding 0 5px. и убрать .gap(пробел)
 function iliPadd() {
   var contSp = $("span.cont:contains()");
-  var contSpIli = $("span.cont:contains('||'), span.cont:contains('=')");
+  var contSpIli = $("span.cont:contains('|'), span.cont:contains('=')");
   // ? не раб - в связке 2 :contains
   // var contSpBr = $("span.cont:contains('[')");
   $(".gap").css("display", "none");
@@ -499,7 +505,7 @@ function сolNul() {
   // ! есть 000
   // * находит у кого есть '000' в подсказке и выделяет родителя или потомка
   var datT = $("div:contains(000)"); // var datT = $("span:contains(000)");
-  $(".tokens").has(datT).css("outline", "3px solid #000000")
+  $(".tokens").has(datT).css("outline", "3px solid #000000");
   // $(datT).closest(".tokens").css("color", "#ff0000"); // блоку/родителю
   // $(".tokens").find(datT).css("background", "#100835"); // переменой/потомку
   // ! не в подсказке <p>
